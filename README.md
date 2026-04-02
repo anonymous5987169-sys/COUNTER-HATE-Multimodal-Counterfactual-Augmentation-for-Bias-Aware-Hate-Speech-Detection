@@ -1,6 +1,5 @@
-# Bias Evaluation of Counterfactual Data Augmentation in Hate Speech Detection
+# COUNTER-HATE-Multimodal-Counterfactual-Augmentation-for-Bias-Aware-Hate-Speech-Detection
 
-**Target Venue:** ACM Multimedia (ACMMM) 2026
 **Status:** All Pipelines Complete — Text, Image, Cross-modal Fusion (Late + Feature-level GMU/CrossAttn) + Ablation & Calibration + Extended Analysis + Multi-Seed + Full Statistical Suite
 **Last Updated:** 3 March 2026
 **Version:** 7.0
