@@ -330,18 +330,19 @@ graph TD
 
 ---
 
-## 8. 
+## 8. Fairness-Aware Threshold Optimization Pipeline
+
 ```mermaid
 graph TD
     A["Ensemble Predictions<br/>Continuous Scores"] -->|Per-Group Split| B["8 Identity Groups<br/>race, religion, gender<br/>orientation, nation<br/>disability, age, multiple"]
     
-    B --> C["Constraint: DP<br/>P(Å·=1) equal<br/>across groups"]
+    B --> C["Constraint: DP<br/>P(y_hat=1) equal<br/>across groups"]
     
-    C --> D["5-Fold CV<br/>Threshold Search<br/>Ï„ âˆˆ [0, 1]"]
+    C --> D["5-Fold CV<br/>Threshold Search<br/>tau in [0, 1]"]
     
-    D --> E["Fairness-Aware<br/>Optimization<br/>min:
+    D --> E["Fairness-Aware<br/>Optimization<br/>min: max FPR-diff"]
     
-    E --> F["Optimal Thresholds<br/>Ï„_group"]
+    E --> F["Optimal Thresholds<br/>tau_group"]
     
     F --> G["Apply Per-Group<br/>Thresholds"]
     
