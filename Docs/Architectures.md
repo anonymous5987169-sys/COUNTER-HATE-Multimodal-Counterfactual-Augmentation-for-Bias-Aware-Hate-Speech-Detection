@@ -1,4 +1,4 @@
-﻿# Comprehensive System Architecture & Diagrams
+# Comprehensive System Architecture & Diagrams
 ## Bias Evaluation of Counterfactual Data Augmentation in Hate Speech Detection
 
 ---
@@ -7,7 +7,7 @@
 
 ```mermaid
 graph TD
-    A["ðŸ“Š Raw Data<br/>18K Texts + Metadata"] -->|CSV| B["ðŸ”„ Data Preprocessing<br/>Tokenization, Cleaning"]
+    A["📊 Raw Data<br/>18K Texts + Metadata"] -->|CSV| B["💬 Data Preprocessing<br/>Tokenization, Cleaning"]
     B -->|6K Originals| C["nCF Condition<br/>No Augmentation"]
     B -->|18K Augmented| D["CF Condition<br/>Identity Substitution<br/>+ LLM Rewrite"]
     
@@ -15,26 +15,27 @@ graph TD
     C -->|Stratified Split| F["Val Set<br/>891 samples"]
     C -->|Fixed Test| G["Test Set<br/>892 samples"]
     
-    D -->|    D -->|Stratified Split| I["Val Set<br/>891 originals"]
+    D -->|Stratified Split| H["Train Set<br/>7,474 samples"]
+    D -->|Stratified Split| I["Val Set<br/>891 originals"]
     D -->|Fixed Test| J["Test Set<br/>892 originals"]
     
-    G -->|Text Input| K["ðŸ–¼ï¸ T2I Generator<br/>Z-Image-Turbo"]
+    G -->|Text Input| K["🖼 T2I Generator<br/>Z-Image-Turbo"]
     J -->|Text Input| K
     
     K -->|18K Images<br/>720x720| L["Image Dataset"]
     
-    G -->|Text| M["ðŸ“ Text Models<br/>TF-IDF, MiniLM"]
+    G -->|Text| M["💬 Text Models<br/>TF-IDF, MiniLM"]
     J -->|Text| M
     
-    L -->|Image| N["ðŸ¤– Image Models<br/>CLIP ViT-B/32"]
+    L -->|Image| N["🤖 Image Models<br/>CLIP ViT-B/32"]
     
-    M -->|Text Predictions| O["ðŸ”— Fusion Module<br/>Late/Stacking/CrossAttn"]
+    M -->|Text Predictions| O["🔗 Fusion Module<br/>Late/Stacking/CrossAttn"]
     N -->|Image Predictions| O
     
-    O -->|Combined Predictions| P["ðŸ“ˆ Evaluation Engine<br/>Metrics, Fairness, Bias"]
+    O -->|Combined Predictions| P["📈 Evaluation Engine<br/>Metrics, Fairness, Bias"]
     
-    P -->|Results| Q["ðŸ“Š Analysis & Reporting<br/>Calibration, Statistical Tests"]
-    Q -->|Final Report| R["âœ… Outputs<br/>F1, AUC, FPR, ECE<br/>Per-Group Metrics"]
+    P -->|Results| Q["📊 Analysis & Reporting<br/>Calibration, Statistical Tests"]
+    Q -->|Final Report| R["✅ Outputs<br/>F1, AUC, FPR, ECE<br/>Per-Group Metrics"]
     
     style A fill:#e1f5ff
     style K fill:#fff3e0
@@ -92,9 +93,9 @@ graph LR
     end
     
     subgraph "OUTPUT LAYER"
-        U["ðŸ“Š Results JSONs<br/>Metrics per condition"]
-        V["ðŸ“ˆ Visualizations<br/>Plots & Tables"]
-        W["ðŸ“‹ Analysis Reports<br/>Statistical Summary"]
+        U["📊 Results JSONs<br/>Metrics per condition"]
+        V["📈 Visualizations<br/>Plots & Tables"]
+        W["📋 Analysis Reports<br/>Statistical Summary"]
     end
     
     A --> C
@@ -144,26 +145,26 @@ graph LR
 
 ```mermaid
 graph LR
-    subgraph INPUT ["ðŸ“¥ INPUT"]
+    subgraph INPUT ["📥 INPUT"]
         A["Raw Data<br/>CSV"]
     end
     
-    subgraph PREP ["ðŸ”§ PREPROCESSING"]
+    subgraph PREP ["📧 PREPROCESSING"]
         B["Augmentation"]
         C["T2I Gen<br/>Turbo"]
         D["Feature<br/>Extract"]
     end
     
-    subgraph MODEL ["ðŸ¤– MODELING"]
+    subgraph MODEL ["🤖 MODELING"]
         E["Text Models<br/>TF-IDF + MiniLM"]
         F["Image Models<br/>3 conditions"]
     end
     
-    subgraph FUSION ["ðŸ”— FUSION"]
+    subgraph FUSION ["🔗 FUSION"]
         G["Late/Stack/Attn"]
     end
     
-    subgraph EVAL ["ðŸ“Š EVALUATION"]
+    subgraph EVAL ["📊 EVALUATION"]
         H["Metrics"]
         I["Fairness"]
         J["Statistics"]
@@ -197,7 +198,7 @@ graph TD
     
     C -->|LogReg| C1["MiniLM+LogReg<br/>F1=0.935-0.952"]
     C -->|SVM| C2["MiniLM+SVM<br/>F1=0.931-0.951"]
-    C -->|MLP| C3["MiniLM+MLP<br/>F1=0.939-0.952<br/>â­ BEST"]
+    C -->|MLP| C3["MiniLM+MLP<br/>F1=0.939-0.952<br/>⭐ BEST"]
     
     B1 --> E["Validation<br/>5-Fold CV"]
     B2 --> E
@@ -243,7 +244,7 @@ graph LR
     C2 --> D
     C3 --> D
     
-    D --> E["Sigmoid Output<br/>Score âˆˆ [0,1]"]
+    D --> E["Sigmoid Output<br/>Score in [0,1]"]
     
     E -->|Threshold<br/>0.38-0.50| F["Predictions<br/>Binary Labels"]
     
@@ -304,7 +305,7 @@ graph TD
     B --> C2["False Negative Rate<br/>FNR = FN/P"]
     B --> C3["Equalized Odds<br/>EO-diff = max|FPR - FNR|"]
     
-    C1 --> D["Compute Î”FPR<br/>Max gap across groups"]
+    C1 --> D["Compute ΔFPR<br/>Max gap across groups"]
     C2 --> D
     C3 --> D
     C4 --> D
@@ -313,7 +314,7 @@ graph TD
     
     E --> F["Significance<br/>p-values, CI"]
     
-    F --> G["Model Calibration<br/>Predict â‰ˆ Confidence"]
+    F --> G["Model Calibration<br/>Predict ≈ Confidence"]
     
     G -->|Post-hoc| H1["Isotonic Regression<br/>Monotonic mapping"]
     G -->|Post-hoc| H2["Temperature Scaling<br/>Single scalar"]
@@ -372,7 +373,7 @@ graph LR
     D4 --> D5["Wilcoxon Signed-Rank<br/>Pairwise comparisons"]
     
     B --> D6["Goodness-of-Fit<br/>Chi-Square<br/>Fisher Exact"]
-    B --> D7["Effect Size<br/>Cohen's d<br/>CramÃ©r's V"]
+    B --> D7["Effect Size<br/>Cohen's d<br/>Cramér's V"]
     
     D1 --> E["Correction<br/>Holm-Bonferroni"]
     D2 --> E
@@ -382,7 +383,7 @@ graph LR
     D6 --> E
     D7 --> E
     
-    E --> F["Adjusted p-values<br/>Î± = 0.05"]
+    E --> F["Adjusted p-values<br/>α = 0.05"]
     
     F --> G["Conclusions<br/>Significant CAD Effect<br/>on Group FPR"]
     
@@ -402,7 +403,7 @@ graph LR
 |-----------|-----|-----|-----------|
 | Text **nCF** (6K originals) | 0.9396 | 0.971 | 0.062 |
 | Text **CF** (18K augmented) | 0.9518 | 0.980 | 0.052 |
-| **Î” improvement** | **+1.3%** | **+0.9%** | **-0.010 â†“** |
+| **Δ improvement** | **+1.3%** | **+0.9%** | **-0.010 †** |
 
 ---
 
@@ -412,18 +413,18 @@ graph LR
 | Image **nCF** (6K originals) | 0.770 | 0.816 | 0.387 |
 | Image **CF-no-adv** (18K) | 0.801 | 0.852 | 0.300 |
 | Image **CF+GRL** (18K + fairness) | 0.794 | 0.839 | 0.315 |
-| **Î” nCFâ†’CF+GRL** | **+3.1%** | **+2.8%** | **-0.072 â†“** |
+| **Δ nCF†CF+GRL** | **+3.1%** | **+2.8%** | **-0.072 †** |
 
 ---
 
 ### Fusion Models
 | Condition | F1 | AUC | FPR | ECE |
 |-----------|-----|-----|-----|-----|
-| Late Fusion **nCFÃ—nCF** | ~0.910* | ~0.940* | ~0.110* | â€” |
-| Late Fusion **CFÃ—CF** | 0.935 | 0.968 | 0.076 | 0.014 |
-| **Î” improvement** | **+2.7%** | **+2.9%** | **-0.034 â†“** | â€” |
+| Late Fusion **nCF—nCF** | ~0.910* | ~0.940* | ~0.110* | € |
+| Late Fusion **CF—CF** | 0.935 | 0.968 | 0.076 | 0.014 |
+| **Δ improvement** | **+2.7%** | **+2.9%** | **-0.034 †** | € |
 
-*nCF fusion not explicitly reported â€” estimated from component models*
+*nCF fusion not explicitly reported € estimated from component models*
 
 ---
 
@@ -431,9 +432,9 @@ graph LR
 
 **CAD consistently helps across ALL modalities:**
 
-- Text gains are **modest but reliable** (+1.3% F1) â€” text was already strong
-- Image gains are **most dramatic** â€” overall FPR drops by **18.6%** (0.387â†’0.315), significant bias reduction
-- Fusion compounds both gains â€” best calibration (ECE=0.014) and lowest FPR overall
+- Text gains are **modest but reliable** (+1.3% F1) € text was already strong
+- Image gains are **most dramatic** € overall FPR drops by **18.6%** (0.387†0.315), significant bias reduction
+- Fusion compounds both gains € best calibration (ECE=0.014) and lowest FPR overall
 
 **Framing paper:**
 
@@ -464,8 +465,8 @@ This is a **clean, compelling narrative** that directly answers the research que
 - MiniLM embeddings dramatically outperform TF-IDF (F1: 0.952 vs 0.838)
 - MLP classifier best utilizes semantic embeddings
 - CF augmentation stabilizes text models (stdâ‰¤0.004 across 3 seeds)
-- TF-IDF FPR amplified by CAD (0.198â†’0.237, +19.7% for SVM/RF)
-- MiniLM relatively robust to CAD (0.048â†’0.052, +8.3%)
+- TF-IDF FPR amplified by CAD (0.198†0.237, +19.7% for SVM/RF)
+- MiniLM relatively robust to CAD (0.048†0.052, +8.3%)
 
 ---
 
@@ -479,21 +480,21 @@ This is a **clean, compelling narrative** that directly answers the research que
 
 **Fairness Metrics per Condition:**
 
-| Group | nCF FPR | CF-no-adv FPR | CF+GRL FPR | Î” (nCFâ†’CF+GRL) |
+| Group | nCF FPR | CF-no-adv FPR | CF+GRL FPR | Δ (nCF†CF+GRL) |
 |-------|---------|---------------|-----------|-----------------|
-| Race/Ethnicity | 0.528 | 0.491 | 0.453 | -0.075 â†“ |
-| Religion | 0.357 | 0.268 | 0.268 | -0.089 â†“ |
+| Race/Ethnicity | 0.528 | 0.491 | 0.453 | -0.075 † |
+| Religion | 0.357 | 0.268 | 0.268 | -0.089 † |
 | Gender | 0.360 | 0.337 | 0.360 | 0.000 |
-| Sexual Orientation | 0.337 | 0.202 | 0.213 | -0.124 â†“ |
+| Sexual Orientation | 0.337 | 0.202 | 0.213 | -0.124 † |
 | National Origin | 0.500 | 0.500 | 0.500 | 0.000 |
-| Disability | 0.714 | 0.571 | 0.571 | -0.143 â†“ |
+| Disability | 0.714 | 0.571 | 0.571 | -0.143 † |
 | Age | 0.400 | 0.400 | 0.400 | 0.000 |
-| **Max Î”FPR (range)** | **0.377** | **0.382** | **0.358** | **-5.0%** |
+| **Max ΔFPR (range)** | **0.377** | **0.382** | **0.358** | **-5.0%** |
 
 **Key Findings:**
 - Image generation (T2I) successfully scaled to 18K images
-- CF (more data) improves image F1: 0.770â†’0.801 (+4.0%)
-- GRL adversarial debiasing reduces max FPR gap (0.377â†’0.358)
+- CF (more data) improves image F1: 0.770†0.801 (+4.0%)
+- GRL adversarial debiasing reduces max FPR gap (0.377†0.358)
 - Image models more sensitive to group bias than text (FPR: 0.30-0.71 vs text: 0.04-0.08)
 - Multi-seed stability: std(F1)â‰¤0.002 across 3 seeds
 
@@ -503,24 +504,24 @@ This is a **clean, compelling narrative** that directly answers the research que
 
 | Model | Strategy | Conditions | F1 | AUC | FPR | ECE |
 |-------|----------|------------|-----|-----|-----|-----|---------|
-| **Late Fusion** | w=0.50 simple avg | Text CF Ã— Image CF-no-adv | **0.935** | **0.968** | **0.076** | **0.014** | 0.471 |
-| Weighted Average | w=0.445 (optimal) | Text CF Ã— Image CF-no-adv | 0.940 | 0.974 | 0.082 | 0.061 | 0.468 |
-| Equal-Weight Avg | w=0.50 | Text CF Ã— Image CF-no-adv | 0.935 | 0.969 | 0.086 | 0.058 | 0.469 |
+| **Late Fusion** | w=0.50 simple avg | Text CF — Image CF-no-adv | **0.935** | **0.968** | **0.076** | **0.014** | 0.471 |
+| Weighted Average | w=0.445 (optimal) | Text CF — Image CF-no-adv | 0.940 | 0.974 | 0.082 | 0.061 | 0.468 |
+| Equal-Weight Avg | w=0.50 | Text CF — Image CF-no-adv | 0.935 | 0.969 | 0.086 | 0.058 | 0.469 |
 | **Stacking Ensemble** | Meta-LR (poly-9) | 5-fold CV | 0.936 | 0.973 | 0.069 | **0.014** | 0.467 |
 | Stacking (Meta-SVM) | Meta-SVM (RBF) | 5-fold CV | 0.932 | 0.970 | 0.071 | 0.018 | 0.472 |
 | Stacking (Meta-MLP) | Meta-MLP | 5-fold CV | 0.928 | 0.968 | 0.074 | 0.019 | 0.476 |
-| Learned Fusion | Product | Text Ã— Image | 0.942 | 0.972 | 0.073 | 0.021 | 0.465 |
-| Learned Fusion | Min/Max | Text Ã— Image | 0.930 | 0.964 | 0.085 | 0.032 | 0.488 |
-| Learned Fusion | Entropy-weighted | Text Ã— Image | 0.935 | 0.970 | 0.071 | 0.019 | 0.471 |
-| **Cross-Attention GMU** | GMU + Cross-Attn + GRL | 5-fold CV ensemble | 0.876Â±0.006 | 0.920Â±0.007 | 0.218 | 0.038 | 0.354 |
+| Learned Fusion | Product | Text — Image | 0.942 | 0.972 | 0.073 | 0.021 | 0.465 |
+| Learned Fusion | Min/Max | Text — Image | 0.930 | 0.964 | 0.085 | 0.032 | 0.488 |
+| Learned Fusion | Entropy-weighted | Text — Image | 0.935 | 0.970 | 0.071 | 0.019 | 0.471 |
+| **Cross-Attention GMU** | GMU + Cross-Attn + GRL | 5-fold CV ensemble | 0.876±0.006 | 0.920±0.007 | 0.218 | 0.038 | 0.354 |
 
 **Best Performing Models (Top 3):**
 
 | Rank | Model | F1 | AUC | Calibration | Notes |
 |------|-------|-----|-----|-------------|-------|
-| ðŸ¥‡ 1st | Late Fusion (w=0.50) + Isotonic Cal | 0.935 | 0.968 | ECE=0.014 | Excellent OOD generalization |
-| ðŸ¥ˆ 2nd | Weighted Avg (w=0.445) | 0.940 | 0.974 | ECE=0.061 | Best F1 across all strategies |
-| ðŸ¥‰ 3rd | Stacking Ensemble (Meta-LR) | 0.936 | 0.973 | ECE=0.014 | Best calibration post-hoc |
+| 🥇 1st | Late Fusion (w=0.50) + Isotonic Cal | 0.935 | 0.968 | ECE=0.014 | Excellent OOD generalization |
+| 🥈 2nd | Weighted Avg (w=0.445) | 0.940 | 0.974 | ECE=0.061 | Best F1 across all strategies |
+| 🥉 3rd | Stacking Ensemble (Meta-LR) | 0.936 | 0.973 | ECE=0.014 | Best calibration post-hoc |
 
 ---
 
@@ -528,15 +529,15 @@ This is a **clean, compelling narrative** that directly answers the research que
 
 | Model | Dataset | Method | ECE | MCE | Brier | Improvement |
 |-------|---------|--------|-----|-----|-------|-------------|
-| Text (MiniLM+MLP) CF | Test | Raw | 0.0575 | 0.2188 | 0.0492 | â€” |
+| Text (MiniLM+MLP) CF | Test | Raw | 0.0575 | 0.2188 | 0.0492 | € |
 | Text (MiniLM+MLP) CF | Test | Isotonic | 0.0198 | 0.0687 | 0.0195 | **-65.6%** |
 | Text (MiniLM+MLP) CF | Test | Temperature | 0.0245 | 0.1043 | 0.0241 | -57.4% |
-| Image (CLIP ViT-B/32 CF-no-adv) | Test | Raw | 0.0397 | 0.1847 | 0.1867 | â€” |
+| Image (CLIP ViT-B/32 CF-no-adv) | Test | Raw | 0.0397 | 0.1847 | 0.1867 | € |
 | Image (CLIP ViT-B/32 CF-no-adv) | Test | Isotonic | 0.0142 | 0.0524 | 0.1763 | -64.2% |
 | **Late Fusion (w=0.50)** | **Test** | **Isotonic** | **0.0140** | **0.0542** | **0.0761** | **-75.7%** |
 | Stacking Ensemble | Test (5-fold CV) | Stacking | 0.0141 | 0.0628 | 0.0689 | -73.2% |
-| Cross-Attention GMU | Val (5-fold) | None | 0.0379 | 0.1529 | â€” | â€” |
-| Cross-Attention GMU | Ensemble (3-run) | None | 0.0380 | 0.1541 | â€” | â€” |
+| Cross-Attention GMU | Val (5-fold) | None | 0.0379 | 0.1529 | € | € |
+| Cross-Attention GMU | Ensemble (3-run) | None | 0.0380 | 0.1541 | € | € |
 
 **Calibration Improvement:** Isotonic regression reduces ECE by 64-76%, making confidence scores trustworthy.
 
@@ -546,12 +547,12 @@ This is a **clean, compelling narrative** that directly answers the research que
 
 | Test | Comparison | Test Statistic | p-value | Effect Size | Conclusion |
 |------|-----------|-----------------|---------|-------------|-----------|
-| **OLS Regression** | nCF FPR vs CF FPR (condition) | F=9.82 | **1.7Ã—10â»Â¹â°** | â€” | **Highly significant** |
-| Chi-Square | Independence (group Ã— condition) | Ï‡Â²=24.37 | **3.2Ã—10â»â´** | CramÃ©r's V=0.156 | **Significant** |
-| Fisher Exact | Race group (2Ã—2 table) | Odds Ratio=2.14 | 0.032 | â€” | **Significant** |
+| **OLS Regression** | nCF FPR vs CF FPR (condition) | F=9.82 | **1.7—10¹₀** | € | **Highly significant** |
+| Chi-Square | Independence (group — condition) | Ï‡²=24.37 | **3.2—10¹⁴** | Cramér's V=0.156 | **Significant** |
+| Fisher Exact | Race group (2—2 table) | Odds Ratio=2.14 | 0.032 | € | **Significant** |
 | Wilcoxon Signed-Rank | Text nCF vs CF (paired) | Z=3.21 | **0.001** | r=0.315 | **Significant** |
-| Kruskal-Wallis | Multi-group FPR comparison | H=18.74 | **0.009** | Î·Â²=0.184 | **Significant** |
-| Bonferroni Correction | 8 groups Ã— 3 tests (24 comparisons) | Î±'=0.00208 | Multiple | â€” | Controls false positives |
+| Kruskal-Wallis | Multi-group FPR comparison | H=18.74 | **0.009** | ·Â²=0.184 | **Significant** |
+| Bonferroni Correction | 8 groups — 3 tests (24 comparisons) | α'=0.00208 | Multiple | € | Controls false positives |
 
 **Interpretation:**
 - CAD effect on FPR is **statistically significant** (p<0.001)
@@ -567,15 +568,15 @@ This is a **clean, compelling narrative** that directly answers the research que
 |-------|-----------|--------|-------|-------|-------|------|-----|-----|
 | **Text (MiniLM+MLP)** | nCF | F1 | 0.9393 | 0.9408 | 0.9387 | 0.9396 | 0.0009 | **0.10%** |
 | Text (MiniLM+MLP) | CF | F1 | 0.9519 | 0.9521 | 0.9514 | 0.9518 | 0.0003 | **0.03%** |
-| **Image (CLIP ViT-B/32 CF-no-adv)** | â€” | F1 | 0.8004 | 0.8008 | 0.8012 | 0.8008 | 0.0004 | **0.05%** |
-| Image (CLIP ViT-B/32 CF+GRL) | â€” | F1 | 0.7935 | 0.7938 | 0.7942 | 0.7938 | 0.0004 | **0.05%** |
-| nCF Condition (baseline) | â€” | FPR (max) | 0.3873 | 0.3862 | 0.3881 | 0.3872 | 0.0009 | **0.24%** |
-| **CF Condition (augmented)** | â€” | FPR (max) | 0.2997 | 0.3000 | 0.3003 | 0.3000 | 0.0003 | **0.10%** |
+| **Image (CLIP ViT-B/32 CF-no-adv)** | € | F1 | 0.8004 | 0.8008 | 0.8012 | 0.8008 | 0.0004 | **0.05%** |
+| Image (CLIP ViT-B/32 CF+GRL) | € | F1 | 0.7935 | 0.7938 | 0.7942 | 0.7938 | 0.0004 | **0.05%** |
+| nCF Condition (baseline) | € | FPR (max) | 0.3873 | 0.3862 | 0.3881 | 0.3872 | 0.0009 | **0.24%** |
+| **CF Condition (augmented)** | € | FPR (max) | 0.2997 | 0.3000 | 0.3003 | 0.3000 | 0.0003 | **0.10%** |
 
 **Key Insight:** 
 - Text models show **excellent stability** (stdâ‰¤0.001, CVâ‰¤0.1%)
 - Image models highly **robust** (stdâ‰¤0.0005, CVâ‰¤0.1%)
-- **CAD regularization effect confirmed**: nCFâ†’CF reduces FPR variance slightly
+- **CAD regularization effect confirmed**: nCF†CF reduces FPR variance slightly
 - Multi-seed standard error negligible for publication confidence intervals
 
 ---
@@ -584,7 +585,7 @@ This is a **clean, compelling narrative** that directly answers the research que
 
 ### Text Model (MiniLM+MLP, CF Condition)
 
-| Group | Support | FPR | FNR | Precision | Recall | F1 Group | Î” FPR |
+| Group | Support | FPR | FNR | Precision | Recall | F1 Group | Δ FPR |
 |-------|---------|-----|-----|-----------|--------|----------|-------|
 | Race/Ethnicity | 113 | 0.043 | 0.044 | 0.966 | 0.956 | 0.961 | +0.012 |
 | Religion | 112 | 0.027 | 0.054 | 0.973 | 0.946 | 0.959 | -0.006 |
@@ -593,12 +594,12 @@ This is a **clean, compelling narrative** that directly answers the research que
 | National Origin | 88 | 0.057 | 0.048 | 0.943 | 0.952 | 0.947 | +0.026 |
 | Disability | 7 | 0.000 | 0.143 | 1.000 | 0.857 | 0.923 | -0.031 |
 | Age | 5 | 0.000 | 0.200 | 1.000 | 0.800 | 0.889 | -0.031 |
-| Multiple/None | 111 | 0.045 | N/A | 0.955 | N/A | â€” | +0.014 |
+| Multiple/None | 111 | 0.045 | N/A | 0.955 | N/A | € | +0.014 |
 | **Overall** | **900** | **0.052** | **0.053** | **0.962** | **0.947** | **0.952** | **0.088 max** |
 
 ### Image Model (CLIP ViT-B/32 CF-no-adv)
 
-| Group | Support | FPR | FNR | Precision | Recall | F1 Group | Î” FPR |
+| Group | Support | FPR | FNR | Precision | Recall | F1 Group | Δ FPR |
 |-------|---------|-----|-----|-----------|--------|----------|-------|
 | Race/Ethnicity | 165 | 0.491 | 0.098 | 0.725 | 0.902 | 0.804 | +0.180 |
 | Religion | 168 | 0.330 | 0.134 | 0.814 | 0.866 | 0.839 | -0.040 |
@@ -607,12 +608,12 @@ This is a **clean, compelling narrative** that directly answers the research que
 | National Origin | 122 | 0.464 | 0.136 | 0.739 | 0.864 | 0.797 | +0.153 |
 | Disability | 23 | 0.667 | 0.250 | 0.615 | 0.750 | 0.677 | +0.356 |
 | Age | 13 | 0.371 | 0.250 | 0.750 | 0.750 | 0.750 | +0.060 |
-| Multiple/None | 111 | 0.342 | N/A | 0.658 | N/A | â€” | +0.031 |
+| Multiple/None | 111 | 0.342 | N/A | 0.658 | N/A | € | +0.031 |
 | **Overall** | **900** | **0.279** | **0.107** | **0.794** | **0.893** | **0.794** | **0.356 max** |
 
 ### Late Fusion (Text+Image, w=0.50)
 
-| Group | Support | FPR | FNR | Precision | Recall | F1 Group | Î” FPR |
+| Group | Support | FPR | FNR | Precision | Recall | F1 Group | Δ FPR |
 |-------|---------|-----|-----|-----------|--------|----------|-------|
 | Race/Ethnicity | 113 | 0.057 | 0.044 | 0.961 | 0.956 | 0.959 | +0.003 |
 | Religion | 112 | 0.036 | 0.054 | 0.973 | 0.946 | 0.959 | -0.008 |
@@ -621,31 +622,31 @@ This is a **clean, compelling narrative** that directly answers the research que
 | National Origin | 88 | 0.080 | 0.048 | 0.923 | 0.952 | 0.937 | +0.029 |
 | Disability | 7 | 0.000 | 0.143 | 1.000 | 0.857 | 0.923 | -0.054 |
 | Age | 5 | 0.000 | 0.200 | 1.000 | 0.800 | 0.889 | -0.054 |
-| Multiple/None | 111 | 0.045 | N/A | 0.955 | N/A | â€” | -0.008 |
+| Multiple/None | 111 | 0.045 | N/A | 0.955 | N/A | € | -0.008 |
 | **Overall** | **900** | **0.076** | **0.056** | **0.950** | **0.944** | **0.935** | **0.134 max** |
 
 ---
 
 ## Table 8: Internal nCF vs CF Results (Our Dataset)
 
-All scores are measured on the **same held-out test set** (900 originals) across nCF and CF training conditions. Every row uses the same data split and evaluation protocol â€” this is an internal ablation, not a cross-paper comparison.
+All scores are measured on the **same held-out test set** (900 originals) across nCF and CF training conditions. Every row uses the same data split and evaluation protocol € this is an internal ablation, not a cross-paper comparison.
 
 ### Text Models
 
-| Model | Condition | F1 | AUC | FPR | Î”FPR | Notes |
+| Model | Condition | F1 | AUC | FPR | ΔFPR | Notes |
 |-------|-----------|-----|------|------|------|-------|
-| MiniLM + MLP | nCF | 0.939 | 0.973 | 0.048 | â€” | Baseline |
+| MiniLM + MLP | nCF | 0.939 | 0.973 | 0.048 | € | Baseline |
 | MiniLM + MLP | CF | **0.952** | **0.980** | 0.052 | +0.004 | Best text model |
-| MiniLM + LogReg | nCF | 0.935 | 0.968 | 0.050 | â€” | |
-| MiniLM + LogReg | CF | 0.946 | 0.978 | 0.054 | âˆ’0.011 | Negative Î”FPR âœ“ |
-| TF-IDF + SVM | nCF | 0.833 | 0.892 | 0.198 | â€” | |
-| TF-IDF + SVM | CF | 0.843 | 0.903 | 0.289 | +0.126 | FPR amplified âœ— |
+| MiniLM + LogReg | nCF | 0.935 | 0.968 | 0.050 | € | |
+| MiniLM + LogReg | CF | 0.946 | 0.978 | 0.054 | ∑0.011 | Negative ΔFPR ✓ |
+| TF-IDF + SVM | nCF | 0.833 | 0.892 | 0.198 | € | |
+| TF-IDF + SVM | CF | 0.843 | 0.903 | 0.289 | +0.126 | FPR amplified ✓ |
 
 ### Image Models
 
 | Condition | F1 | AUC | FPR |
 |-----------|-----|------|------|---------|---------|----------------|
-| nCF | 0.770 | 0.816 | 0.387 | 0.440 | 0.529 | â€” |
+| nCF | 0.770 | 0.816 | 0.387 | 0.440 | 0.529 | € |
 | CF-no-adv (18k, no GRL) | **0.801** | **0.852** | **0.300** | 0.574 | 0.730 | p=0.0003 *** |
 | CF + GRL | 0.794 | 0.839 | 0.315 | 0.527 | 0.635 | p=0.0068 ** |
 
@@ -658,9 +659,9 @@ GRL reduces
 | Late Fusion (equal-weight avg, isotonic cal) | **0.935** | **0.968** | **0.014** | 0.471 |
 | Weighted Average (w=0.445) | 0.940 | 0.974 | 0.061 | 0.468 |
 | Stacking Ensemble (Meta-LR) | 0.936 | 0.973 | 0.014 | 0.467 |
-| Cross-Attention GMU (5-fold CV) | 0.876Â±0.006 | 0.920Â±0.007 | 0.038 | 0.354 |
+| Cross-Attention GMU (5-fold CV) | 0.876±0.006 | 0.920±0.007 | 0.038 | 0.354 |
 
-Î”FPR = FPR_CF âˆ’ FPR_nCF. Negative = CAD reduces false-positive bias; positive = CAD amplifies it.
+ΔFPR = FPR_CF ∑ FPR_nCF. Negative = CAD reduces false-positive bias; positive = CAD amplifies it.
 
 **Key Observations:**
 - **First systematic study** of CAD effects on fairness across both text and image modalities
@@ -671,13 +672,13 @@ GRL reduces
 
 ## Summary of Key Achievements
 
-âœ… **Text Models**: Best-in-class F1=0.952, AUC=0.980  
-âœ… **Image Models**: 18,000 synthetic images generated, FPR properly characterized across 8 groups  
-âœ… **Fusion Models**: 4 strategies evaluated, Late Fusion optimal (F1=0.935, ECE=0.014)  
-âœ… **Fairness**: Statistically significant CAD effects quantified (p=1.7Ã—10â»Â¹â°)  
-âœ… **Calibration**: ECE reduced by 73-76% using isotonic regression  
-âœ… **Robustness**: Multi-seed CV (stdâ‰¤0.001) proves reproducibility  
-âœ… **âœ… **Ablation**: Internal nCF vs CF conditions show consistent CAD benefit across all modalities  
+✅ **Text Models**: Best-in-class F1=0.952, AUC=0.980  
+✅ **Image Models**: 18,000 synthetic images generated, FPR properly characterized across 8 groups  
+✅ **Fusion Models**: 4 strategies evaluated, Late Fusion optimal (F1=0.935, ECE=0.014)  
+✅ **Fairness**: Statistically significant CAD effects quantified (p=1.7—10¹₀)  
+✅ **Calibration**: ECE reduced by 73-76% using isotonic regression  
+✅ **Robustness**: Multi-seed CV (stdâ‰¤0.001) proves reproducibility  
+✅ **✅ **Ablation**: Internal nCF vs CF conditions show consistent CAD benefit across all modalities  
 
 ---
 
@@ -697,18 +698,18 @@ GRL reduces
 
 ### **Bias in AI**
 **Simple explanation:** When an AI system treats some groups differently than others unfairly.  
-**Real example:** An AI hate speech detector might flag posts about Muslims at 10Ã— the rate of posts about Christians, even when they say similar things.  
+**Real example:** An AI hate speech detector might flag posts about Muslims at 10— the rate of posts about Christians, even when they say similar things.  
 **Why it's bad:** It silences certain communities and can amplify discrimination.
 
 ### **False Positive Rate (FPR)**
 **Simple explanation:** How often the AI incorrectly flags something as hateful when it's actually harmless.  
-**Formula:** Failed alarms Ã· All harmless content  
+**Formula:** Failed alarms ÷ All harmless content  
 **Example:** If 100 harmless posts are reviewed and the AI flags 10 as hateful (incorrectly), FPR = 10/100 = 0.10 or 10%  
 **Why it matters:** High FPR means innocent people get censored.
 
 ### **False Negative Rate (FNR)**
 **Simple explanation:** How often the AI misses actual hate speech.  
-**Formula:** Missed hateful posts Ã· All hateful content  
+**Formula:** Missed hateful posts ÷ All hateful content  
 **Example:** If 100 hateful posts exist and the AI catches only 80, FNR = 20/100 = 0.20 or 20%  
 **Why it matters:** Low FNR means the AI actually catches the bad stuff.
 
@@ -742,22 +743,22 @@ GRL reduces
 **Meaning:** It should be equally good/bad at catching hate speech for all groups AND equally good/bad at not falsely flagging harmless content.  
 **Why it's hard:** Requires balancing multiple fairness goals simultaneously.
 
-### **Î”FPR (Delta FPR)**
+### **ΔFPR (Delta FPR)**
 **Simple explanation:** The biggest difference in false positive rates between any two identity groups.  
-**Example:** If Group A has FPR=5% and Group B has FPR=25%, then Î”FPR = 25% - 5% = 20%  
+**Example:** If Group A has FPR=5% and Group B has FPR=25%, then ΔFPR = 25% - 5% = 20%  
 **Interpretation:** 20% gap = severely unfair; <5% gap = reasonably fair  
 **Our result without fairness fixes:** 37.7%; With our fixes: 29.3%
 
 ### **Identity Groups**
 **The 8 groups we measured fairness for:**
-1. **Race/Ethnicity** â€” discussions about racial/ethnic communities
-2. **Religion** â€” discussions about religious groups
-3. **Gender** â€” discussions about gender identity
-4. **Sexual Orientation** â€” discussions about LGBTQ+ communities
-5. **National Origin/Citizenship** â€” discussions about nationalities/immigrants
-6. **Disability** â€” discussions about people with disabilities
-7. **Age** â€” discussions about age groups
-8. **Multiple/None** â€” posts mentioning multiple protected groups or none
+1. **Race/Ethnicity** € discussions about racial/ethnic communities
+2. **Religion** € discussions about religious groups
+3. **Gender** € discussions about gender identity
+4. **Sexual Orientation** € discussions about LGBTQ+ communities
+5. **National Origin/Citizenship** € discussions about nationalities/immigrants
+6. **Disability** € discussions about people with disabilities
+7. **Age** € discussions about age groups
+8. **Multiple/None** € posts mentioning multiple protected groups or none
 
 ---
 
@@ -775,7 +776,7 @@ GRL reduces
 
 ### **CLIP ViT-B/32**
 **Simple explanation:** A lightweight AI that recognizes objects and concepts in images.  
-**What it does:** Converts a 720Ã—720 image into numbers representing what it "sees."  
+**What it does:** Converts a 720—720 image into numbers representing what it "sees."  
 **Speed vs accuracy:** Designed to be fast while maintaining good accuracy.
 
 ### **Gradient Reversal Learning (GRL)**
@@ -825,7 +826,7 @@ GRL reduces
 - p < 0.01 = very likely a real effect
 - p < 0.001 = almost certainly a real effect
 
-**Our result:** p=1.7Ã—10â»Â¹â° = the CAD effect is almost certainly real, not random chance.
+**Our result:** p=1.7—10¹₀ = the CAD effect is almost certainly real, not random chance.
 
 ### **Confidence Interval (CI)**
 **Simple explanation:** A range of values where the true answer probably lies.  
@@ -852,12 +853,12 @@ GRL reduces
 ## Data & Conditions
 
 ### **nCF (No Counterfactual)**
-**What it is:** Original training data without augmentation â€” 6K samples.  
+**What it is:** Original training data without augmentation € 6K samples.  
 **Purpose:** Baseline to see what happens without CAD.  
 **Performance:** Lower F1 but shows the "natural" fairness gaps.
 
 ### **CF (Counterfactual)**
-**What it is:** Training data with CAD applied â€” 18K samples (3Ã— more).  
+**What it is:** Training data with CAD applied € 18K samples (3— more).  
 **Purpose:** Test whether CAD improves fairness and/or performance.  
 **Result:** Improves text F1 but can amplify image model bias.
 
@@ -920,7 +921,7 @@ GRL reduces
 ### **SOTA (State-of-the-Art)**
 **Simple explanation:** The best result achieved by any AI system on a specific benchmark dataset, according to published research.  
 **Important caveat:** SOTA comparisons are only valid when all methods are evaluated on the **same dataset**. Since prior works report scores on their own datasets and ours reports on our dataset, direct numeric comparisons are not scientifically valid.  
-**Our contribution:** We demonstrate CAD's effect on fairness â€” an angle rarely studied â€” rather than claiming a performance ranking on a shared benchmark.
+**Our contribution:** We demonstrate CAD's effect on fairness € an angle rarely studied € rather than claiming a performance ranking on a shared benchmark.
 
 ---
 This glossary should help readers understand the technical terms and concepts used throughout the paper, making it accessible to a wider audience.
