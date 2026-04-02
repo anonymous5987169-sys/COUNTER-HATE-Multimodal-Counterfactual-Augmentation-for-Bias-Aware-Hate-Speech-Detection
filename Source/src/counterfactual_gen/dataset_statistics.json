@@ -1,0 +1,84 @@
+{
+  "total_samples": 6000,
+  "class_distribution": {
+    "hate_race": 750,
+    "hate_religion": 750,
+    "hate_gender": 750,
+    "hate_other": 750,
+    "offensive_non_hate": 750,
+    "neutral_discussion": 750,
+    "counter_speech": 750,
+    "ambiguous": 750
+  },
+  "target_group_distribution": {
+    "race/ethnicity": 1157,
+    "religion": 1091,
+    "sexual_orientation": 761,
+    "gender": 1133,
+    "national_origin/citizenship": 875,
+    "age": 56,
+    "disability": 177,
+    "multiple/none": 750
+  },
+  "polarity_distribution": {
+    "hate": 3000,
+    "non-hate": 3000
+  },
+  "text_length_stats": {
+    "mean": 31.604,
+    "median": 26.0,
+    "min": 10,
+    "max": 128,
+    "std": 20.297787662698614
+  },
+  "hate_score_stats": {
+    "hate_religion": {
+      "mean": 1.4657333333333333,
+      "median": 1.27,
+      "min": 0.6,
+      "max": 5.42
+    },
+    "counter_speech": {
+      "mean": -4.815919999999999,
+      "median": -4.6850000000000005,
+      "min": -6.9,
+      "max": -4.27
+    },
+    "hate_other": {
+      "mean": 1.894333333333333,
+      "median": 1.72,
+      "min": 1.06,
+      "max": 6.3
+    },
+    "hate_gender": {
+      "mean": 2.595493333333333,
+      "median": 2.4,
+      "min": 1.96,
+      "max": 6.09
+    },
+    "neutral_discussion": {
+      "mean": -6.159253333333333,
+      "median": -6.005,
+      "min": -8.3,
+      "max": -5.14
+    },
+    "offensive_non_hate": {
+      "mean": 0.5086933333333333,
+      "median": 0.51,
+      "min": 0.42,
+      "max": 0.59
+    },
+    "hate_race": {
+      "mean": 2.13084,
+      "median": 1.94,
+      "min": 1.36,
+      "max": 5.53
+    },
+    "ambiguous": {
+      "mean": -4.867653333333333,
+      "median": -4.57,
+      "min": -8.07,
+      "max": -3.56
+    }
+  }
+}
