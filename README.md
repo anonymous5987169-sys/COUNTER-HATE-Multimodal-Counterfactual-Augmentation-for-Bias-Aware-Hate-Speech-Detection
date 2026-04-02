@@ -39,7 +39,7 @@ Hate speech detection models suffer from systematic group-level biases; they mis
 - **18,000 image-text pairs** across three configurable conditions;
   - **Originals (nCF):** 6,000 original text samples from Kennedy et al. (UC Berkeley D-Lab hate content collection)
   - **Counterfactuals (CF):** 12,000 rewritten text samples (2 per original) via Qwen2.5-7B-Instruct with deterministic fallback
-  - **All 18,000 images:** Synthetically generated from text samples via Z-Image-Turbo (720×720 PNG, ~7.7 prompts/sec on H200)
+  - **All 18,000 images:** Synthetically generated from text samples via Z-Image-Turbo (720×720 PNG, ~7.7 prompts/sec on H200). Where 6,000 images generated from Original text samples; 12,000 images generated from Counterfactual Text pairs. 
 
 ### Identity Categories (8 total)
 
