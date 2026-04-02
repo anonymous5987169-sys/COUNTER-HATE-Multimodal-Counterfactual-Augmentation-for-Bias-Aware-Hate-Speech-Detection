@@ -4,7 +4,7 @@ See [Appendix.pdf](./Appendix.pdf) for extended results, dataset construction de
 
 ---
 
-# COUNTER-HATE: Multimodal Counterfactual Augmentation for Bias-Aware Hate Detection
+# COUNTER-HATE: Multimodal Counterfactual Augmentation for Bias-Aware Hate Content Detection
 
 **Target Venue:** ACM Multimedia (ACMMM) 2026  
 **Status:** Reproducible; all pipelines documented  
