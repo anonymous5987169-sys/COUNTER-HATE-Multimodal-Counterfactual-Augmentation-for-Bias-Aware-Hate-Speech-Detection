@@ -1,0 +1,493 @@
+{
+  "description": "Cross-Modal Late Fusion: MiniLM+MLP \u00d7 EfficientNet",
+  "condition": "cf",
+  "condition_label": "CF+GRL",
+  "n_val": 891,
+  "n_test": 892,
+  "text_model": "minilm_mlp_cf.joblib",
+  "image_model": "efficientnet_cf.pth",
+  "bootstrap_n": 1500,
+  "table6": [
+    {
+      "model": "Text-Only",
+      "f1": 0.8471,
+      "f1_95ci": [
+        0.8194,
+        0.8729
+      ],
+      "auc_roc": 0.9056,
+      "fpr": 0.214,
+      "fnr": 0.1094,
+      "precision": 0.8077,
+      "recall": 0.8906,
+      "dp_diff": 0.781,
+      "eo_diff": 0.6522,
+      "ece": 0.1327
+    },
+    {
+      "model": "Image-Only",
+      "f1": 0.7943,
+      "f1_95ci": [
+        0.7657,
+        0.822
+      ],
+      "auc_roc": 0.8401,
+      "fpr": 0.3243,
+      "fnr": 0.1295,
+      "precision": 0.7303,
+      "recall": 0.8705,
+      "dp_diff": 0.5805,
+      "eo_diff": 0.6679,
+      "ece": 0.0779
+    },
+    {
+      "model": "Equal Fusion",
+      "f1": 0.852,
+      "f1_95ci": [
+        0.8251,
+        0.8767
+      ],
+      "auc_roc": 0.9051,
+      "fpr": 0.205,
+      "fnr": 0.1071,
+      "precision": 0.8147,
+      "recall": 0.8929,
+      "dp_diff": 0.7901,
+      "eo_diff": 0.7497,
+      "ece": 0.0499
+    },
+    {
+      "model": "Learned Fusion",
+      "f1": 0.852,
+      "f1_95ci": [
+        0.8251,
+        0.8767
+      ],
+      "auc_roc": 0.9051,
+      "fpr": 0.205,
+      "fnr": 0.1071,
+      "precision": 0.8147,
+      "recall": 0.8929,
+      "dp_diff": 0.7901,
+      "eo_diff": 0.7497,
+      "ece": 0.0499
+    }
+  ],
+  "detailed_results": {
+    "text_only": {
+      "metrics": {
+        "accuracy": 0.8386,
+        "precision": 0.8077,
+        "recall": 0.8906,
+        "f1": 0.8471,
+        "auc_roc": 0.9056,
+        "brier": 0.143,
+        "fpr": 0.214,
+        "fnr": 0.1094
+      },
+      "fairness": {
+        "demographic_parity_diff": 0.781,
+        "equalised_odds_diff": 0.6522,
+        "max_fpr_across_groups": 0.5714,
+        "min_fpr_across_groups": 0.045
+      },
+      "per_group": {
+        "race/ethnicity": {
+          "n": 165,
+          "n_hate": 112,
+          "n_non_hate": 53,
+          "fpr": 0.3774,
+          "fnr": 0.125,
+          "auc": 0.7793
+        },
+        "religion": {
+          "n": 168,
+          "n_hate": 112,
+          "n_non_hate": 56,
+          "fpr": 0.2321,
+          "fnr": 0.0446,
+          "auc": 0.946
+        },
+        "gender": {
+          "n": 161,
+          "n_hate": 72,
+          "n_non_hate": 89,
+          "fpr": 0.2809,
+          "fnr": 0.1389,
+          "auc": 0.8622
+        },
+        "sexual_orientation": {
+          "n": 129,
+          "n_hate": 40,
+          "n_non_hate": 89,
+          "fpr": 0.1348,
+          "fnr": 0.075,
+          "auc": 0.9371
+        },
+        "national_origin/citizenship": {
+          "n": 122,
+          "n_hate": 88,
+          "n_non_hate": 34,
+          "fpr": 0.4412,
+          "fnr": 0.1705,
+          "auc": 0.8229
+        },
+        "disability": {
+          "n": 23,
+          "n_hate": 16,
+          "n_non_hate": 7,
+          "fpr": 0.5714,
+          "fnr": 0.0625,
+          "auc": 0.7321
+        },
+        "age": {
+          "n": 13,
+          "n_hate": 8,
+          "n_non_hate": 5,
+          "fpr": 0.2,
+          "fnr": 0.125,
+          "auc": 0.8
+        },
+        "multiple/none": {
+          "n": 111,
+          "n_hate": 0,
+          "n_non_hate": 111,
+          "fpr": 0.045,
+          "fnr": null,
+          "auc": null
+        }
+      },
+      "ece": 0.1327,
+      "ci": {
+        "f1_ci": [
+          0.8194,
+          0.8729
+        ],
+        "auc_ci": [
+          0.8844,
+          0.9249
+        ],
+        "fpr_ci": [
+          0.1765,
+          0.2536
+        ]
+      },
+      "threshold": 0.24
+    },
+    "image_only": {
+      "metrics": {
+        "accuracy": 0.7735,
+        "precision": 0.7303,
+        "recall": 0.8705,
+        "f1": 0.7943,
+        "auc_roc": 0.8401,
+        "brier": 0.1654,
+        "fpr": 0.3243,
+        "fnr": 0.1295
+      },
+      "fairness": {
+        "demographic_parity_diff": 0.5805,
+        "equalised_odds_diff": 0.6679,
+        "max_fpr_across_groups": 0.5714,
+        "min_fpr_across_groups": 0.1982
+      },
+      "per_group": {
+        "race/ethnicity": {
+          "n": 165,
+          "n_hate": 112,
+          "n_non_hate": 53,
+          "fpr": 0.4906,
+          "fnr": 0.1429,
+          "auc": 0.7252
+        },
+        "religion": {
+          "n": 168,
+          "n_hate": 112,
+          "n_non_hate": 56,
+          "fpr": 0.3214,
+          "fnr": 0.0804,
+          "auc": 0.8828
+        },
+        "gender": {
+          "n": 161,
+          "n_hate": 72,
+          "n_non_hate": 89,
+          "fpr": 0.3596,
+          "fnr": 0.1389,
+          "auc": 0.8262
+        },
+        "sexual_orientation": {
+          "n": 129,
+          "n_hate": 40,
+          "n_non_hate": 89,
+          "fpr": 0.2697,
+          "fnr": 0.125,
+          "auc": 0.8921
+        },
+        "national_origin/citizenship": {
+          "n": 122,
+          "n_hate": 88,
+          "n_non_hate": 34,
+          "fpr": 0.4706,
+          "fnr": 0.1023,
+          "auc": 0.736
+        },
+        "disability": {
+          "n": 23,
+          "n_hate": 16,
+          "n_non_hate": 7,
+          "fpr": 0.5714,
+          "fnr": 0.375,
+          "auc": 0.4464
+        },
+        "age": {
+          "n": 13,
+          "n_hate": 8,
+          "n_non_hate": 5,
+          "fpr": 0.4,
+          "fnr": 0.375,
+          "auc": 0.575
+        },
+        "multiple/none": {
+          "n": 111,
+          "n_hate": 0,
+          "n_non_hate": 111,
+          "fpr": 0.1982,
+          "fnr": null,
+          "auc": null
+        }
+      },
+      "ece": 0.0779,
+      "ci": {
+        "f1_ci": [
+          0.7657,
+          0.822
+        ],
+        "auc_ci": [
+          0.8135,
+          0.867
+        ],
+        "fpr_ci": [
+          0.279,
+          0.3668
+        ]
+      },
+      "threshold": 0.41
+    },
+    "equal_fusion": {
+      "metrics": {
+        "accuracy": 0.8442,
+        "precision": 0.8147,
+        "recall": 0.8929,
+        "f1": 0.852,
+        "auc_roc": 0.9051,
+        "brier": 0.1184,
+        "fpr": 0.205,
+        "fnr": 0.1071
+      },
+      "fairness": {
+        "demographic_parity_diff": 0.7901,
+        "equalised_odds_diff": 0.7497,
+        "max_fpr_across_groups": 0.5714,
+        "min_fpr_across_groups": 0.036
+      },
+      "per_group": {
+        "race/ethnicity": {
+          "n": 165,
+          "n_hate": 112,
+          "n_non_hate": 53,
+          "fpr": 0.3585,
+          "fnr": 0.1339,
+          "auc": 0.7955
+        },
+        "religion": {
+          "n": 168,
+          "n_hate": 112,
+          "n_non_hate": 56,
+          "fpr": 0.25,
+          "fnr": 0.0357,
+          "auc": 0.9452
+        },
+        "gender": {
+          "n": 161,
+          "n_hate": 72,
+          "n_non_hate": 89,
+          "fpr": 0.2584,
+          "fnr": 0.1111,
+          "auc": 0.8691
+        },
+        "sexual_orientation": {
+          "n": 129,
+          "n_hate": 40,
+          "n_non_hate": 89,
+          "fpr": 0.1236,
+          "fnr": 0.1,
+          "auc": 0.9492
+        },
+        "national_origin/citizenship": {
+          "n": 122,
+          "n_hate": 88,
+          "n_non_hate": 34,
+          "fpr": 0.4412,
+          "fnr": 0.1591,
+          "auc": 0.8005
+        },
+        "disability": {
+          "n": 23,
+          "n_hate": 16,
+          "n_non_hate": 7,
+          "fpr": 0.5714,
+          "fnr": 0.0625,
+          "auc": 0.5089
+        },
+        "age": {
+          "n": 13,
+          "n_hate": 8,
+          "n_non_hate": 5,
+          "fpr": 0.2,
+          "fnr": 0.25,
+          "auc": 0.8
+        },
+        "multiple/none": {
+          "n": 111,
+          "n_hate": 0,
+          "n_non_hate": 111,
+          "fpr": 0.036,
+          "fnr": null,
+          "auc": null
+        }
+      },
+      "ece": 0.0499,
+      "ci": {
+        "f1_ci": [
+          0.8251,
+          0.8767
+        ],
+        "auc_ci": [
+          0.8844,
+          0.9245
+        ],
+        "fpr_ci": [
+          0.1696,
+          0.2431
+        ]
+      },
+      "threshold": 0.49,
+      "fusion_info": {
+        "strategy": "equal_weight",
+        "w_text": 0.5,
+        "w_image": 0.5,
+        "threshold": 0.49,
+        "val_f1": 0.8788
+      }
+    },
+    "learned_fusion": {
+      "metrics": {
+        "accuracy": 0.8442,
+        "precision": 0.8147,
+        "recall": 0.8929,
+        "f1": 0.852,
+        "auc_roc": 0.9051,
+        "brier": 0.1184,
+        "fpr": 0.205,
+        "fnr": 0.1071
+      },
+      "fairness": {
+        "demographic_parity_diff": 0.7901,
+        "equalised_odds_diff": 0.7497,
+        "max_fpr_across_groups": 0.5714,
+        "min_fpr_across_groups": 0.036
+      },
+      "per_group": {
+        "race/ethnicity": {
+          "n": 165,
+          "n_hate": 112,
+          "n_non_hate": 53,
+          "fpr": 0.3585,
+          "fnr": 0.1339,
+          "auc": 0.7955
+        },
+        "religion": {
+          "n": 168,
+          "n_hate": 112,
+          "n_non_hate": 56,
+          "fpr": 0.25,
+          "fnr": 0.0357,
+          "auc": 0.9452
+        },
+        "gender": {
+          "n": 161,
+          "n_hate": 72,
+          "n_non_hate": 89,
+          "fpr": 0.2584,
+          "fnr": 0.1111,
+          "auc": 0.8691
+        },
+        "sexual_orientation": {
+          "n": 129,
+          "n_hate": 40,
+          "n_non_hate": 89,
+          "fpr": 0.1236,
+          "fnr": 0.1,
+          "auc": 0.9492
+        },
+        "national_origin/citizenship": {
+          "n": 122,
+          "n_hate": 88,
+          "n_non_hate": 34,
+          "fpr": 0.4412,
+          "fnr": 0.1591,
+          "auc": 0.8005
+        },
+        "disability": {
+          "n": 23,
+          "n_hate": 16,
+          "n_non_hate": 7,
+          "fpr": 0.5714,
+          "fnr": 0.0625,
+          "auc": 0.5089
+        },
+        "age": {
+          "n": 13,
+          "n_hate": 8,
+          "n_non_hate": 5,
+          "fpr": 0.2,
+          "fnr": 0.25,
+          "auc": 0.8
+        },
+        "multiple/none": {
+          "n": 111,
+          "n_hate": 0,
+          "n_non_hate": 111,
+          "fpr": 0.036,
+          "fnr": null,
+          "auc": null
+        }
+      },
+      "ece": 0.0499,
+      "ci": {
+        "f1_ci": [
+          0.8251,
+          0.8767
+        ],
+        "auc_ci": [
+          0.8844,
+          0.9245
+        ],
+        "fpr_ci": [
+          0.1696,
+          0.2431
+        ]
+      },
+      "threshold": 0.49,
+      "fusion_info": {
+        "strategy": "learned_weight",
+        "w_text": 0.5,
+        "w_image": 0.5,
+        "threshold": 0.49,
+        "val_f1": 0.8788
+      }
+    }
+  },
+  "runtime_seconds": 190.6
+}

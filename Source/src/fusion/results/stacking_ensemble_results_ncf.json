@@ -1,0 +1,164 @@
+{
+  "condition": "ncf",
+  "condition_label": "nCF",
+  "description": "Stacking Ensemble: train OOF fitting + single held-out test evaluation",
+  "protocol": "5-fold CV/OOF on train only; final meta-learner fit on full train; one-shot evaluation on test",
+  "best_meta_learner": "LogisticRegression",
+  "n_train_samples": 4158,
+  "n_test_samples": 892,
+  "n_folds": 5,
+  "n_meta_features": 9,
+  "feature_names": [
+    "p_text",
+    "p_image",
+    "p_text*p_image",
+    "|p_text-p_image|",
+    "max(pt,pi)",
+    "min(pt,pi)",
+    "mean(pt,pi)",
+    "p_text^2",
+    "p_image^2"
+  ],
+  "meta_learner_selection": {
+    "LogisticRegression": {
+      "mean_f1": 0.8915,
+      "std_f1": 0.0072
+    },
+    "GradientBoosting": {
+      "mean_f1": 0.8811,
+      "std_f1": 0.0119
+    },
+    "MLP(32,16)": {
+      "mean_f1": 0.8887,
+      "std_f1": 0.0071
+    },
+    "ExtraTrees": {
+      "mean_f1": 0.8505,
+      "std_f1": 0.0154
+    }
+  },
+  "threshold_train_oof": 0.45,
+  "threshold_calibrated_train_oof": 0.42,
+  "fold_f1s": [
+    0.9014,
+    0.893,
+    0.8922,
+    0.8993,
+    0.8721
+  ],
+  "oof_metrics_uncalibrated": {
+    "accuracy": 0.887,
+    "precision": 0.8511,
+    "recall": 0.9391,
+    "f1": 0.8929,
+    "auc_roc": 0.9471,
+    "brier": 0.0852,
+    "fpr": 0.1656,
+    "fnr": 0.0609,
+    "ece": 0.0138
+  },
+  "test_metrics_uncalibrated": {
+    "accuracy": 0.8498,
+    "precision": 0.823,
+    "recall": 0.8929,
+    "f1": 0.8565,
+    "auc_roc": 0.9209,
+    "brier": 0.1095,
+    "fpr": 0.1937,
+    "fnr": 0.1071,
+    "ece": 0.0408
+  },
+  "test_metrics_calibrated": {
+    "accuracy": 0.8487,
+    "precision": 0.8214,
+    "recall": 0.8929,
+    "f1": 0.8556,
+    "auc_roc": 0.9192,
+    "brier": 0.1082,
+    "fpr": 0.1959,
+    "fnr": 0.1071,
+    "ece": 0.033
+  },
+  "per_group_fpr_stacking_test": {
+    "race/ethnicity": {
+      "n": 165,
+      "n_non_hate": 53,
+      "fpr": 0.3585
+    },
+    "religion": {
+      "n": 168,
+      "n_non_hate": 56,
+      "fpr": 0.2143
+    },
+    "gender": {
+      "n": 161,
+      "n_non_hate": 89,
+      "fpr": 0.2921
+    },
+    "sexual_orientation": {
+      "n": 129,
+      "n_non_hate": 89,
+      "fpr": 0.1124
+    },
+    "national_origin/citizenship": {
+      "n": 122,
+      "n_non_hate": 34,
+      "fpr": 0.3235
+    },
+    "disability": {
+      "n": 23,
+      "n_non_hate": 7,
+      "fpr": 0.5714
+    },
+    "age": {
+      "n": 13,
+      "n_non_hate": 5,
+      "fpr": 0.2
+    },
+    "multiple/none": {
+      "n": 111,
+      "n_non_hate": 111,
+      "fpr": 0.027
+    }
+  },
+  "f1_95ci": [
+    0.8326,
+    0.8797
+  ],
+  "baselines": {
+    "text_only": {
+      "accuracy": 0.8464,
+      "precision": 0.8091,
+      "recall": 0.9085,
+      "f1": 0.8559,
+      "auc_roc": 0.9079,
+      "brier": 0.1143,
+      "fpr": 0.2162,
+      "fnr": 0.0915,
+      "ece": 0.0283
+    },
+    "image_only": {
+      "accuracy": 0.8094,
+      "precision": 0.7896,
+      "recall": 0.846,
+      "f1": 0.8168,
+      "auc_roc": 0.8858,
+      "brier": 0.1341,
+      "fpr": 0.2275,
+      "fnr": 0.154,
+      "ece": 0.0279
+    },
+    "scalar_fusion": {
+      "accuracy": 0.8498,
+      "precision": 0.8244,
+      "recall": 0.8906,
+      "f1": 0.8562,
+      "auc_roc": 0.9192,
+      "brier": 0.1075,
+      "fpr": 0.1914,
+      "fnr": 0.1094,
+      "ece": 0.0421
+    }
+  },
+  "runtime_seconds": 8.0
+}

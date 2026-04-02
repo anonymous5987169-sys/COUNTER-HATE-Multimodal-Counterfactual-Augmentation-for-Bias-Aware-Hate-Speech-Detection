@@ -1,0 +1,523 @@
+{
+  "description": "Leakage-safe fusion strategy comparison across 3 conditions",
+  "protocol": "5-fold CV on train OOF only; final eval on held-out test",
+  "conditions": [
+    "ncf",
+    "cf_no_adv",
+    "cf"
+  ],
+  "condition_labels": {
+    "ncf": "nCF",
+    "cf_no_adv": "CF-no-adv",
+    "cf": "CF+GRL"
+  },
+  "by_condition": {
+    "ncf": {
+      "condition": "ncf",
+      "condition_label": "nCF",
+      "protocol": "5-fold CV on train OOF only; final eval on held-out test",
+      "n_train_oof": 4158,
+      "n_test": 892,
+      "n_folds": 5,
+      "cv_results": {
+        "Equal Weight": {
+          "f1": {
+            "mean": 0.8881,
+            "std": 0.0107
+          },
+          "auc": {
+            "mean": 0.9461,
+            "std": 0.0072
+          },
+          "fpr": {
+            "mean": 0.1709,
+            "std": 0.0295
+          },
+          "fnr": {
+            "mean": 0.0661,
+            "std": 0.0106
+          }
+        },
+        "Product": {
+          "f1": {
+            "mean": 0.8824,
+            "std": 0.01
+          },
+          "auc": {
+            "mean": 0.9451,
+            "std": 0.0072
+          },
+          "fpr": {
+            "mean": 0.1786,
+            "std": 0.0357
+          },
+          "fnr": {
+            "mean": 0.0704,
+            "std": 0.025
+          }
+        },
+        "LR (2D)": {
+          "f1": {
+            "mean": 0.8928,
+            "std": 0.0109
+          },
+          "auc": {
+            "mean": 0.9466,
+            "std": 0.0072
+          },
+          "fpr": {
+            "mean": 0.1642,
+            "std": 0.0216
+          },
+          "fnr": {
+            "mean": 0.0623,
+            "std": 0.0114
+          }
+        },
+        "LR (Poly)": {
+          "f1": {
+            "mean": 0.8926,
+            "std": 0.0107
+          },
+          "auc": {
+            "mean": 0.9471,
+            "std": 0.0071
+          },
+          "fpr": {
+            "mean": 0.1646,
+            "std": 0.0151
+          },
+          "fnr": {
+            "mean": 0.0623,
+            "std": 0.0166
+          }
+        },
+        "Gradient Boosting": {
+          "f1": {
+            "mean": 0.8865,
+            "std": 0.0104
+          },
+          "auc": {
+            "mean": 0.9459,
+            "std": 0.006
+          },
+          "fpr": {
+            "mean": 0.1777,
+            "std": 0.0303
+          },
+          "fnr": {
+            "mean": 0.0637,
+            "std": 0.0178
+          }
+        },
+        "MLP Stacking": {
+          "f1": {
+            "mean": 0.8907,
+            "std": 0.0096
+          },
+          "auc": {
+            "mean": 0.9475,
+            "std": 0.0071
+          },
+          "fpr": {
+            "mean": 0.1724,
+            "std": 0.0212
+          },
+          "fnr": {
+            "mean": 0.0599,
+            "std": 0.0132
+          }
+        }
+      },
+      "test_results": {
+        "Equal Weight": {
+          "accuracy": 0.8419,
+          "f1": 0.8476,
+          "auc_roc": 0.9195,
+          "brier": 0.109,
+          "fpr": 0.1914,
+          "fnr": 0.125
+        },
+        "Product": {
+          "accuracy": 0.8374,
+          "f1": 0.8405,
+          "auc_roc": 0.919,
+          "brier": 0.1438,
+          "fpr": 0.1779,
+          "fnr": 0.1473
+        },
+        "LR (2D)": {
+          "accuracy": 0.8509,
+          "f1": 0.8574,
+          "auc_roc": 0.92,
+          "brier": 0.1108,
+          "fpr": 0.1914,
+          "fnr": 0.1071
+        },
+        "LR (Poly)": {
+          "accuracy": 0.8453,
+          "f1": 0.8538,
+          "auc_roc": 0.9209,
+          "brier": 0.1095,
+          "fpr": 0.2095,
+          "fnr": 0.1004
+        },
+        "Gradient Boosting": {
+          "accuracy": 0.8498,
+          "f1": 0.855,
+          "auc_roc": 0.9174,
+          "brier": 0.1087,
+          "fpr": 0.1824,
+          "fnr": 0.1183
+        },
+        "MLP Stacking": {
+          "accuracy": 0.8509,
+          "f1": 0.859,
+          "auc_roc": 0.9214,
+          "brier": 0.1082,
+          "fpr": 0.2027,
+          "fnr": 0.096
+        }
+      },
+      "runtime_seconds": 15.4
+    },
+    "cf_no_adv": {
+      "condition": "cf_no_adv",
+      "condition_label": "CF-no-adv",
+      "protocol": "5-fold CV on train OOF only; final eval on held-out test",
+      "n_train_oof": 4158,
+      "n_test": 892,
+      "n_folds": 5,
+      "cv_results": {
+        "Equal Weight": {
+          "f1": {
+            "mean": 0.9976,
+            "std": 0.0008
+          },
+          "auc": {
+            "mean": 0.9996,
+            "std": 0.0003
+          },
+          "fpr": {
+            "mean": 0.0043,
+            "std": 0.0018
+          },
+          "fnr": {
+            "mean": 0.0005,
+            "std": 0.001
+          }
+        },
+        "Product": {
+          "f1": {
+            "mean": 0.9966,
+            "std": 0.0009
+          },
+          "auc": {
+            "mean": 0.9996,
+            "std": 0.0003
+          },
+          "fpr": {
+            "mean": 0.0048,
+            "std": 0.0015
+          },
+          "fnr": {
+            "mean": 0.0019,
+            "std": 0.0024
+          }
+        },
+        "LR (2D)": {
+          "f1": {
+            "mean": 0.9969,
+            "std": 0.0014
+          },
+          "auc": {
+            "mean": 0.9997,
+            "std": 0.0002
+          },
+          "fpr": {
+            "mean": 0.0053,
+            "std": 0.0024
+          },
+          "fnr": {
+            "mean": 0.001,
+            "std": 0.0012
+          }
+        },
+        "LR (Poly)": {
+          "f1": {
+            "mean": 0.9969,
+            "std": 0.0021
+          },
+          "auc": {
+            "mean": 0.9997,
+            "std": 0.0002
+          },
+          "fpr": {
+            "mean": 0.0043,
+            "std": 0.0018
+          },
+          "fnr": {
+            "mean": 0.0019,
+            "std": 0.0028
+          }
+        },
+        "Gradient Boosting": {
+          "f1": {
+            "mean": 0.9969,
+            "std": 0.0019
+          },
+          "auc": {
+            "mean": 0.9994,
+            "std": 0.0005
+          },
+          "fpr": {
+            "mean": 0.0043,
+            "std": 0.0036
+          },
+          "fnr": {
+            "mean": 0.0019,
+            "std": 0.0024
+          }
+        },
+        "MLP Stacking": {
+          "f1": {
+            "mean": 0.9964,
+            "std": 0.0024
+          },
+          "auc": {
+            "mean": 0.9994,
+            "std": 0.0006
+          },
+          "fpr": {
+            "mean": 0.0048,
+            "std": 0.0015
+          },
+          "fnr": {
+            "mean": 0.0024,
+            "std": 0.0037
+          }
+        }
+      },
+      "test_results": {
+        "Equal Weight": {
+          "accuracy": 0.8453,
+          "f1": 0.8526,
+          "auc_roc": 0.9099,
+          "brier": 0.1152,
+          "fpr": 0.2005,
+          "fnr": 0.1094
+        },
+        "Product": {
+          "accuracy": 0.843,
+          "f1": 0.8482,
+          "auc_roc": 0.91,
+          "brier": 0.1557,
+          "fpr": 0.1869,
+          "fnr": 0.1272
+        },
+        "LR (2D)": {
+          "accuracy": 0.8363,
+          "f1": 0.8423,
+          "auc_roc": 0.9132,
+          "brier": 0.146,
+          "fpr": 0.1982,
+          "fnr": 0.1295
+        },
+        "LR (Poly)": {
+          "accuracy": 0.8374,
+          "f1": 0.8443,
+          "auc_roc": 0.9127,
+          "brier": 0.1472,
+          "fpr": 0.2027,
+          "fnr": 0.1228
+        },
+        "Gradient Boosting": {
+          "accuracy": 0.8408,
+          "f1": 0.8436,
+          "auc_roc": 0.9084,
+          "brier": 0.1486,
+          "fpr": 0.1734,
+          "fnr": 0.1451
+        },
+        "MLP Stacking": {
+          "accuracy": 0.8397,
+          "f1": 0.8467,
+          "auc_roc": 0.9143,
+          "brier": 0.1464,
+          "fpr": 0.2027,
+          "fnr": 0.1183
+        }
+      },
+      "runtime_seconds": 27.2
+    },
+    "cf": {
+      "condition": "cf",
+      "condition_label": "CF+GRL",
+      "protocol": "5-fold CV on train OOF only; final eval on held-out test",
+      "n_train_oof": 4158,
+      "n_test": 892,
+      "n_folds": 5,
+      "cv_results": {
+        "Equal Weight": {
+          "f1": {
+            "mean": 0.9976,
+            "std": 0.0008
+          },
+          "auc": {
+            "mean": 0.9994,
+            "std": 0.0003
+          },
+          "fpr": {
+            "mean": 0.0043,
+            "std": 0.0018
+          },
+          "fnr": {
+            "mean": 0.0005,
+            "std": 0.001
+          }
+        },
+        "Product": {
+          "f1": {
+            "mean": 0.9969,
+            "std": 0.0006
+          },
+          "auc": {
+            "mean": 0.9994,
+            "std": 0.0003
+          },
+          "fpr": {
+            "mean": 0.0053,
+            "std": 0.0018
+          },
+          "fnr": {
+            "mean": 0.001,
+            "std": 0.0012
+          }
+        },
+        "LR (2D)": {
+          "f1": {
+            "mean": 0.9969,
+            "std": 0.0021
+          },
+          "auc": {
+            "mean": 0.9996,
+            "std": 0.0003
+          },
+          "fpr": {
+            "mean": 0.0043,
+            "std": 0.0018
+          },
+          "fnr": {
+            "mean": 0.0019,
+            "std": 0.0028
+          }
+        },
+        "LR (Poly)": {
+          "f1": {
+            "mean": 0.9969,
+            "std": 0.0021
+          },
+          "auc": {
+            "mean": 0.9995,
+            "std": 0.0003
+          },
+          "fpr": {
+            "mean": 0.0043,
+            "std": 0.0018
+          },
+          "fnr": {
+            "mean": 0.0019,
+            "std": 0.0028
+          }
+        },
+        "Gradient Boosting": {
+          "f1": {
+            "mean": 0.9964,
+            "std": 0.0026
+          },
+          "auc": {
+            "mean": 0.9991,
+            "std": 0.0008
+          },
+          "fpr": {
+            "mean": 0.0038,
+            "std": 0.0029
+          },
+          "fnr": {
+            "mean": 0.0034,
+            "std": 0.0036
+          }
+        },
+        "MLP Stacking": {
+          "f1": {
+            "mean": 0.9974,
+            "std": 0.0023
+          },
+          "auc": {
+            "mean": 0.9989,
+            "std": 0.001
+          },
+          "fpr": {
+            "mean": 0.0034,
+            "std": 0.0024
+          },
+          "fnr": {
+            "mean": 0.0019,
+            "std": 0.0028
+          }
+        }
+      },
+      "test_results": {
+        "Equal Weight": {
+          "accuracy": 0.8442,
+          "f1": 0.8513,
+          "auc_roc": 0.9051,
+          "brier": 0.1184,
+          "fpr": 0.2005,
+          "fnr": 0.1116
+        },
+        "Product": {
+          "accuracy": 0.8386,
+          "f1": 0.8448,
+          "auc_roc": 0.9061,
+          "brier": 0.1586,
+          "fpr": 0.1982,
+          "fnr": 0.125
+        },
+        "LR (2D)": {
+          "accuracy": 0.8352,
+          "f1": 0.8411,
+          "auc_roc": 0.909,
+          "brier": 0.1472,
+          "fpr": 0.1982,
+          "fnr": 0.1317
+        },
+        "LR (Poly)": {
+          "accuracy": 0.8363,
+          "f1": 0.843,
+          "auc_roc": 0.9083,
+          "brier": 0.1483,
+          "fpr": 0.2027,
+          "fnr": 0.125
+        },
+        "Gradient Boosting": {
+          "accuracy": 0.8296,
+          "f1": 0.8311,
+          "auc_roc": 0.9014,
+          "brier": 0.1489,
+          "fpr": 0.1757,
+          "fnr": 0.1652
+        },
+        "MLP Stacking": {
+          "accuracy": 0.8386,
+          "f1": 0.8414,
+          "auc_roc": 0.9108,
+          "brier": 0.1481,
+          "fpr": 0.1757,
+          "fnr": 0.1473
+        }
+      },
+      "runtime_seconds": 17.6
+    }
+  }
+}

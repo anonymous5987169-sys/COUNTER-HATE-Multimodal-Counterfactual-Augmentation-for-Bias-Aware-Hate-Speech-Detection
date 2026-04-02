@@ -1,0 +1,533 @@
+{
+  "description": "Stacking ensemble across nCF / CF-no-adv / CF+GRL fusion conditions",
+  "conditions": [
+    "ncf",
+    "cf_no_adv",
+    "cf"
+  ],
+  "condition_labels": {
+    "ncf": "nCF",
+    "cf_no_adv": "CF-no-adv",
+    "cf": "CF+GRL"
+  },
+  "summary_table": [
+    {
+      "condition": "nCF",
+      "f1": 0.8565,
+      "auc_roc": 0.9209,
+      "fpr": 0.1937,
+      "ece": 0.0408,
+      "best_meta_learner": "LogisticRegression"
+    },
+    {
+      "condition": "CF-no-adv",
+      "f1": 0.8441,
+      "auc_roc": 0.9132,
+      "fpr": 0.1847,
+      "ece": 0.1551,
+      "best_meta_learner": "GradientBoosting"
+    },
+    {
+      "condition": "CF+GRL",
+      "f1": 0.8514,
+      "auc_roc": 0.9059,
+      "fpr": 0.2095,
+      "ece": 0.202,
+      "best_meta_learner": "MLP(32,16)"
+    }
+  ],
+  "by_condition": {
+    "ncf": {
+      "condition": "ncf",
+      "condition_label": "nCF",
+      "description": "Stacking Ensemble: train OOF fitting + single held-out test evaluation",
+      "protocol": "5-fold CV/OOF on train only; final meta-learner fit on full train; one-shot evaluation on test",
+      "best_meta_learner": "LogisticRegression",
+      "n_train_samples": 4158,
+      "n_test_samples": 892,
+      "n_folds": 5,
+      "n_meta_features": 9,
+      "feature_names": [
+        "p_text",
+        "p_image",
+        "p_text*p_image",
+        "|p_text-p_image|",
+        "max(pt,pi)",
+        "min(pt,pi)",
+        "mean(pt,pi)",
+        "p_text^2",
+        "p_image^2"
+      ],
+      "meta_learner_selection": {
+        "LogisticRegression": {
+          "mean_f1": 0.8915,
+          "std_f1": 0.0072
+        },
+        "GradientBoosting": {
+          "mean_f1": 0.8811,
+          "std_f1": 0.0119
+        },
+        "MLP(32,16)": {
+          "mean_f1": 0.8887,
+          "std_f1": 0.0071
+        },
+        "ExtraTrees": {
+          "mean_f1": 0.8505,
+          "std_f1": 0.0154
+        }
+      },
+      "threshold_train_oof": 0.45,
+      "threshold_calibrated_train_oof": 0.42,
+      "fold_f1s": [
+        0.9014,
+        0.893,
+        0.8922,
+        0.8993,
+        0.8721
+      ],
+      "oof_metrics_uncalibrated": {
+        "accuracy": 0.887,
+        "precision": 0.8511,
+        "recall": 0.9391,
+        "f1": 0.8929,
+        "auc_roc": 0.9471,
+        "brier": 0.0852,
+        "fpr": 0.1656,
+        "fnr": 0.0609,
+        "ece": 0.0138
+      },
+      "test_metrics_uncalibrated": {
+        "accuracy": 0.8498,
+        "precision": 0.823,
+        "recall": 0.8929,
+        "f1": 0.8565,
+        "auc_roc": 0.9209,
+        "brier": 0.1095,
+        "fpr": 0.1937,
+        "fnr": 0.1071,
+        "ece": 0.0408
+      },
+      "test_metrics_calibrated": {
+        "accuracy": 0.8487,
+        "precision": 0.8214,
+        "recall": 0.8929,
+        "f1": 0.8556,
+        "auc_roc": 0.9192,
+        "brier": 0.1082,
+        "fpr": 0.1959,
+        "fnr": 0.1071,
+        "ece": 0.033
+      },
+      "per_group_fpr_stacking_test": {
+        "race/ethnicity": {
+          "n": 165,
+          "n_non_hate": 53,
+          "fpr": 0.3585
+        },
+        "religion": {
+          "n": 168,
+          "n_non_hate": 56,
+          "fpr": 0.2143
+        },
+        "gender": {
+          "n": 161,
+          "n_non_hate": 89,
+          "fpr": 0.2921
+        },
+        "sexual_orientation": {
+          "n": 129,
+          "n_non_hate": 89,
+          "fpr": 0.1124
+        },
+        "national_origin/citizenship": {
+          "n": 122,
+          "n_non_hate": 34,
+          "fpr": 0.3235
+        },
+        "disability": {
+          "n": 23,
+          "n_non_hate": 7,
+          "fpr": 0.5714
+        },
+        "age": {
+          "n": 13,
+          "n_non_hate": 5,
+          "fpr": 0.2
+        },
+        "multiple/none": {
+          "n": 111,
+          "n_non_hate": 111,
+          "fpr": 0.027
+        }
+      },
+      "f1_95ci": [
+        0.8326,
+        0.8797
+      ],
+      "baselines": {
+        "text_only": {
+          "accuracy": 0.8464,
+          "precision": 0.8091,
+          "recall": 0.9085,
+          "f1": 0.8559,
+          "auc_roc": 0.9079,
+          "brier": 0.1143,
+          "fpr": 0.2162,
+          "fnr": 0.0915,
+          "ece": 0.0283
+        },
+        "image_only": {
+          "accuracy": 0.8094,
+          "precision": 0.7896,
+          "recall": 0.846,
+          "f1": 0.8168,
+          "auc_roc": 0.8858,
+          "brier": 0.1341,
+          "fpr": 0.2275,
+          "fnr": 0.154,
+          "ece": 0.0279
+        },
+        "scalar_fusion": {
+          "accuracy": 0.8498,
+          "precision": 0.8244,
+          "recall": 0.8906,
+          "f1": 0.8562,
+          "auc_roc": 0.9192,
+          "brier": 0.1075,
+          "fpr": 0.1914,
+          "fnr": 0.1094,
+          "ece": 0.0421
+        }
+      },
+      "runtime_seconds": 8.0
+    },
+    "cf_no_adv": {
+      "condition": "cf_no_adv",
+      "condition_label": "CF-no-adv",
+      "description": "Stacking Ensemble: train OOF fitting + single held-out test evaluation",
+      "protocol": "5-fold CV/OOF on train only; final meta-learner fit on full train; one-shot evaluation on test",
+      "best_meta_learner": "GradientBoosting",
+      "n_train_samples": 4158,
+      "n_test_samples": 892,
+      "n_folds": 5,
+      "n_meta_features": 9,
+      "feature_names": [
+        "p_text",
+        "p_image",
+        "p_text*p_image",
+        "|p_text-p_image|",
+        "max(pt,pi)",
+        "min(pt,pi)",
+        "mean(pt,pi)",
+        "p_text^2",
+        "p_image^2"
+      ],
+      "meta_learner_selection": {
+        "LogisticRegression": {
+          "mean_f1": 0.9966,
+          "std_f1": 0.0022
+        },
+        "GradientBoosting": {
+          "mean_f1": 0.9969,
+          "std_f1": 0.0021
+        },
+        "MLP(32,16)": {
+          "mean_f1": 0.9969,
+          "std_f1": 0.0019
+        },
+        "ExtraTrees": {
+          "mean_f1": 0.9959,
+          "std_f1": 0.0017
+        }
+      },
+      "threshold_train_oof": 0.17,
+      "threshold_calibrated_train_oof": 0.4,
+      "fold_f1s": [
+        0.9976,
+        0.9976,
+        0.9976,
+        0.9916,
+        0.9976
+      ],
+      "oof_metrics_uncalibrated": {
+        "accuracy": 0.9969,
+        "precision": 0.9962,
+        "recall": 0.9976,
+        "f1": 0.9969,
+        "auc_roc": 0.9993,
+        "brier": 0.0033,
+        "fpr": 0.0039,
+        "fnr": 0.0024,
+        "ece": 0.0033
+      },
+      "test_metrics_uncalibrated": {
+        "accuracy": 0.8397,
+        "precision": 0.8252,
+        "recall": 0.8638,
+        "f1": 0.8441,
+        "auc_roc": 0.9132,
+        "brier": 0.1558,
+        "fpr": 0.1847,
+        "fnr": 0.1362,
+        "ece": 0.1551
+      },
+      "test_metrics_calibrated": {
+        "accuracy": 0.8453,
+        "precision": 0.8125,
+        "recall": 0.8996,
+        "f1": 0.8538,
+        "auc_roc": 0.905,
+        "brier": 0.1392,
+        "fpr": 0.2095,
+        "fnr": 0.1004,
+        "ece": 0.1198
+      },
+      "per_group_fpr_stacking_test": {
+        "race/ethnicity": {
+          "n": 165,
+          "n_non_hate": 53,
+          "fpr": 0.3585
+        },
+        "religion": {
+          "n": 168,
+          "n_non_hate": 56,
+          "fpr": 0.1964
+        },
+        "gender": {
+          "n": 161,
+          "n_non_hate": 89,
+          "fpr": 0.2247
+        },
+        "sexual_orientation": {
+          "n": 129,
+          "n_non_hate": 89,
+          "fpr": 0.1124
+        },
+        "national_origin/citizenship": {
+          "n": 122,
+          "n_non_hate": 34,
+          "fpr": 0.4118
+        },
+        "disability": {
+          "n": 23,
+          "n_non_hate": 7,
+          "fpr": 0.5714
+        },
+        "age": {
+          "n": 13,
+          "n_non_hate": 5,
+          "fpr": 0.2
+        },
+        "multiple/none": {
+          "n": 111,
+          "n_non_hate": 111,
+          "fpr": 0.027
+        }
+      },
+      "f1_95ci": [
+        0.8173,
+        0.8688
+      ],
+      "baselines": {
+        "text_only": {
+          "accuracy": 0.8386,
+          "precision": 0.8028,
+          "recall": 0.8996,
+          "f1": 0.8484,
+          "auc_roc": 0.9044,
+          "brier": 0.143,
+          "fpr": 0.223,
+          "fnr": 0.1004,
+          "ece": 0.1293
+        },
+        "image_only": {
+          "accuracy": 0.7747,
+          "precision": 0.7656,
+          "recall": 0.7946,
+          "f1": 0.7798,
+          "auc_roc": 0.8474,
+          "brier": 0.1592,
+          "fpr": 0.2455,
+          "fnr": 0.2054,
+          "ece": 0.0738
+        },
+        "scalar_fusion": {
+          "accuracy": 0.8352,
+          "precision": 0.8142,
+          "recall": 0.8705,
+          "f1": 0.8414,
+          "auc_roc": 0.9132,
+          "brier": 0.1201,
+          "fpr": 0.2005,
+          "fnr": 0.1295,
+          "ece": 0.0736
+        }
+      },
+      "runtime_seconds": 15.6
+    },
+    "cf": {
+      "condition": "cf",
+      "condition_label": "CF+GRL",
+      "description": "Stacking Ensemble: train OOF fitting + single held-out test evaluation",
+      "protocol": "5-fold CV/OOF on train only; final meta-learner fit on full train; one-shot evaluation on test",
+      "best_meta_learner": "MLP(32,16)",
+      "n_train_samples": 4158,
+      "n_test_samples": 892,
+      "n_folds": 5,
+      "n_meta_features": 9,
+      "feature_names": [
+        "p_text",
+        "p_image",
+        "p_text*p_image",
+        "|p_text-p_image|",
+        "max(pt,pi)",
+        "min(pt,pi)",
+        "mean(pt,pi)",
+        "p_text^2",
+        "p_image^2"
+      ],
+      "meta_learner_selection": {
+        "LogisticRegression": {
+          "mean_f1": 0.9969,
+          "std_f1": 0.0019
+        },
+        "GradientBoosting": {
+          "mean_f1": 0.9962,
+          "std_f1": 0.0004
+        },
+        "MLP(32,16)": {
+          "mean_f1": 0.9971,
+          "std_f1": 0.0016
+        },
+        "ExtraTrees": {
+          "mean_f1": 0.9966,
+          "std_f1": 0.0012
+        }
+      },
+      "threshold_train_oof": 0.47,
+      "threshold_calibrated_train_oof": 0.2,
+      "fold_f1s": [
+        0.9976,
+        0.9976,
+        0.9988,
+        0.9952,
+        0.9976
+      ],
+      "oof_metrics_uncalibrated": {
+        "accuracy": 0.9976,
+        "precision": 0.9957,
+        "recall": 0.9995,
+        "f1": 0.9976,
+        "auc_roc": 0.9995,
+        "brier": 0.1422,
+        "fpr": 0.0043,
+        "fnr": 0.0005,
+        "ece": 0.3727
+      },
+      "test_metrics_uncalibrated": {
+        "accuracy": 0.843,
+        "precision": 0.8117,
+        "recall": 0.8951,
+        "f1": 0.8514,
+        "auc_roc": 0.9059,
+        "brier": 0.1708,
+        "fpr": 0.2095,
+        "fnr": 0.1049,
+        "ece": 0.202
+      },
+      "test_metrics_calibrated": {
+        "accuracy": 0.843,
+        "precision": 0.8008,
+        "recall": 0.9152,
+        "f1": 0.8542,
+        "auc_roc": 0.8799,
+        "brier": 0.1482,
+        "fpr": 0.2297,
+        "fnr": 0.0848,
+        "ece": 0.1016
+      },
+      "per_group_fpr_stacking_test": {
+        "race/ethnicity": {
+          "n": 165,
+          "n_non_hate": 53,
+          "fpr": 0.3774
+        },
+        "religion": {
+          "n": 168,
+          "n_non_hate": 56,
+          "fpr": 0.25
+        },
+        "gender": {
+          "n": 161,
+          "n_non_hate": 89,
+          "fpr": 0.2697
+        },
+        "sexual_orientation": {
+          "n": 129,
+          "n_non_hate": 89,
+          "fpr": 0.1124
+        },
+        "national_origin/citizenship": {
+          "n": 122,
+          "n_non_hate": 34,
+          "fpr": 0.4412
+        },
+        "disability": {
+          "n": 23,
+          "n_non_hate": 7,
+          "fpr": 0.5714
+        },
+        "age": {
+          "n": 13,
+          "n_non_hate": 5,
+          "fpr": 0.2
+        },
+        "multiple/none": {
+          "n": 111,
+          "n_non_hate": 111,
+          "fpr": 0.045
+        }
+      },
+      "f1_95ci": [
+        0.825,
+        0.8757
+      ],
+      "baselines": {
+        "text_only": {
+          "accuracy": 0.8386,
+          "precision": 0.8028,
+          "recall": 0.8996,
+          "f1": 0.8484,
+          "auc_roc": 0.9044,
+          "brier": 0.143,
+          "fpr": 0.223,
+          "fnr": 0.1004,
+          "ece": 0.1293
+        },
+        "image_only": {
+          "accuracy": 0.7691,
+          "precision": 0.7553,
+          "recall": 0.7991,
+          "f1": 0.7766,
+          "auc_roc": 0.8401,
+          "brier": 0.1654,
+          "fpr": 0.2613,
+          "fnr": 0.2009,
+          "ece": 0.0779
+        },
+        "scalar_fusion": {
+          "accuracy": 0.8442,
+          "precision": 0.816,
+          "recall": 0.8906,
+          "f1": 0.8517,
+          "auc_roc": 0.9051,
+          "brier": 0.1184,
+          "fpr": 0.2027,
+          "fnr": 0.1094,
+          "ece": 0.0499
+        }
+      },
+      "runtime_seconds": 8.2
+    }
+  }
+}

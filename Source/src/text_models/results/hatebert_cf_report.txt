@@ -1,0 +1,22 @@
+Model: hatebert
+Condition: CF
+Backbone: GroNLP/hateBERT
+Epochs: 2, Batch: 16, LR: 2e-05
+Train size: 3000
+Test size: 892
+Training time: 93.7s
+
+                    precision    recall  f1-score   support
+
+         hate_race     0.0000    0.0000    0.0000       112
+     hate_religion     0.1519    0.9643    0.2625       112
+       hate_gender     0.3830    0.3214    0.3495       112
+        hate_other     0.0000    0.0000    0.0000       112
+offensive_non_hate     0.1364    0.0536    0.0769       112
+neutral_discussion     0.3721    0.1455    0.2092       110
+    counter_speech     0.0000    0.0000    0.0000       111
+         ambiguous     0.0000    0.0000    0.0000       111
+
+          accuracy                         0.1861       892
+         macro avg     0.1304    0.1856    0.1123       892
+      weighted avg     0.1302    0.1861    0.1123       892

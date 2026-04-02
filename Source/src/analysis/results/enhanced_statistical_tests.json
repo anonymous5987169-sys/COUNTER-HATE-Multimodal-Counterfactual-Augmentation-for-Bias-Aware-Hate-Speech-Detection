@@ -1,0 +1,4872 @@
+{
+  "per_group_fpr": {
+    "text_cf": {
+      "age": 0.4,
+      "disability": 0.428571,
+      "gender": 0.292135,
+      "multiple/none": 0.054054,
+      "national_origin/citizenship": 0.352941,
+      "race/ethnicity": 0.358491,
+      "religion": 0.25,
+      "sexual_orientation": 0.146067
+    },
+    "text_ncf": {
+      "age": 0.0,
+      "disability": 0.0,
+      "gender": 0.046154,
+      "national_origin/citizenship": 0.041667,
+      "race/ethnicity": 0.540541,
+      "religion": 0.021127,
+      "sexual_orientation": 0.035714
+    },
+    "image": {
+      "age": 0.4,
+      "disability": 0.571429,
+      "gender": 0.370787,
+      "multiple/none": 0.135135,
+      "national_origin/citizenship": 0.382353,
+      "race/ethnicity": 0.45283,
+      "religion": 0.285714,
+      "sexual_orientation": 0.224719
+    },
+    "fusion": {
+      "age": 0.2,
+      "disability": 0.571429,
+      "gender": 0.258427,
+      "multiple/none": 0.036036,
+      "national_origin/citizenship": 0.411765,
+      "race/ethnicity": 0.358491,
+      "religion": 0.214286,
+      "sexual_orientation": 0.134831
+    }
+  },
+  "clopper_pearson_ci": {
+    "text_cf": {
+      "age": {
+        "lower": 0.052744950526316906,
+        "upper": 0.8533672003653268,
+        "point_estimate": 0.4,
+        "n": 5,
+        "fp_count": 2
+      },
+      "disability": {
+        "lower": 0.09898827844250786,
+        "upper": 0.815948432359917,
+        "point_estimate": 0.42857142857142855,
+        "n": 7,
+        "fp_count": 3
+      },
+      "gender": {
+        "lower": 0.20050757253435128,
+        "upper": 0.3980689630674446,
+        "point_estimate": 0.29213483146067415,
+        "n": 89,
+        "fp_count": 26
+      },
+      "multiple/none": {
+        "lower": 0.02009265930446559,
+        "upper": 0.11394448770454148,
+        "point_estimate": 0.05405405405405406,
+        "n": 111,
+        "fp_count": 6
+      },
+      "national_origin/citizenship": {
+        "lower": 0.1974586479123424,
+        "upper": 0.5351136291089579,
+        "point_estimate": 0.35294117647058826,
+        "n": 34,
+        "fp_count": 12
+      },
+      "race/ethnicity": {
+        "lower": 0.23143094687129984,
+        "upper": 0.5019667760094333,
+        "point_estimate": 0.3584905660377358,
+        "n": 53,
+        "fp_count": 19
+      },
+      "religion": {
+        "lower": 0.14393311216439628,
+        "upper": 0.38372019088070575,
+        "point_estimate": 0.25,
+        "n": 56,
+        "fp_count": 14
+      },
+      "sexual_orientation": {
+        "lower": 0.0801310169341979,
+        "upper": 0.23682024363591428,
+        "point_estimate": 0.14606741573033707,
+        "n": 89,
+        "fp_count": 13
+      }
+    },
+    "text_ncf": {
+      "age": {
+        "lower": 0.0,
+        "upper": 0.7075982261787133,
+        "point_estimate": 0.0,
+        "n": 3,
+        "fp_count": 0
+      },
+      "disability": {
+        "lower": 0.0,
+        "upper": 0.45925812643990044,
+        "point_estimate": 0.0,
+        "n": 6,
+        "fp_count": 0
+      },
+      "gender": {
+        "lower": 0.009621078840338563,
+        "upper": 0.12901127989825886,
+        "point_estimate": 0.046153846153846156,
+        "n": 65,
+        "fp_count": 3
+      },
+      "national_origin/citizenship": {
+        "lower": 0.0010543524454697474,
+        "upper": 0.21120168345697307,
+        "point_estimate": 0.041666666666666664,
+        "n": 24,
+        "fp_count": 1
+      },
+      "race/ethnicity": {
+        "lower": 0.45676184663558056,
+        "upper": 0.6226637490522253,
+        "point_estimate": 0.5405405405405406,
+        "n": 148,
+        "fp_count": 80
+      },
+      "religion": {
+        "lower": 0.004378218036954267,
+        "upper": 0.06049859125056423,
+        "point_estimate": 0.02112676056338028,
+        "n": 142,
+        "fp_count": 3
+      },
+      "sexual_orientation": {
+        "lower": 0.004354812741052646,
+        "upper": 0.12313180745799578,
+        "point_estimate": 0.03571428571428571,
+        "n": 56,
+        "fp_count": 2
+      }
+    },
+    "image": {
+      "age": {
+        "lower": 0.052744950526316906,
+        "upper": 0.8533672003653268,
+        "point_estimate": 0.4,
+        "n": 5,
+        "fp_count": 2
+      },
+      "disability": {
+        "lower": 0.184051567640083,
+        "upper": 0.9010117215574921,
+        "point_estimate": 0.5714285714285714,
+        "n": 7,
+        "fp_count": 4
+      },
+      "gender": {
+        "lower": 0.27072993363431447,
+        "upper": 0.47970188653242024,
+        "point_estimate": 0.3707865168539326,
+        "n": 89,
+        "fp_count": 33
+      },
+      "multiple/none": {
+        "lower": 0.07765076345833435,
+        "upper": 0.2130735089589396,
+        "point_estimate": 0.13513513513513514,
+        "n": 111,
+        "fp_count": 15
+      },
+      "national_origin/citizenship": {
+        "lower": 0.22166543042549666,
+        "upper": 0.56436028822861,
+        "point_estimate": 0.38235294117647056,
+        "n": 34,
+        "fp_count": 13
+      },
+      "race/ethnicity": {
+        "lower": 0.3156152838640987,
+        "upper": 0.5955017082732814,
+        "point_estimate": 0.4528301886792453,
+        "n": 53,
+        "fp_count": 24
+      },
+      "religion": {
+        "lower": 0.17295175603419502,
+        "upper": 0.42209871895907697,
+        "point_estimate": 0.2857142857142857,
+        "n": 56,
+        "fp_count": 16
+      },
+      "sexual_orientation": {
+        "lower": 0.14299487582352866,
+        "upper": 0.32550212541119056,
+        "point_estimate": 0.2247191011235955,
+        "n": 89,
+        "fp_count": 20
+      }
+    },
+    "fusion": {
+      "age": {
+        "lower": 0.0050507633794680575,
+        "upper": 0.7164179361180893,
+        "point_estimate": 0.2,
+        "n": 5,
+        "fp_count": 1
+      },
+      "disability": {
+        "lower": 0.184051567640083,
+        "upper": 0.9010117215574921,
+        "point_estimate": 0.5714285714285714,
+        "n": 7,
+        "fp_count": 4
+      },
+      "gender": {
+        "lower": 0.17140361256823747,
+        "upper": 0.3621199056147069,
+        "point_estimate": 0.25842696629213485,
+        "n": 89,
+        "fp_count": 23
+      },
+      "multiple/none": {
+        "lower": 0.00990436589506044,
+        "upper": 0.08969989106579195,
+        "point_estimate": 0.036036036036036036,
+        "n": 111,
+        "fp_count": 4
+      },
+      "national_origin/citizenship": {
+        "lower": 0.24647073529775063,
+        "upper": 0.5930305670291519,
+        "point_estimate": 0.4117647058823529,
+        "n": 34,
+        "fp_count": 14
+      },
+      "race/ethnicity": {
+        "lower": 0.23143094687129984,
+        "upper": 0.5019667760094333,
+        "point_estimate": 0.3584905660377358,
+        "n": 53,
+        "fp_count": 19
+      },
+      "religion": {
+        "lower": 0.11592219911993071,
+        "upper": 0.34439541108633354,
+        "point_estimate": 0.21428571428571427,
+        "n": 56,
+        "fp_count": 12
+      },
+      "sexual_orientation": {
+        "lower": 0.07165545823681792,
+        "upper": 0.22368177578687556,
+        "point_estimate": 0.1348314606741573,
+        "n": 89,
+        "fp_count": 12
+      }
+    }
+  },
+  "chi2_proportions": {
+    "text_cf": {
+      "chi2": 36.415362246688325,
+      "p_value": 6.0513788397335926e-06,
+      "dof": 7,
+      "n_groups": 8,
+      "significant": true,
+      "contingency_table": {
+        "age": {
+          "n": 5,
+          "fp": 2,
+          "tn": 3,
+          "fpr": 0.4
+        },
+        "disability": {
+          "n": 7,
+          "fp": 3,
+          "tn": 4,
+          "fpr": 0.428571
+        },
+        "gender": {
+          "n": 89,
+          "fp": 26,
+          "tn": 63,
+          "fpr": 0.292135
+        },
+        "multiple/none": {
+          "n": 111,
+          "fp": 6,
+          "tn": 105,
+          "fpr": 0.054054
+        },
+        "national_origin/citizenship": {
+          "n": 34,
+          "fp": 12,
+          "tn": 22,
+          "fpr": 0.352941
+        },
+        "race/ethnicity": {
+          "n": 53,
+          "fp": 19,
+          "tn": 34,
+          "fpr": 0.358491
+        },
+        "religion": {
+          "n": 56,
+          "fp": 14,
+          "tn": 42,
+          "fpr": 0.25
+        },
+        "sexual_orientation": {
+          "n": 89,
+          "fp": 13,
+          "tn": 76,
+          "fpr": 0.146067
+        }
+      },
+      "expected_counts": {
+        "age": {
+          "fp": 1.07,
+          "tn": 3.93
+        },
+        "disability": {
+          "fp": 1.5,
+          "tn": 5.5
+        },
+        "gender": {
+          "fp": 19.04,
+          "tn": 69.96
+        },
+        "multiple/none": {
+          "fp": 23.75,
+          "tn": 87.25
+        },
+        "national_origin/citizenship": {
+          "fp": 7.27,
+          "tn": 26.73
+        },
+        "race/ethnicity": {
+          "fp": 11.34,
+          "tn": 41.66
+        },
+        "religion": {
+          "fp": 11.98,
+          "tn": 44.02
+        },
+        "sexual_orientation": {
+          "fp": 19.04,
+          "tn": 69.96
+        }
+      }
+    },
+    "text_ncf": {
+      "chi2": 160.46720784663913,
+      "p_value": 4.715153196452531e-32,
+      "dof": 6,
+      "n_groups": 7,
+      "significant": true,
+      "contingency_table": {
+        "age": {
+          "n": 3,
+          "fp": 0,
+          "tn": 3,
+          "fpr": 0.0
+        },
+        "disability": {
+          "n": 6,
+          "fp": 0,
+          "tn": 6,
+          "fpr": 0.0
+        },
+        "gender": {
+          "n": 65,
+          "fp": 3,
+          "tn": 62,
+          "fpr": 0.046154
+        },
+        "national_origin/citizenship": {
+          "n": 24,
+          "fp": 1,
+          "tn": 23,
+          "fpr": 0.041667
+        },
+        "race/ethnicity": {
+          "n": 148,
+          "fp": 80,
+          "tn": 68,
+          "fpr": 0.540541
+        },
+        "religion": {
+          "n": 142,
+          "fp": 3,
+          "tn": 139,
+          "fpr": 0.021127
+        },
+        "sexual_orientation": {
+          "n": 56,
+          "fp": 2,
+          "tn": 54,
+          "fpr": 0.035714
+        }
+      },
+      "expected_counts": {
+        "age": {
+          "fp": 0.6,
+          "tn": 2.4
+        },
+        "disability": {
+          "fp": 1.2,
+          "tn": 4.8
+        },
+        "gender": {
+          "fp": 13.03,
+          "tn": 51.97
+        },
+        "national_origin/citizenship": {
+          "fp": 4.81,
+          "tn": 19.19
+        },
+        "race/ethnicity": {
+          "fp": 29.67,
+          "tn": 118.33
+        },
+        "religion": {
+          "fp": 28.46,
+          "tn": 113.54
+        },
+        "sexual_orientation": {
+          "fp": 11.23,
+          "tn": 44.77
+        }
+      }
+    },
+    "image": {
+      "chi2": 29.01997806172669,
+      "p_value": 0.0001434782378735997,
+      "dof": 7,
+      "n_groups": 8,
+      "significant": true,
+      "contingency_table": {
+        "age": {
+          "n": 5,
+          "fp": 2,
+          "tn": 3,
+          "fpr": 0.4
+        },
+        "disability": {
+          "n": 7,
+          "fp": 4,
+          "tn": 3,
+          "fpr": 0.571429
+        },
+        "gender": {
+          "n": 89,
+          "fp": 33,
+          "tn": 56,
+          "fpr": 0.370787
+        },
+        "multiple/none": {
+          "n": 111,
+          "fp": 15,
+          "tn": 96,
+          "fpr": 0.135135
+        },
+        "national_origin/citizenship": {
+          "n": 34,
+          "fp": 13,
+          "tn": 21,
+          "fpr": 0.382353
+        },
+        "race/ethnicity": {
+          "n": 53,
+          "fp": 24,
+          "tn": 29,
+          "fpr": 0.45283
+        },
+        "religion": {
+          "n": 56,
+          "fp": 16,
+          "tn": 40,
+          "fpr": 0.285714
+        },
+        "sexual_orientation": {
+          "n": 89,
+          "fp": 20,
+          "tn": 69,
+          "fpr": 0.224719
+        }
+      },
+      "expected_counts": {
+        "age": {
+          "fp": 1.43,
+          "tn": 3.57
+        },
+        "disability": {
+          "fp": 2.0,
+          "tn": 5.0
+        },
+        "gender": {
+          "fp": 25.46,
+          "tn": 63.54
+        },
+        "multiple/none": {
+          "fp": 31.75,
+          "tn": 79.25
+        },
+        "national_origin/citizenship": {
+          "fp": 9.73,
+          "tn": 24.27
+        },
+        "race/ethnicity": {
+          "fp": 15.16,
+          "tn": 37.84
+        },
+        "religion": {
+          "fp": 16.02,
+          "tn": 39.98
+        },
+        "sexual_orientation": {
+          "fp": 25.46,
+          "tn": 63.54
+        }
+      }
+    },
+    "fusion": {
+      "chi2": 46.78990546633592,
+      "p_value": 6.134218782715352e-08,
+      "dof": 7,
+      "n_groups": 8,
+      "significant": true,
+      "contingency_table": {
+        "age": {
+          "n": 5,
+          "fp": 1,
+          "tn": 4,
+          "fpr": 0.2
+        },
+        "disability": {
+          "n": 7,
+          "fp": 4,
+          "tn": 3,
+          "fpr": 0.571429
+        },
+        "gender": {
+          "n": 89,
+          "fp": 23,
+          "tn": 66,
+          "fpr": 0.258427
+        },
+        "multiple/none": {
+          "n": 111,
+          "fp": 4,
+          "tn": 107,
+          "fpr": 0.036036
+        },
+        "national_origin/citizenship": {
+          "n": 34,
+          "fp": 14,
+          "tn": 20,
+          "fpr": 0.411765
+        },
+        "race/ethnicity": {
+          "n": 53,
+          "fp": 19,
+          "tn": 34,
+          "fpr": 0.358491
+        },
+        "religion": {
+          "n": 56,
+          "fp": 12,
+          "tn": 44,
+          "fpr": 0.214286
+        },
+        "sexual_orientation": {
+          "n": 89,
+          "fp": 12,
+          "tn": 77,
+          "fpr": 0.134831
+        }
+      },
+      "expected_counts": {
+        "age": {
+          "fp": 1.0,
+          "tn": 4.0
+        },
+        "disability": {
+          "fp": 1.4,
+          "tn": 5.6
+        },
+        "gender": {
+          "fp": 17.84,
+          "tn": 71.16
+        },
+        "multiple/none": {
+          "fp": 22.25,
+          "tn": 88.75
+        },
+        "national_origin/citizenship": {
+          "fp": 6.82,
+          "tn": 27.18
+        },
+        "race/ethnicity": {
+          "fp": 10.62,
+          "tn": 42.38
+        },
+        "religion": {
+          "fp": 11.23,
+          "tn": 44.77
+        },
+        "sexual_orientation": {
+          "fp": 17.84,
+          "tn": 71.16
+        }
+      }
+    }
+  },
+  "kruskal_wallis": {
+    "text_cf": {
+      "H_statistic": 36.33334566505155,
+      "p_value": 6.271235941865001e-06,
+      "n_groups": 8,
+      "significant": true
+    },
+    "text_ncf": {
+      "H_statistic": 160.1057952163543,
+      "p_value": 5.623950704293982e-32,
+      "n_groups": 7,
+      "significant": true
+    },
+    "image": {
+      "H_statistic": 28.954617750776794,
+      "p_value": 0.00014746989741272782,
+      "n_groups": 8,
+      "significant": true
+    },
+    "fusion": {
+      "H_statistic": 46.68452279636643,
+      "p_value": 6.43133598394374e-08,
+      "n_groups": 8,
+      "significant": true
+    }
+  },
+  "pairwise_mann_whitney": {
+    "text_cf": {
+      "n_comparisons": 28,
+      "pairs": [
+        {
+          "group_1": "age",
+          "group_2": "disability",
+          "U_statistic": 17.0,
+          "p_value_raw": 1.0,
+          "n_1": 5,
+          "n_2": 7,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "gender",
+          "U_statistic": 246.5,
+          "p_value_raw": 0.6172061113705237,
+          "n_1": 5,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.785535050835212,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "multiple/none",
+          "U_statistic": 373.5,
+          "p_value_raw": 0.003097738161955967,
+          "n_1": 5,
+          "n_2": 111,
+          "p_value_holm": 0.07124797772498724,
+          "p_value_bh_fdr": 0.014135737521470806,
+          "significant_holm": false,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 0.07124797772498724,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "national_origin/citizenship",
+          "U_statistic": 89.0,
+          "p_value_raw": 0.8595858115613956,
+          "n_1": 5,
+          "n_2": 34,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.9346152841884594,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "race/ethnicity",
+          "U_statistic": 138.0,
+          "p_value_raw": 0.8678570496035695,
+          "n_1": 5,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.9346152841884594,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "religion",
+          "U_statistic": 161.0,
+          "p_value_raw": 0.47936938015165176,
+          "n_1": 5,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.7064390865392762,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "sexual_orientation",
+          "U_statistic": 279.0,
+          "p_value_raw": 0.13691594172175714,
+          "n_1": 5,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.29489587447763077,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "gender",
+          "U_statistic": 354.0,
+          "p_value_raw": 0.4567855476032374,
+          "n_1": 7,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.7064390865392762,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "multiple/none",
+          "U_statistic": 534.0,
+          "p_value_raw": 0.0003270099486438352,
+          "n_1": 7,
+          "n_2": 111,
+          "p_value_holm": 0.007848238767452045,
+          "p_value_bh_fdr": 0.0018312557124054772,
+          "significant_holm": true,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 0.007848238767452045,
+          "significant_bonferroni": true
+        },
+        {
+          "group_1": "disability",
+          "group_2": "national_origin/citizenship",
+          "U_statistic": 128.0,
+          "p_value_raw": 0.7241594651964924,
+          "n_1": 7,
+          "n_2": 34,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.8519461551243366,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "race/ethnicity",
+          "U_statistic": 198.5,
+          "p_value_raw": 0.7302395615351456,
+          "n_1": 7,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.8519461551243366,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "religion",
+          "U_statistic": 231.0,
+          "p_value_raw": 0.32644846907037883,
+          "n_1": 7,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.571284820873163,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "sexual_orientation",
+          "U_statistic": 399.5,
+          "p_value_raw": 0.05612331796381386,
+          "n_1": 7,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.14285935481698073,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "multiple/none",
+          "U_statistic": 6115.5,
+          "p_value_raw": 5.342823615892122e-06,
+          "n_1": 89,
+          "n_2": 111,
+          "p_value_holm": 0.00013891341401319518,
+          "p_value_bh_fdr": 4.9866353748326476e-05,
+          "significant_holm": true,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 0.00013891341401319518,
+          "significant_bonferroni": true
+        },
+        {
+          "group_1": "gender",
+          "group_2": "national_origin/citizenship",
+          "U_statistic": 1421.0,
+          "p_value_raw": 0.5179298135784987,
+          "n_1": 89,
+          "n_2": 34,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.725101739009898,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "race/ethnicity",
+          "U_statistic": 2202.0,
+          "p_value_raw": 0.41423260419663543,
+          "n_1": 89,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.6822654657356348,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "religion",
+          "U_statistic": 2597.0,
+          "p_value_raw": 0.5835763871751083,
+          "n_1": 89,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.778101849566811,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "sexual_orientation",
+          "U_statistic": 4539.0,
+          "p_value_raw": 0.018924797099509824,
+          "n_1": 89,
+          "n_2": 89,
+          "p_value_holm": 0.3784959419901965,
+          "p_value_bh_fdr": 0.05887714653180834,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 0.3784959419901965,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "national_origin/citizenship",
+          "U_statistic": 1323.0,
+          "p_value_raw": 4.1380307049642534e-06,
+          "n_1": 111,
+          "n_2": 34,
+          "p_value_holm": 0.00011172682903403484,
+          "p_value_bh_fdr": 4.9866353748326476e-05,
+          "significant_holm": true,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 0.00011172682903403484,
+          "significant_bonferroni": true
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "race/ethnicity",
+          "U_statistic": 2046.0,
+          "p_value_raw": 4.3173547563123195e-07,
+          "n_1": 111,
+          "n_2": 53,
+          "p_value_holm": 1.2088593317674495e-05,
+          "p_value_bh_fdr": 1.2088593317674495e-05,
+          "significant_holm": true,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 1.2088593317674495e-05,
+          "significant_bonferroni": true
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "religion",
+          "U_statistic": 2499.0,
+          "p_value_raw": 0.0002445672025754675,
+          "n_1": 111,
+          "n_2": 56,
+          "p_value_holm": 0.006114180064386687,
+          "p_value_bh_fdr": 0.0017119704180282723,
+          "significant_holm": true,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 0.006114180064386687,
+          "significant_bonferroni": true
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "sexual_orientation",
+          "U_statistic": 4485.0,
+          "p_value_raw": 0.02798081395088653,
+          "n_1": 111,
+          "n_2": 89,
+          "p_value_holm": 0.531635465066844,
+          "p_value_bh_fdr": 0.07834627906248227,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 0.531635465066844,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "race/ethnicity",
+          "U_statistic": 896.0,
+          "p_value_raw": 0.9623627064419047,
+          "n_1": 34,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.9980057696434567,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "religion",
+          "U_statistic": 1050.0,
+          "p_value_raw": 0.30135995200453525,
+          "n_1": 34,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.5625385770751324,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "sexual_orientation",
+          "U_statistic": 1826.0,
+          "p_value_raw": 0.011232658757649526,
+          "n_1": 34,
+          "n_2": 89,
+          "p_value_holm": 0.23588583391064005,
+          "p_value_bh_fdr": 0.039314305651773344,
+          "significant_holm": false,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 0.23588583391064005,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "race/ethnicity",
+          "group_2": "religion",
+          "U_statistic": 1645.0,
+          "p_value_raw": 0.22144166160074352,
+          "n_1": 53,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.44288332320148704,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "race/ethnicity",
+          "group_2": "sexual_orientation",
+          "U_statistic": 2859.5,
+          "p_value_raw": 0.0035339343803677016,
+          "n_1": 53,
+          "n_2": 89,
+          "p_value_holm": 0.07774655636808944,
+          "p_value_bh_fdr": 0.014135737521470806,
+          "significant_holm": false,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 0.07774655636808944,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "religion",
+          "group_2": "sexual_orientation",
+          "U_statistic": 2751.0,
+          "p_value_raw": 0.11949493777100972,
+          "n_1": 56,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.2788215214656894,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        }
+      ]
+    },
+    "text_ncf": {
+      "n_comparisons": 21,
+      "pairs": [
+        {
+          "group_1": "age",
+          "group_2": "disability",
+          "U_statistic": 9.0,
+          "p_value_raw": 1.0,
+          "n_1": 3,
+          "n_2": 6,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "gender",
+          "U_statistic": 93.0,
+          "p_value_raw": 0.7370146430968475,
+          "n_1": 3,
+          "n_2": 65,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.9586562557000032,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "national_origin/citizenship",
+          "U_statistic": 34.5,
+          "p_value_raw": 0.8136637157667919,
+          "n_1": 3,
+          "n_2": 24,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.9586562557000032,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "race/ethnicity",
+          "U_statistic": 102.0,
+          "p_value_raw": 0.06529646021341216,
+          "n_1": 3,
+          "n_2": 148,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.2285376107469426,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "religion",
+          "U_statistic": 208.5,
+          "p_value_raw": 0.8217053620285741,
+          "n_1": 3,
+          "n_2": 142,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.9586562557000032,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "sexual_orientation",
+          "U_statistic": 81.0,
+          "p_value_raw": 0.7831973887122372,
+          "n_1": 3,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.9586562557000032,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "gender",
+          "U_statistic": 186.0,
+          "p_value_raw": 0.614081917208376,
+          "n_1": 6,
+          "n_2": 65,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.9586562557000032,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "national_origin/citizenship",
+          "U_statistic": 69.0,
+          "p_value_raw": 0.6769222390213793,
+          "n_1": 6,
+          "n_2": 24,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.9586562557000032,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "race/ethnicity",
+          "U_statistic": 204.0,
+          "p_value_raw": 0.009762577325110848,
+          "n_1": 6,
+          "n_2": 148,
+          "p_value_holm": 0.1659638145268844,
+          "p_value_bh_fdr": 0.04100282476546556,
+          "significant_holm": false,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 0.1659638145268844,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "religion",
+          "U_statistic": 417.0,
+          "p_value_raw": 0.7349368049766598,
+          "n_1": 6,
+          "n_2": 142,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.9586562557000032,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "sexual_orientation",
+          "U_statistic": 162.0,
+          "p_value_raw": 0.6687561679919102,
+          "n_1": 6,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.9586562557000032,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "national_origin/citizenship",
+          "U_statistic": 783.5,
+          "p_value_raw": 0.9383974438834164,
+          "n_1": 65,
+          "n_2": 24,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.9853173160775872,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "race/ethnicity",
+          "U_statistic": 2432.0,
+          "p_value_raw": 1.0795185164111165e-11,
+          "n_1": 65,
+          "n_2": 148,
+          "p_value_holm": 2.159037032822233e-10,
+          "p_value_bh_fdr": 1.1334944422316725e-10,
+          "significant_holm": true,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 2.159037032822233e-10,
+          "significant_bonferroni": true
+        },
+        {
+          "group_1": "gender",
+          "group_2": "religion",
+          "U_statistic": 4730.5,
+          "p_value_raw": 0.3224507218338327,
+          "n_1": 65,
+          "n_2": 142,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.9586562557000032,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "sexual_orientation",
+          "U_statistic": 1839.0,
+          "p_value_raw": 0.7802825591543655,
+          "n_1": 65,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.9586562557000032,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "race/ethnicity",
+          "U_statistic": 890.0,
+          "p_value_raw": 6.010352110385724e-06,
+          "n_1": 24,
+          "n_2": 148,
+          "p_value_holm": 0.00010818633798694302,
+          "p_value_bh_fdr": 3.155434857952505e-05,
+          "significant_holm": true,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 0.00010818633798694302,
+          "significant_bonferroni": true
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "religion",
+          "U_statistic": 1739.0,
+          "p_value_raw": 0.5508932442364008,
+          "n_1": 24,
+          "n_2": 142,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.9586562557000032,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "sexual_orientation",
+          "U_statistic": 676.0,
+          "p_value_raw": 0.9110912964788381,
+          "n_1": 24,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.9853173160775872,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "race/ethnicity",
+          "group_2": "religion",
+          "U_statistic": 15966.0,
+          "p_value_raw": 1.5907089619165577e-22,
+          "n_1": 148,
+          "n_2": 142,
+          "p_value_holm": 3.340488820024771e-21,
+          "p_value_bh_fdr": 3.340488820024771e-21,
+          "significant_holm": true,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 3.340488820024771e-21,
+          "significant_bonferroni": true
+        },
+        {
+          "group_1": "race/ethnicity",
+          "group_2": "sexual_orientation",
+          "U_statistic": 6236.0,
+          "p_value_raw": 5.940833261476024e-11,
+          "n_1": 148,
+          "n_2": 56,
+          "p_value_holm": 1.1287583196804445e-09,
+          "p_value_bh_fdr": 4.158583283033217e-10,
+          "significant_holm": true,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 1.1287583196804445e-09,
+          "significant_bonferroni": true
+        },
+        {
+          "group_1": "religion",
+          "group_2": "sexual_orientation",
+          "U_statistic": 3918.0,
+          "p_value_raw": 0.5601096431515802,
+          "n_1": 142,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.9586562557000032,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        }
+      ]
+    },
+    "image": {
+      "n_comparisons": 28,
+      "pairs": [
+        {
+          "group_1": "age",
+          "group_2": "disability",
+          "U_statistic": 14.5,
+          "p_value_raw": 0.6403735394530488,
+          "n_1": 5,
+          "n_2": 7,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.7471024626952236,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "gender",
+          "U_statistic": 229.0,
+          "p_value_raw": 0.9039120553135478,
+          "n_1": 5,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.9423298744235298,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "multiple/none",
+          "U_statistic": 351.0,
+          "p_value_raw": 0.10523370972390969,
+          "n_1": 5,
+          "n_2": 111,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.24554532268912263,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "national_origin/citizenship",
+          "U_statistic": 86.5,
+          "p_value_raw": 0.9602528127460618,
+          "n_1": 5,
+          "n_2": 34,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.9602528127460618,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "race/ethnicity",
+          "U_statistic": 125.5,
+          "p_value_raw": 0.8344294934936076,
+          "n_1": 5,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.9345610327128405,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "religion",
+          "U_statistic": 156.0,
+          "p_value_raw": 0.6059887224447682,
+          "n_1": 5,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.7377254012371092,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "sexual_orientation",
+          "U_statistic": 261.5,
+          "p_value_raw": 0.3764518925704958,
+          "n_1": 5,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.5547712101038885,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "gender",
+          "U_statistic": 374.0,
+          "p_value_raw": 0.3000320492598534,
+          "n_1": 7,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.5547712101038885,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "multiple/none",
+          "U_statistic": 558.0,
+          "p_value_raw": 0.002493247754904387,
+          "n_1": 7,
+          "n_2": 111,
+          "p_value_holm": 0.06233119387260967,
+          "p_value_bh_fdr": 0.01745273428433071,
+          "significant_holm": false,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 0.06233119387260967,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "national_origin/citizenship",
+          "U_statistic": 141.5,
+          "p_value_raw": 0.37184323966702637,
+          "n_1": 7,
+          "n_2": 34,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.5547712101038885,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "race/ethnicity",
+          "U_statistic": 207.5,
+          "p_value_raw": 0.5667350211923965,
+          "n_1": 7,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.7212991178812319,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "religion",
+          "U_statistic": 252.0,
+          "p_value_raw": 0.13224384524767593,
+          "n_1": 7,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.2848328974565328,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "sexual_orientation",
+          "U_statistic": 419.5,
+          "p_value_raw": 0.043415719558733856,
+          "n_1": 7,
+          "n_2": 89,
+          "p_value_holm": 0.911730110733411,
+          "p_value_bh_fdr": 0.1519550184555685,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 0.911730110733411,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "multiple/none",
+          "U_statistic": 6103.5,
+          "p_value_raw": 0.00011038428784877038,
+          "n_1": 89,
+          "n_2": 111,
+          "p_value_holm": 0.0029803757719168004,
+          "p_value_bh_fdr": 0.0015453800298827853,
+          "significant_holm": true,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 0.0029803757719168004,
+          "significant_bonferroni": true
+        },
+        {
+          "group_1": "gender",
+          "group_2": "national_origin/citizenship",
+          "U_statistic": 1495.5,
+          "p_value_raw": 0.9086752360512609,
+          "n_1": 89,
+          "n_2": 34,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.9423298744235298,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "race/ethnicity",
+          "U_statistic": 2165.0,
+          "p_value_raw": 0.33767173801014994,
+          "n_1": 89,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.5547712101038885,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "religion",
+          "U_statistic": 2704.0,
+          "p_value_raw": 0.29448556292740036,
+          "n_1": 89,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.5547712101038885,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "sexual_orientation",
+          "U_statistic": 4539.0,
+          "p_value_raw": 0.033749130993533875,
+          "n_1": 89,
+          "n_2": 89,
+          "p_value_holm": 0.7424808818577453,
+          "p_value_bh_fdr": 0.1349965239741355,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 0.7424808818577453,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "national_origin/citizenship",
+          "U_statistic": 1420.5,
+          "p_value_raw": 0.001469139117217796,
+          "n_1": 111,
+          "n_2": 34,
+          "p_value_holm": 0.038197617047662696,
+          "p_value_bh_fdr": 0.013711965094032764,
+          "significant_holm": true,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 0.038197617047662696,
+          "significant_bonferroni": true
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "race/ethnicity",
+          "U_statistic": 2007.0,
+          "p_value_raw": 8.455244584557542e-06,
+          "n_1": 111,
+          "n_2": 53,
+          "p_value_holm": 0.0002367468483676112,
+          "p_value_bh_fdr": 0.0002367468483676112,
+          "significant_holm": true,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 0.0002367468483676112,
+          "significant_bonferroni": true
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "religion",
+          "U_statistic": 2640.0,
+          "p_value_raw": 0.018612345800281975,
+          "n_1": 111,
+          "n_2": 56,
+          "p_value_holm": 0.4280839534064854,
+          "p_value_bh_fdr": 0.08685761373464922,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 0.4280839534064854,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "sexual_orientation",
+          "U_statistic": 4497.0,
+          "p_value_raw": 0.0987391625532984,
+          "n_1": 111,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.24554532268912263,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "race/ethnicity",
+          "U_statistic": 837.5,
+          "p_value_raw": 0.5221950758246938,
+          "n_1": 34,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.6962601010995918,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "religion",
+          "U_statistic": 1044.0,
+          "p_value_raw": 0.3468613275793585,
+          "n_1": 34,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.5547712101038885,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "sexual_orientation",
+          "U_statistic": 1751.5,
+          "p_value_raw": 0.07946885616447791,
+          "n_1": 34,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.22251279726053813,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "race/ethnicity",
+          "group_2": "religion",
+          "U_statistic": 1732.0,
+          "p_value_raw": 0.07228143142213422,
+          "n_1": 53,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.22251279726053813,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "race/ethnicity",
+          "group_2": "sexual_orientation",
+          "U_statistic": 2896.5,
+          "p_value_raw": 0.004649183922895445,
+          "n_1": 53,
+          "n_2": 89,
+          "p_value_holm": 0.11158041414949069,
+          "p_value_bh_fdr": 0.026035429968214494,
+          "significant_holm": false,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 0.11158041414949069,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "religion",
+          "group_2": "sexual_orientation",
+          "U_statistic": 2644.0,
+          "p_value_raw": 0.4109707427879553,
+          "n_1": 56,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.5753590399031374,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        }
+      ]
+    },
+    "fusion": {
+      "n_comparisons": 28,
+      "pairs": [
+        {
+          "group_1": "age",
+          "group_2": "disability",
+          "U_statistic": 11.0,
+          "p_value_raw": 0.2554845715110693,
+          "n_1": 5,
+          "n_2": 7,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.3765035790689442,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "gender",
+          "U_statistic": 209.5,
+          "p_value_raw": 0.7803716748158089,
+          "n_1": 5,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.8092743294386167,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "multiple/none",
+          "U_statistic": 323.0,
+          "p_value_raw": 0.08203556269797889,
+          "n_1": 5,
+          "n_2": 111,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.16407112539595778,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "national_origin/citizenship",
+          "U_statistic": 67.0,
+          "p_value_raw": 0.3831342787184753,
+          "n_1": 5,
+          "n_2": 34,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.510845704957967,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "race/ethnicity",
+          "U_statistic": 111.5,
+          "p_value_raw": 0.49035157427269394,
+          "n_1": 5,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.5969497425928448,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "religion",
+          "U_statistic": 138.0,
+          "p_value_raw": 0.9556654844126466,
+          "n_1": 5,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.9556654844126466,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "sexual_orientation",
+          "U_statistic": 237.0,
+          "p_value_raw": 0.6932398818318759,
+          "n_1": 5,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.7465660265881741,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "gender",
+          "U_statistic": 409.0,
+          "p_value_raw": 0.07923445307454569,
+          "n_1": 7,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.16407112539595778,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "multiple/none",
+          "U_statistic": 596.5,
+          "p_value_raw": 5.679249075768542e-08,
+          "n_1": 7,
+          "n_2": 111,
+          "p_value_holm": 1.476604759699821e-06,
+          "p_value_bh_fdr": 5.300632470717306e-07,
+          "significant_holm": true,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 1.476604759699821e-06,
+          "significant_bonferroni": true
+        },
+        {
+          "group_1": "disability",
+          "group_2": "national_origin/citizenship",
+          "U_statistic": 138.0,
+          "p_value_raw": 0.4559742591749011,
+          "n_1": 7,
+          "n_2": 34,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.5803308753135105,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "race/ethnicity",
+          "U_statistic": 225.0,
+          "p_value_raw": 0.28629973906229944,
+          "n_1": 7,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.4008196346872192,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "religion",
+          "U_statistic": 266.0,
+          "p_value_raw": 0.04381543116118102,
+          "n_1": 7,
+          "n_2": 56,
+          "p_value_holm": 0.7886777609012584,
+          "p_value_bh_fdr": 0.10934573053241181,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 0.7886777609012584,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "sexual_orientation",
+          "U_statistic": 447.5,
+          "p_value_raw": 0.0030975218439423815,
+          "n_1": 7,
+          "n_2": 89,
+          "p_value_holm": 0.06504795872279001,
+          "p_value_bh_fdr": 0.010841326453798336,
+          "significant_holm": false,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 0.06504795872279001,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "multiple/none",
+          "U_statistic": 6038.0,
+          "p_value_raw": 5.107028938151855e-06,
+          "n_1": 89,
+          "n_2": 111,
+          "p_value_holm": 0.00012767572345379638,
+          "p_value_bh_fdr": 3.574920256706299e-05,
+          "significant_holm": true,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 0.00012767572345379638,
+          "significant_bonferroni": true
+        },
+        {
+          "group_1": "gender",
+          "group_2": "national_origin/citizenship",
+          "U_statistic": 1281.0,
+          "p_value_raw": 0.09933776032000577,
+          "n_1": 89,
+          "n_2": 34,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.1738410805600101,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "race/ethnicity",
+          "U_statistic": 2122.5,
+          "p_value_raw": 0.20892385703484495,
+          "n_1": 89,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.33101111450687326,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "religion",
+          "U_statistic": 2602.0,
+          "p_value_raw": 0.5485479167104066,
+          "n_1": 89,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.6399725694954744,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "sexual_orientation",
+          "U_statistic": 4450.0,
+          "p_value_raw": 0.038782176247780874,
+          "n_1": 89,
+          "n_2": 89,
+          "p_value_holm": 0.7368613487078366,
+          "p_value_bh_fdr": 0.10859009349378644,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 0.7368613487078366,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "national_origin/citizenship",
+          "U_statistic": 1178.0,
+          "p_value_raw": 7.0759036993507326e-09,
+          "n_1": 111,
+          "n_2": 34,
+          "p_value_holm": 1.9812530358182052e-07,
+          "p_value_bh_fdr": 1.9812530358182052e-07,
+          "significant_holm": true,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 1.9812530358182052e-07,
+          "significant_bonferroni": true
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "race/ethnicity",
+          "U_statistic": 1993.0,
+          "p_value_raw": 2.9919513839223693e-08,
+          "n_1": 111,
+          "n_2": 53,
+          "p_value_holm": 8.078268736590397e-07,
+          "p_value_bh_fdr": 4.1887319374913175e-07,
+          "significant_holm": true,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 8.078268736590397e-07,
+          "significant_bonferroni": true
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "religion",
+          "U_statistic": 2554.0,
+          "p_value_raw": 0.00023284766840054872,
+          "n_1": 111,
+          "n_2": 56,
+          "p_value_holm": 0.00558834404161317,
+          "p_value_bh_fdr": 0.0013039469430430727,
+          "significant_holm": true,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 0.00558834404161317,
+          "significant_bonferroni": true
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "sexual_orientation",
+          "U_statistic": 4451.5,
+          "p_value_raw": 0.01076039940677226,
+          "n_1": 111,
+          "n_2": 89,
+          "p_value_holm": 0.2152079881354452,
+          "p_value_bh_fdr": 0.03347679815440258,
+          "significant_holm": false,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 0.2152079881354452,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "race/ethnicity",
+          "U_statistic": 949.0,
+          "p_value_raw": 0.6229783610775863,
+          "n_1": 34,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.6977357644068967,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "religion",
+          "U_statistic": 1140.0,
+          "p_value_raw": 0.0468624559424622,
+          "n_1": 34,
+          "n_2": 56,
+          "p_value_holm": 0.7966617510218574,
+          "p_value_bh_fdr": 0.10934573053241181,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 0.7966617510218574,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "sexual_orientation",
+          "U_statistic": 1932.0,
+          "p_value_raw": 0.0008182152841367183,
+          "n_1": 34,
+          "n_2": 89,
+          "p_value_holm": 0.018818951535144523,
+          "p_value_bh_fdr": 0.0038183379926380193,
+          "significant_holm": true,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 0.018818951535144523,
+          "significant_bonferroni": true
+        },
+        {
+          "group_1": "race/ethnicity",
+          "group_2": "religion",
+          "U_statistic": 1698.0,
+          "p_value_raw": 0.09762970001164513,
+          "n_1": 53,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.1738410805600101,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        },
+        {
+          "group_1": "race/ethnicity",
+          "group_2": "sexual_orientation",
+          "U_statistic": 2886.0,
+          "p_value_raw": 0.001893001190180152,
+          "n_1": 53,
+          "n_2": 89,
+          "p_value_holm": 0.04164602618396335,
+          "p_value_bh_fdr": 0.007572004760720608,
+          "significant_holm": true,
+          "significant_bh_fdr": true,
+          "p_value_bonferroni": 0.04164602618396335,
+          "significant_bonferroni": true
+        },
+        {
+          "group_1": "religion",
+          "group_2": "sexual_orientation",
+          "U_statistic": 2690.0,
+          "p_value_raw": 0.21279285932584713,
+          "n_1": 56,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.33101111450687326,
+          "significant_holm": false,
+          "significant_bh_fdr": false,
+          "p_value_bonferroni": 1.0,
+          "significant_bonferroni": false
+        }
+      ]
+    }
+  },
+  "fishers_exact": {
+    "text_cf": {
+      "n_comparisons": 28,
+      "pairs": [
+        {
+          "group_1": "age",
+          "group_2": "disability",
+          "table": [
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "odds_ratio": 0.8888888888888888,
+          "p_value_raw": 1.0,
+          "n_1": 5,
+          "n_2": 7,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "gender",
+          "table": [
+            [
+              2,
+              3
+            ],
+            [
+              26,
+              63
+            ]
+          ],
+          "odds_ratio": 1.6153846153846154,
+          "p_value_raw": 0.6323595237384737,
+          "n_1": 5,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.8204479304081299,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "multiple/none",
+          "table": [
+            [
+              2,
+              3
+            ],
+            [
+              6,
+              105
+            ]
+          ],
+          "odds_ratio": 11.666666666666666,
+          "p_value_raw": 0.03770541371140232,
+          "n_1": 5,
+          "n_2": 111,
+          "p_value_holm": 0.716402860516644,
+          "p_value_bh_fdr": 0.1055751583919265,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "national_origin/citizenship",
+          "table": [
+            [
+              2,
+              3
+            ],
+            [
+              12,
+              22
+            ]
+          ],
+          "odds_ratio": 1.2222222222222223,
+          "p_value_raw": 1.0,
+          "n_1": 5,
+          "n_2": 34,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "race/ethnicity",
+          "table": [
+            [
+              2,
+              3
+            ],
+            [
+              19,
+              34
+            ]
+          ],
+          "odds_ratio": 1.1929824561403508,
+          "p_value_raw": 1.0,
+          "n_1": 5,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "religion",
+          "table": [
+            [
+              2,
+              3
+            ],
+            [
+              14,
+              42
+            ]
+          ],
+          "odds_ratio": 2.0,
+          "p_value_raw": 0.5992837292472349,
+          "n_1": 5,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.8204479304081299,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              2,
+              3
+            ],
+            [
+              13,
+              76
+            ]
+          ],
+          "odds_ratio": 3.8974358974358974,
+          "p_value_raw": 0.17882685287418057,
+          "n_1": 5,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.38516552926746583,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "gender",
+          "table": [
+            [
+              3,
+              4
+            ],
+            [
+              26,
+              63
+            ]
+          ],
+          "odds_ratio": 1.8173076923076923,
+          "p_value_raw": 0.4282263430651469,
+          "n_1": 7,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.7053139768131832,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "multiple/none",
+          "table": [
+            [
+              3,
+              4
+            ],
+            [
+              6,
+              105
+            ]
+          ],
+          "odds_ratio": 13.125,
+          "p_value_raw": 0.009379625814428826,
+          "n_1": 7,
+          "n_2": 111,
+          "p_value_holm": 0.21573139373186298,
+          "p_value_bh_fdr": 0.043771587134001186,
+          "significant_holm": false,
+          "significant_bh_fdr": true
+        },
+        {
+          "group_1": "disability",
+          "group_2": "national_origin/citizenship",
+          "table": [
+            [
+              3,
+              4
+            ],
+            [
+              12,
+              22
+            ]
+          ],
+          "odds_ratio": 1.375,
+          "p_value_raw": 0.6927800714707006,
+          "n_1": 7,
+          "n_2": 34,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.8204479304081299,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "race/ethnicity",
+          "table": [
+            [
+              3,
+              4
+            ],
+            [
+              19,
+              34
+            ]
+          ],
+          "odds_ratio": 1.3421052631578947,
+          "p_value_raw": 0.6997759594778882,
+          "n_1": 7,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.8204479304081299,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "religion",
+          "table": [
+            [
+              3,
+              4
+            ],
+            [
+              14,
+              42
+            ]
+          ],
+          "odds_ratio": 2.25,
+          "p_value_raw": 0.3752452730320129,
+          "n_1": 7,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.6566792278060226,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              3,
+              4
+            ],
+            [
+              13,
+              76
+            ]
+          ],
+          "odds_ratio": 4.384615384615385,
+          "p_value_raw": 0.08806561029711636,
+          "n_1": 7,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.22416700802902348,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "multiple/none",
+          "table": [
+            [
+              26,
+              63
+            ],
+            [
+              6,
+              105
+            ]
+          ],
+          "odds_ratio": 7.222222222222222,
+          "p_value_raw": 4.920081025230045e-06,
+          "n_1": 89,
+          "n_2": 111,
+          "p_value_holm": 0.00013284218768121122,
+          "p_value_bh_fdr": 6.888113435322063e-05,
+          "significant_holm": true,
+          "significant_bh_fdr": true
+        },
+        {
+          "group_1": "gender",
+          "group_2": "national_origin/citizenship",
+          "table": [
+            [
+              26,
+              63
+            ],
+            [
+              12,
+              22
+            ]
+          ],
+          "odds_ratio": 0.7566137566137566,
+          "p_value_raw": 0.5203713192081807,
+          "n_1": 89,
+          "n_2": 34,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.7668629967278452,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "race/ethnicity",
+          "table": [
+            [
+              26,
+              63
+            ],
+            [
+              19,
+              34
+            ]
+          ],
+          "odds_ratio": 0.7385129490392648,
+          "p_value_raw": 0.4580377635621068,
+          "n_1": 89,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.7125031877632771,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "religion",
+          "table": [
+            [
+              26,
+              63
+            ],
+            [
+              14,
+              42
+            ]
+          ],
+          "odds_ratio": 1.2380952380952381,
+          "p_value_raw": 0.7032410832069684,
+          "n_1": 89,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.8204479304081299,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              26,
+              63
+            ],
+            [
+              13,
+              76
+            ]
+          ],
+          "odds_ratio": 2.4126984126984126,
+          "p_value_raw": 0.028851706227166832,
+          "n_1": 89,
+          "n_2": 89,
+          "p_value_holm": 0.6058858307705035,
+          "p_value_bh_fdr": 0.09704515368795079,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "national_origin/citizenship",
+          "table": [
+            [
+              6,
+              105
+            ],
+            [
+              12,
+              22
+            ]
+          ],
+          "odds_ratio": 0.10476190476190476,
+          "p_value_raw": 3.281760741506154e-05,
+          "n_1": 111,
+          "n_2": 34,
+          "p_value_holm": 0.0008532577927916001,
+          "p_value_bh_fdr": 0.0003062976692072411,
+          "significant_holm": true,
+          "significant_bh_fdr": true
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "race/ethnicity",
+          "table": [
+            [
+              6,
+              105
+            ],
+            [
+              19,
+              34
+            ]
+          ],
+          "odds_ratio": 0.10225563909774436,
+          "p_value_raw": 1.3496877027690858e-06,
+          "n_1": 111,
+          "n_2": 53,
+          "p_value_holm": 3.7791255677534406e-05,
+          "p_value_bh_fdr": 3.7791255677534406e-05,
+          "significant_holm": true,
+          "significant_bh_fdr": true
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "religion",
+          "table": [
+            [
+              6,
+              105
+            ],
+            [
+              14,
+              42
+            ]
+          ],
+          "odds_ratio": 0.17142857142857143,
+          "p_value_raw": 0.000582944426004181,
+          "n_1": 111,
+          "n_2": 56,
+          "p_value_holm": 0.014573610650104525,
+          "p_value_bh_fdr": 0.004080610982029267,
+          "significant_holm": true,
+          "significant_bh_fdr": true
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              6,
+              105
+            ],
+            [
+              13,
+              76
+            ]
+          ],
+          "odds_ratio": 0.33406593406593404,
+          "p_value_raw": 0.031193085113984186,
+          "n_1": 111,
+          "n_2": 89,
+          "p_value_holm": 0.6238617022796837,
+          "p_value_bh_fdr": 0.09704515368795079,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "race/ethnicity",
+          "table": [
+            [
+              12,
+              22
+            ],
+            [
+              19,
+              34
+            ]
+          ],
+          "odds_ratio": 0.9760765550239234,
+          "p_value_raw": 1.0,
+          "n_1": 34,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "religion",
+          "table": [
+            [
+              12,
+              22
+            ],
+            [
+              14,
+              42
+            ]
+          ],
+          "odds_ratio": 1.6363636363636365,
+          "p_value_raw": 0.34191499125969105,
+          "n_1": 34,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.63824131701809,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              12,
+              22
+            ],
+            [
+              13,
+              76
+            ]
+          ],
+          "odds_ratio": 3.1888111888111887,
+          "p_value_raw": 0.0220217858813556,
+          "n_1": 34,
+          "n_2": 89,
+          "p_value_holm": 0.4844792893898232,
+          "p_value_bh_fdr": 0.0880871435254224,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "race/ethnicity",
+          "group_2": "religion",
+          "table": [
+            [
+              19,
+              34
+            ],
+            [
+              14,
+              42
+            ]
+          ],
+          "odds_ratio": 1.6764705882352942,
+          "p_value_raw": 0.29712333842737726,
+          "n_1": 53,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.5942466768547545,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "race/ethnicity",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              19,
+              34
+            ],
+            [
+              13,
+              76
+            ]
+          ],
+          "odds_ratio": 3.266968325791855,
+          "p_value_raw": 0.006282938587418796,
+          "n_1": 53,
+          "n_2": 89,
+          "p_value_holm": 0.1507905260980511,
+          "p_value_bh_fdr": 0.035184456089545256,
+          "significant_holm": false,
+          "significant_bh_fdr": true
+        },
+        {
+          "group_1": "religion",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              14,
+              42
+            ],
+            [
+              13,
+              76
+            ]
+          ],
+          "odds_ratio": 1.9487179487179487,
+          "p_value_raw": 0.13001492260275976,
+          "n_1": 56,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.3033681527397728,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        }
+      ]
+    },
+    "text_ncf": {
+      "n_comparisons": 21,
+      "pairs": [
+        {
+          "group_1": "age",
+          "group_2": "disability",
+          "table": [
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              6
+            ]
+          ],
+          "odds_ratio": null,
+          "p_value_raw": 1.0,
+          "n_1": 3,
+          "n_2": 6,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "gender",
+          "table": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              62
+            ]
+          ],
+          "odds_ratio": 0.0,
+          "p_value_raw": 1.0,
+          "n_1": 3,
+          "n_2": 65,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "national_origin/citizenship",
+          "table": [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              23
+            ]
+          ],
+          "odds_ratio": 0.0,
+          "p_value_raw": 1.0,
+          "n_1": 3,
+          "n_2": 24,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "race/ethnicity",
+          "table": [
+            [
+              0,
+              3
+            ],
+            [
+              80,
+              68
+            ]
+          ],
+          "odds_ratio": 0.0,
+          "p_value_raw": 0.10161340504022402,
+          "n_1": 3,
+          "n_2": 148,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.3556469176407841,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "religion",
+          "table": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              139
+            ]
+          ],
+          "odds_ratio": 0.0,
+          "p_value_raw": 1.0,
+          "n_1": 3,
+          "n_2": 142,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              0,
+              3
+            ],
+            [
+              2,
+              54
+            ]
+          ],
+          "odds_ratio": 0.0,
+          "p_value_raw": 1.0,
+          "n_1": 3,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "gender",
+          "table": [
+            [
+              0,
+              6
+            ],
+            [
+              3,
+              62
+            ]
+          ],
+          "odds_ratio": 0.0,
+          "p_value_raw": 1.0,
+          "n_1": 6,
+          "n_2": 65,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "national_origin/citizenship",
+          "table": [
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              23
+            ]
+          ],
+          "odds_ratio": 0.0,
+          "p_value_raw": 1.0,
+          "n_1": 6,
+          "n_2": 24,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "race/ethnicity",
+          "table": [
+            [
+              0,
+              6
+            ],
+            [
+              80,
+              68
+            ]
+          ],
+          "odds_ratio": 0.0,
+          "p_value_raw": 0.011035254192177435,
+          "n_1": 6,
+          "n_2": 148,
+          "p_value_holm": 0.1875993212670164,
+          "p_value_bh_fdr": 0.04634806760714523,
+          "significant_holm": false,
+          "significant_bh_fdr": true
+        },
+        {
+          "group_1": "disability",
+          "group_2": "religion",
+          "table": [
+            [
+              0,
+              6
+            ],
+            [
+              3,
+              139
+            ]
+          ],
+          "odds_ratio": 0.0,
+          "p_value_raw": 1.0,
+          "n_1": 6,
+          "n_2": 142,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              0,
+              6
+            ],
+            [
+              2,
+              54
+            ]
+          ],
+          "odds_ratio": 0.0,
+          "p_value_raw": 1.0,
+          "n_1": 6,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "national_origin/citizenship",
+          "table": [
+            [
+              3,
+              62
+            ],
+            [
+              1,
+              23
+            ]
+          ],
+          "odds_ratio": 1.1129032258064515,
+          "p_value_raw": 1.0,
+          "n_1": 65,
+          "n_2": 24,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "race/ethnicity",
+          "table": [
+            [
+              3,
+              62
+            ],
+            [
+              80,
+              68
+            ]
+          ],
+          "odds_ratio": 0.04112903225806452,
+          "p_value_raw": 2.2330637003578129e-13,
+          "n_1": 65,
+          "n_2": 148,
+          "p_value_holm": 4.466127400715626e-12,
+          "p_value_bh_fdr": 2.3447168853757036e-12,
+          "significant_holm": true,
+          "significant_bh_fdr": true
+        },
+        {
+          "group_1": "gender",
+          "group_2": "religion",
+          "table": [
+            [
+              3,
+              62
+            ],
+            [
+              3,
+              139
+            ]
+          ],
+          "odds_ratio": 2.2419354838709675,
+          "p_value_raw": 0.38075549366400563,
+          "n_1": 65,
+          "n_2": 142,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              3,
+              62
+            ],
+            [
+              2,
+              54
+            ]
+          ],
+          "odds_ratio": 1.3064516129032258,
+          "p_value_raw": 1.0,
+          "n_1": 65,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "race/ethnicity",
+          "table": [
+            [
+              1,
+              23
+            ],
+            [
+              80,
+              68
+            ]
+          ],
+          "odds_ratio": 0.03695652173913044,
+          "p_value_raw": 2.5113958448114025e-06,
+          "n_1": 24,
+          "n_2": 148,
+          "p_value_holm": 4.520512520660524e-05,
+          "p_value_bh_fdr": 1.3184828185259864e-05,
+          "significant_holm": true,
+          "significant_bh_fdr": true
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "religion",
+          "table": [
+            [
+              1,
+              23
+            ],
+            [
+              3,
+              139
+            ]
+          ],
+          "odds_ratio": 2.0144927536231885,
+          "p_value_raw": 0.46785889357492527,
+          "n_1": 24,
+          "n_2": 142,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              1,
+              23
+            ],
+            [
+              2,
+              54
+            ]
+          ],
+          "odds_ratio": 1.173913043478261,
+          "p_value_raw": 1.0,
+          "n_1": 24,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "race/ethnicity",
+          "group_2": "religion",
+          "table": [
+            [
+              80,
+              68
+            ],
+            [
+              3,
+              139
+            ]
+          ],
+          "odds_ratio": 54.509803921568626,
+          "p_value_raw": 7.454988090743396e-26,
+          "n_1": 148,
+          "n_2": 142,
+          "p_value_holm": 1.5655474990561132e-24,
+          "p_value_bh_fdr": 1.5655474990561132e-24,
+          "significant_holm": true,
+          "significant_bh_fdr": true
+        },
+        {
+          "group_1": "race/ethnicity",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              80,
+              68
+            ],
+            [
+              2,
+              54
+            ]
+          ],
+          "odds_ratio": 31.764705882352942,
+          "p_value_raw": 1.4118138553346491e-12,
+          "n_1": 148,
+          "n_2": 56,
+          "p_value_holm": 2.6824463251358334e-11,
+          "p_value_bh_fdr": 9.882696987342544e-12,
+          "significant_holm": true,
+          "significant_bh_fdr": true
+        },
+        {
+          "group_1": "religion",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              3,
+              139
+            ],
+            [
+              2,
+              54
+            ]
+          ],
+          "odds_ratio": 0.5827338129496403,
+          "p_value_raw": 0.6227888728804527,
+          "n_1": 142,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        }
+      ]
+    },
+    "image": {
+      "n_comparisons": 28,
+      "pairs": [
+        {
+          "group_1": "age",
+          "group_2": "disability",
+          "table": [
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              3
+            ]
+          ],
+          "odds_ratio": 0.5,
+          "p_value_raw": 1.0,
+          "n_1": 5,
+          "n_2": 7,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "gender",
+          "table": [
+            [
+              2,
+              3
+            ],
+            [
+              33,
+              56
+            ]
+          ],
+          "odds_ratio": 1.1313131313131313,
+          "p_value_raw": 1.0,
+          "n_1": 5,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "multiple/none",
+          "table": [
+            [
+              2,
+              3
+            ],
+            [
+              15,
+              96
+            ]
+          ],
+          "odds_ratio": 4.266666666666667,
+          "p_value_raw": 0.15507220772473568,
+          "n_1": 5,
+          "n_2": 111,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.3618351513577166,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "national_origin/citizenship",
+          "table": [
+            [
+              2,
+              3
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "odds_ratio": 1.0769230769230769,
+          "p_value_raw": 1.0,
+          "n_1": 5,
+          "n_2": 34,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "race/ethnicity",
+          "table": [
+            [
+              2,
+              3
+            ],
+            [
+              24,
+              29
+            ]
+          ],
+          "odds_ratio": 0.8055555555555556,
+          "p_value_raw": 1.0,
+          "n_1": 5,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "religion",
+          "table": [
+            [
+              2,
+              3
+            ],
+            [
+              16,
+              40
+            ]
+          ],
+          "odds_ratio": 1.6666666666666667,
+          "p_value_raw": 0.6266052931621963,
+          "n_1": 5,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.8354737242162616,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              2,
+              3
+            ],
+            [
+              20,
+              69
+            ]
+          ],
+          "odds_ratio": 2.3,
+          "p_value_raw": 0.3327701810886437,
+          "n_1": 5,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.608297405069189,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "gender",
+          "table": [
+            [
+              4,
+              3
+            ],
+            [
+              33,
+              56
+            ]
+          ],
+          "odds_ratio": 2.2626262626262625,
+          "p_value_raw": 0.4235698343215277,
+          "n_1": 7,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.608297405069189,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "multiple/none",
+          "table": [
+            [
+              4,
+              3
+            ],
+            [
+              15,
+              96
+            ]
+          ],
+          "odds_ratio": 8.533333333333333,
+          "p_value_raw": 0.012652907892028994,
+          "n_1": 7,
+          "n_2": 111,
+          "p_value_holm": 0.3036697894086958,
+          "p_value_bh_fdr": 0.07085628419536236,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "national_origin/citizenship",
+          "table": [
+            [
+              4,
+              3
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "odds_ratio": 2.1538461538461537,
+          "p_value_raw": 0.42148124227713435,
+          "n_1": 7,
+          "n_2": 34,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.608297405069189,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "race/ethnicity",
+          "table": [
+            [
+              4,
+              3
+            ],
+            [
+              24,
+              29
+            ]
+          ],
+          "odds_ratio": 1.6111111111111112,
+          "p_value_raw": 0.6949693185197201,
+          "n_1": 7,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.8460496051544419,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "religion",
+          "table": [
+            [
+              4,
+              3
+            ],
+            [
+              16,
+              40
+            ]
+          ],
+          "odds_ratio": 3.3333333333333335,
+          "p_value_raw": 0.19477007665204793,
+          "n_1": 7,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.419504780481334,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              4,
+              3
+            ],
+            [
+              20,
+              69
+            ]
+          ],
+          "odds_ratio": 4.6,
+          "p_value_raw": 0.06312607848749163,
+          "n_1": 7,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.2209412747062207,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "multiple/none",
+          "table": [
+            [
+              33,
+              56
+            ],
+            [
+              15,
+              96
+            ]
+          ],
+          "odds_ratio": 3.7714285714285714,
+          "p_value_raw": 0.00012239352710761438,
+          "n_1": 89,
+          "n_2": 111,
+          "p_value_holm": 0.0033046252319055883,
+          "p_value_bh_fdr": 0.0017135093795066015,
+          "significant_holm": true,
+          "significant_bh_fdr": true
+        },
+        {
+          "group_1": "gender",
+          "group_2": "national_origin/citizenship",
+          "table": [
+            [
+              33,
+              56
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "odds_ratio": 0.9519230769230769,
+          "p_value_raw": 1.0,
+          "n_1": 89,
+          "n_2": 34,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "race/ethnicity",
+          "table": [
+            [
+              33,
+              56
+            ],
+            [
+              24,
+              29
+            ]
+          ],
+          "odds_ratio": 0.7120535714285714,
+          "p_value_raw": 0.378257130375797,
+          "n_1": 89,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.608297405069189,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "religion",
+          "table": [
+            [
+              33,
+              56
+            ],
+            [
+              16,
+              40
+            ]
+          ],
+          "odds_ratio": 1.4732142857142858,
+          "p_value_raw": 0.3677300015631828,
+          "n_1": 89,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.608297405069189,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              33,
+              56
+            ],
+            [
+              20,
+              69
+            ]
+          ],
+          "odds_ratio": 2.0330357142857145,
+          "p_value_raw": 0.04864403305742411,
+          "n_1": 89,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.19457613222969644,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "national_origin/citizenship",
+          "table": [
+            [
+              15,
+              96
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "odds_ratio": 0.25240384615384615,
+          "p_value_raw": 0.0026566389388413348,
+          "n_1": 111,
+          "n_2": 34,
+          "p_value_holm": 0.06907261240987471,
+          "p_value_bh_fdr": 0.024795296762519126,
+          "significant_holm": false,
+          "significant_bh_fdr": true
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "race/ethnicity",
+          "table": [
+            [
+              15,
+              96
+            ],
+            [
+              24,
+              29
+            ]
+          ],
+          "odds_ratio": 0.18880208333333334,
+          "p_value_raw": 2.1704912498607024e-05,
+          "n_1": 111,
+          "n_2": 53,
+          "p_value_holm": 0.0006077375499609967,
+          "p_value_bh_fdr": 0.0006077375499609967,
+          "significant_holm": true,
+          "significant_bh_fdr": true
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "religion",
+          "table": [
+            [
+              15,
+              96
+            ],
+            [
+              16,
+              40
+            ]
+          ],
+          "odds_ratio": 0.390625,
+          "p_value_raw": 0.021700202542293424,
+          "n_1": 111,
+          "n_2": 56,
+          "p_value_holm": 0.49910465847274876,
+          "p_value_bh_fdr": 0.10126761186403599,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              15,
+              96
+            ],
+            [
+              20,
+              69
+            ]
+          ],
+          "odds_ratio": 0.5390625,
+          "p_value_raw": 0.13346957467793136,
+          "n_1": 111,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.3397407355438253,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "race/ethnicity",
+          "table": [
+            [
+              13,
+              21
+            ],
+            [
+              24,
+              29
+            ]
+          ],
+          "odds_ratio": 0.748015873015873,
+          "p_value_raw": 0.6571680276725543,
+          "n_1": 34,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.836395671583251,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "religion",
+          "table": [
+            [
+              13,
+              21
+            ],
+            [
+              16,
+              40
+            ]
+          ],
+          "odds_ratio": 1.5476190476190477,
+          "p_value_raw": 0.36150035149118387,
+          "n_1": 34,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.608297405069189,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              13,
+              21
+            ],
+            [
+              20,
+              69
+            ]
+          ],
+          "odds_ratio": 2.1357142857142857,
+          "p_value_raw": 0.11012468264149575,
+          "n_1": 34,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.3083491113961881,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "race/ethnicity",
+          "group_2": "religion",
+          "table": [
+            [
+              24,
+              29
+            ],
+            [
+              16,
+              40
+            ]
+          ],
+          "odds_ratio": 2.0689655172413794,
+          "p_value_raw": 0.07759052204513905,
+          "n_1": 53,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.2413927352515437,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "race/ethnicity",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              24,
+              29
+            ],
+            [
+              20,
+              69
+            ]
+          ],
+          "odds_ratio": 2.8551724137931034,
+          "p_value_raw": 0.008157319700477608,
+          "n_1": 53,
+          "n_2": 89,
+          "p_value_holm": 0.2039329925119402,
+          "p_value_bh_fdr": 0.05710123790334326,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "religion",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              16,
+              40
+            ],
+            [
+              20,
+              69
+            ]
+          ],
+          "odds_ratio": 1.38,
+          "p_value_raw": 0.4344981464779921,
+          "n_1": 56,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.608297405069189,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        }
+      ]
+    },
+    "fusion": {
+      "n_comparisons": 28,
+      "pairs": [
+        {
+          "group_1": "age",
+          "group_2": "disability",
+          "table": [
+            [
+              1,
+              4
+            ],
+            [
+              4,
+              3
+            ]
+          ],
+          "odds_ratio": 0.1875,
+          "p_value_raw": 0.2929292929292929,
+          "n_1": 5,
+          "n_2": 7,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.43168527379053684,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "gender",
+          "table": [
+            [
+              1,
+              4
+            ],
+            [
+              23,
+              66
+            ]
+          ],
+          "odds_ratio": 0.717391304347826,
+          "p_value_raw": 1.0,
+          "n_1": 5,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "multiple/none",
+          "table": [
+            [
+              1,
+              4
+            ],
+            [
+              4,
+              107
+            ]
+          ],
+          "odds_ratio": 6.6875,
+          "p_value_raw": 0.20091579193768608,
+          "n_1": 5,
+          "n_2": 111,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.35160263589095064,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "national_origin/citizenship",
+          "table": [
+            [
+              1,
+              4
+            ],
+            [
+              14,
+              20
+            ]
+          ],
+          "odds_ratio": 0.35714285714285715,
+          "p_value_raw": 0.6308859466754202,
+          "n_1": 5,
+          "n_2": 34,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.7437041161688533,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "race/ethnicity",
+          "table": [
+            [
+              1,
+              4
+            ],
+            [
+              19,
+              34
+            ]
+          ],
+          "odds_ratio": 0.4473684210526316,
+          "p_value_raw": 0.6501965467482709,
+          "n_1": 5,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.7437041161688533,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "religion",
+          "table": [
+            [
+              1,
+              4
+            ],
+            [
+              12,
+              44
+            ]
+          ],
+          "odds_ratio": 0.9166666666666666,
+          "p_value_raw": 1.0,
+          "n_1": 5,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 1.0,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "age",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              1,
+              4
+            ],
+            [
+              12,
+              77
+            ]
+          ],
+          "odds_ratio": 1.6041666666666667,
+          "p_value_raw": 0.5332278953179553,
+          "n_1": 5,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.7109705270906072,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "gender",
+          "table": [
+            [
+              4,
+              3
+            ],
+            [
+              23,
+              66
+            ]
+          ],
+          "odds_ratio": 3.8260869565217392,
+          "p_value_raw": 0.09482353791135353,
+          "n_1": 7,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.20423531242445375,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "multiple/none",
+          "table": [
+            [
+              4,
+              3
+            ],
+            [
+              4,
+              107
+            ]
+          ],
+          "odds_ratio": 35.666666666666664,
+          "p_value_raw": 0.0002929728656967111,
+          "n_1": 7,
+          "n_2": 111,
+          "p_value_holm": 0.007324321642417778,
+          "p_value_bh_fdr": 0.002050810059876978,
+          "significant_holm": true,
+          "significant_bh_fdr": true
+        },
+        {
+          "group_1": "disability",
+          "group_2": "national_origin/citizenship",
+          "table": [
+            [
+              4,
+              3
+            ],
+            [
+              14,
+              20
+            ]
+          ],
+          "odds_ratio": 1.9047619047619047,
+          "p_value_raw": 0.6786006901539636,
+          "n_1": 7,
+          "n_2": 34,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.7437041161688533,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "race/ethnicity",
+          "table": [
+            [
+              4,
+              3
+            ],
+            [
+              19,
+              34
+            ]
+          ],
+          "odds_ratio": 2.3859649122807016,
+          "p_value_raw": 0.4115909782248335,
+          "n_1": 7,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.5762273695147668,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "religion",
+          "table": [
+            [
+              4,
+              3
+            ],
+            [
+              12,
+              44
+            ]
+          ],
+          "odds_ratio": 4.888888888888889,
+          "p_value_raw": 0.06257502125935027,
+          "n_1": 7,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.14600838293848398,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "disability",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              4,
+              3
+            ],
+            [
+              12,
+              77
+            ]
+          ],
+          "odds_ratio": 8.555555555555555,
+          "p_value_raw": 0.013758160234022833,
+          "n_1": 7,
+          "n_2": 89,
+          "p_value_holm": 0.2889213649144795,
+          "p_value_bh_fdr": 0.04815356081907992,
+          "significant_holm": false,
+          "significant_bh_fdr": true
+        },
+        {
+          "group_1": "gender",
+          "group_2": "multiple/none",
+          "table": [
+            [
+              23,
+              66
+            ],
+            [
+              4,
+              107
+            ]
+          ],
+          "odds_ratio": 9.321969696969697,
+          "p_value_raw": 4.703180101505357e-06,
+          "n_1": 89,
+          "n_2": 111,
+          "p_value_holm": 0.00012228268263913926,
+          "p_value_bh_fdr": 4.389634761405e-05,
+          "significant_holm": true,
+          "significant_bh_fdr": true
+        },
+        {
+          "group_1": "gender",
+          "group_2": "national_origin/citizenship",
+          "table": [
+            [
+              23,
+              66
+            ],
+            [
+              14,
+              20
+            ]
+          ],
+          "odds_ratio": 0.49783549783549785,
+          "p_value_raw": 0.12424807346968939,
+          "n_1": 89,
+          "n_2": 34,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.24849614693937877,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "race/ethnicity",
+          "table": [
+            [
+              23,
+              66
+            ],
+            [
+              19,
+              34
+            ]
+          ],
+          "odds_ratio": 0.6236044657097288,
+          "p_value_raw": 0.2545897687001334,
+          "n_1": 89,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.39602852908909636,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "religion",
+          "table": [
+            [
+              23,
+              66
+            ],
+            [
+              12,
+              44
+            ]
+          ],
+          "odds_ratio": 1.2777777777777777,
+          "p_value_raw": 0.6905823935853639,
+          "n_1": 89,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.7437041161688533,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "gender",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              23,
+              66
+            ],
+            [
+              12,
+              77
+            ]
+          ],
+          "odds_ratio": 2.236111111111111,
+          "p_value_raw": 0.05829793869161903,
+          "n_1": 89,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.14600838293848398,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "national_origin/citizenship",
+          "table": [
+            [
+              4,
+              107
+            ],
+            [
+              14,
+              20
+            ]
+          ],
+          "odds_ratio": 0.0534045393858478,
+          "p_value_raw": 2.099944344378231e-07,
+          "n_1": 111,
+          "n_2": 34,
+          "p_value_holm": 5.669849729821224e-06,
+          "p_value_bh_fdr": 2.9399220821295235e-06,
+          "significant_holm": true,
+          "significant_bh_fdr": true
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "race/ethnicity",
+          "table": [
+            [
+              4,
+              107
+            ],
+            [
+              19,
+              34
+            ]
+          ],
+          "odds_ratio": 0.06689621249385146,
+          "p_value_raw": 1.1341583039707964e-07,
+          "n_1": 111,
+          "n_2": 53,
+          "p_value_holm": 3.17564325111823e-06,
+          "p_value_bh_fdr": 2.9399220821295235e-06,
+          "significant_holm": true,
+          "significant_bh_fdr": true
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "religion",
+          "table": [
+            [
+              4,
+              107
+            ],
+            [
+              12,
+              44
+            ]
+          ],
+          "odds_ratio": 0.13707165109034267,
+          "p_value_raw": 0.00045625887006515856,
+          "n_1": 111,
+          "n_2": 56,
+          "p_value_holm": 0.010950212881563805,
+          "p_value_bh_fdr": 0.002555049672364888,
+          "significant_holm": true,
+          "significant_bh_fdr": true
+        },
+        {
+          "group_1": "multiple/none",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              4,
+              107
+            ],
+            [
+              12,
+              77
+            ]
+          ],
+          "odds_ratio": 0.2398753894080997,
+          "p_value_raw": 0.016180311025007617,
+          "n_1": 111,
+          "n_2": 89,
+          "p_value_holm": 0.3236062205001523,
+          "p_value_bh_fdr": 0.050338745411134804,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "race/ethnicity",
+          "table": [
+            [
+              14,
+              20
+            ],
+            [
+              19,
+              34
+            ]
+          ],
+          "odds_ratio": 1.2526315789473683,
+          "p_value_raw": 0.6555920488077984,
+          "n_1": 34,
+          "n_2": 53,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.7437041161688533,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "religion",
+          "table": [
+            [
+              14,
+              20
+            ],
+            [
+              12,
+              44
+            ]
+          ],
+          "odds_ratio": 2.566666666666667,
+          "p_value_raw": 0.056799229641198004,
+          "n_1": 34,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.14600838293848398,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "national_origin/citizenship",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              14,
+              20
+            ],
+            [
+              12,
+              77
+            ]
+          ],
+          "odds_ratio": 4.491666666666666,
+          "p_value_raw": 0.0022896319183277037,
+          "n_1": 34,
+          "n_2": 89,
+          "p_value_holm": 0.052661534121537186,
+          "p_value_bh_fdr": 0.010684948952195952,
+          "significant_holm": false,
+          "significant_bh_fdr": true
+        },
+        {
+          "group_1": "race/ethnicity",
+          "group_2": "religion",
+          "table": [
+            [
+              19,
+              34
+            ],
+            [
+              12,
+              44
+            ]
+          ],
+          "odds_ratio": 2.049019607843137,
+          "p_value_raw": 0.13658768041679065,
+          "n_1": 53,
+          "n_2": 56,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.2549636701113425,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        },
+        {
+          "group_1": "race/ethnicity",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              19,
+              34
+            ],
+            [
+              12,
+              77
+            ]
+          ],
+          "odds_ratio": 3.5857843137254903,
+          "p_value_raw": 0.0029336376993552055,
+          "n_1": 53,
+          "n_2": 89,
+          "p_value_holm": 0.06454002938581452,
+          "p_value_bh_fdr": 0.011734550797420822,
+          "significant_holm": false,
+          "significant_bh_fdr": true
+        },
+        {
+          "group_1": "religion",
+          "group_2": "sexual_orientation",
+          "table": [
+            [
+              12,
+              44
+            ],
+            [
+              12,
+              77
+            ]
+          ],
+          "odds_ratio": 1.75,
+          "p_value_raw": 0.2531969484609128,
+          "n_1": 56,
+          "n_2": 89,
+          "p_value_holm": 1.0,
+          "p_value_bh_fdr": 0.39602852908909636,
+          "significant_holm": false,
+          "significant_bh_fdr": false
+        }
+      ]
+    }
+  },
+  "cohens_d": {
+    "text_cf": {
+      "age vs disability": -0.0529,
+      "age vs gender": 0.2337,
+      "age vs multiple/none": 1.4086,
+      "age vs national_origin/citizenship": 0.0956,
+      "age vs race/ethnicity": 0.0849,
+      "age vs religion": 0.3368,
+      "age vs sexual_orientation": 0.6944,
+      "disability vs gender": 0.2949,
+      "disability vs multiple/none": 1.4838,
+      "disability vs national_origin/citizenship": 0.1534,
+      "disability vs race/ethnicity": 0.1431,
+      "disability vs religion": 0.3991,
+      "disability vs sexual_orientation": 0.7651,
+      "gender vs multiple/none": 0.6827,
+      "gender vs national_origin/citizenship": -0.1308,
+      "gender vs race/ethnicity": -0.1419,
+      "gender vs religion": 0.0937,
+      "gender vs sexual_orientation": 0.3567,
+      "multiple/none vs national_origin/citizenship": -0.9749,
+      "multiple/none vs race/ethnicity": -0.9168,
+      "multiple/none vs religion": -0.6258,
+      "multiple/none vs sexual_orientation": -0.3161,
+      "national_origin/citizenship vs race/ethnicity": -0.0115,
+      "national_origin/citizenship vs religion": 0.226,
+      "national_origin/citizenship vs sexual_orientation": 0.5239,
+      "race/ethnicity vs religion": 0.2356,
+      "race/ethnicity vs sexual_orientation": 0.5208,
+      "religion vs sexual_orientation": 0.2674
+    },
+    "text_ncf": {
+      "age vs disability": 0.0,
+      "age vs gender": -0.2217,
+      "age vs national_origin/citizenship": -0.2128,
+      "age vs race/ethnicity": -1.0883,
+      "age vs religion": -0.1474,
+      "age vs sexual_orientation": -0.1942,
+      "disability vs gender": -0.2266,
+      "disability vs national_origin/citizenship": -0.2252,
+      "disability vs race/ethnicity": -1.0992,
+      "disability vs religion": -0.149,
+      "disability vs sexual_orientation": -0.1992,
+      "gender vs national_origin/citizenship": 0.0214,
+      "gender vs race/ethnicity": -1.1409,
+      "gender vs religion": 0.1488,
+      "gender vs sexual_orientation": 0.052,
+      "national_origin/citizenship vs race/ethnicity": -1.0592,
+      "national_origin/citizenship vs religion": 0.1333,
+      "national_origin/citizenship vs sexual_orientation": 0.0309,
+      "race/ethnicity vs religion": 1.3991,
+      "race/ethnicity vs sexual_orientation": 1.1536,
+      "religion vs sexual_orientation": -0.0926
+    },
+    "image": {
+      "age vs disability": -0.3176,
+      "age vs gender": 0.0598,
+      "age vs multiple/none": 0.7512,
+      "age vs national_origin/citizenship": 0.0353,
+      "age vs race/ethnicity": -0.1044,
+      "age vs religion": 0.247,
+      "age vs sexual_orientation": 0.4113,
+      "disability vs gender": 0.4103,
+      "disability vs multiple/none": 1.2261,
+      "disability vs national_origin/citizenship": 0.3783,
+      "disability vs race/ethnicity": 0.2344,
+      "disability vs religion": 0.6155,
+      "disability vs sexual_orientation": 0.8101,
+      "gender vs multiple/none": 0.5709,
+      "gender vs national_origin/citizenship": -0.0237,
+      "gender vs race/ethnicity": -0.1667,
+      "gender vs religion": 0.1793,
+      "gender vs sexual_orientation": 0.3218,
+      "multiple/none vs national_origin/citizenship": -0.6451,
+      "multiple/none vs race/ethnicity": -0.7914,
+      "multiple/none vs religion": -0.3916,
+      "multiple/none vs sexual_orientation": -0.2362,
+      "national_origin/citizenship vs race/ethnicity": -0.1412,
+      "national_origin/citizenship vs religion": 0.2055,
+      "national_origin/citizenship vs sexual_orientation": 0.3574,
+      "race/ethnicity vs religion": 0.3488,
+      "race/ethnicity vs sexual_orientation": 0.5044,
+      "religion vs sexual_orientation": 0.1405
+    },
+    "fusion": {
+      "age vs disability": -0.7407,
+      "age vs gender": -0.1326,
+      "age vs multiple/none": 0.8113,
+      "age vs national_origin/citizenship": -0.4285,
+      "age vs race/ethnicity": -0.3291,
+      "age vs religion": -0.0343,
+      "age vs sexual_orientation": 0.1869,
+      "disability vs gender": 0.7004,
+      "disability vs multiple/none": 2.4433,
+      "disability vs national_origin/citizenship": 0.3161,
+      "disability vs race/ethnicity": 0.4349,
+      "disability vs religion": 0.8356,
+      "disability vs sexual_orientation": 1.2171,
+      "gender vs multiple/none": 0.6843,
+      "gender vs national_origin/citizenship": -0.3354,
+      "gender vs race/ethnicity": -0.2189,
+      "gender vs religion": 0.1026,
+      "gender vs sexual_orientation": 0.313,
+      "multiple/none vs national_origin/citizenship": -1.2921,
+      "multiple/none vs race/ethnicity": -1.0246,
+      "multiple/none vs religion": -0.6282,
+      "multiple/none vs sexual_orientation": -0.3684,
+      "national_origin/citizenship vs race/ethnicity": 0.1087,
+      "national_origin/citizenship vs religion": 0.4408,
+      "national_origin/citizenship vs sexual_orientation": 0.706,
+      "race/ethnicity vs religion": 0.3208,
+      "race/ethnicity vs sexual_orientation": 0.557,
+      "religion vs sexual_orientation": 0.2135
+    }
+  },
+  "regression": {
+    "n_samples": 888,
+    "logistic_regression": {
+      "method": "logistic_regression",
+      "error": "Singular matrix"
+    },
+    "ols_linear_probability_model": {
+      "method": "OLS_linear_probability_model",
+      "r_squared": 0.21856614096507465,
+      "r_squared_adj": 0.20603455559681705,
+      "anova_table": {
+        "C(group_label)": {
+          "sum_sq": 29.991492867921764,
+          "df": 7.0,
+          "F": 32.812894805375,
+          "PR(>F)": 9.308289897823556e-36
+        },
+        "C(condition)": {
+          "sum_sq": 4.1755323335871575,
+          "df": 1.0,
+          "F": 31.97837222550771,
+          "PR(>F)": 2.1120942233542385e-08
+        },
+        "C(group_label):C(condition)": {
+          "sum_sq": 6.5295550849766,
+          "df": 7.0,
+          "F": 7.143812582880778,
+          "PR(>F)": 1.890256336263656e-07
+        },
+        "Residual": {
+          "sum_sq": 113.99078419363525,
+          "df": 873.0,
+          "F": null,
+          "PR(>F)": null
+        }
+      },
+      "interaction_significant": true,
+      "interaction_p_value": 1.890256336263656e-07
+    }
+  },
+  "ols_regression": {
+    "n_samples": 888,
+    "logistic_regression": {
+      "method": "logistic_regression",
+      "error": "Singular matrix"
+    },
+    "ols_linear_probability_model": {
+      "method": "OLS_linear_probability_model",
+      "r_squared": 0.21856614096507465,
+      "r_squared_adj": 0.20603455559681705,
+      "anova_table": {
+        "C(group_label)": {
+          "sum_sq": 29.991492867921764,
+          "df": 7.0,
+          "F": 32.812894805375,
+          "PR(>F)": 9.308289897823556e-36
+        },
+        "C(condition)": {
+          "sum_sq": 4.1755323335871575,
+          "df": 1.0,
+          "F": 31.97837222550771,
+          "PR(>F)": 2.1120942233542385e-08
+        },
+        "C(group_label):C(condition)": {
+          "sum_sq": 6.5295550849766,
+          "df": 7.0,
+          "F": 7.143812582880778,
+          "PR(>F)": 1.890256336263656e-07
+        },
+        "Residual": {
+          "sum_sq": 113.99078419363525,
+          "df": 873.0,
+          "F": null,
+          "PR(>F)": null
+        }
+      },
+      "interaction_significant": true,
+      "interaction_p_value": 1.890256336263656e-07
+    }
+  },
+  "dfpr_regression": {
+    "text_cf": {
+      "modality": "text_cf",
+      "method": "logistic_regression",
+      "pseudo_r_squared": 0.0872055060673751,
+      "llr_p_value": 1.1509964739063662e-06,
+      "significant_overall": true,
+      "coefficients": {
+        "Intercept": {
+          "coefficient": -0.4055,
+          "p_value": 0.656923,
+          "significant": false
+        },
+        "C(group_label)[T.disability]": {
+          "coefficient": 0.1178,
+          "p_value": 0.921172,
+          "significant": false
+        },
+        "C(group_label)[T.gender]": {
+          "coefficient": -0.4796,
+          "p_value": 0.610743,
+          "significant": false
+        },
+        "C(group_label)[T.multiple/none]": {
+          "coefficient": -2.4567,
+          "p_value": 0.01448,
+          "significant": true
+        },
+        "C(group_label)[T.national_origin/citizenship]": {
+          "coefficient": -0.2007,
+          "p_value": 0.837898,
+          "significant": false
+        },
+        "C(group_label)[T.race/ethnicity]": {
+          "coefficient": -0.1765,
+          "p_value": 0.853674,
+          "significant": false
+        },
+        "C(group_label)[T.religion]": {
+          "coefficient": -0.6931,
+          "p_value": 0.471948,
+          "significant": false
+        },
+        "C(group_label)[T.sexual_orientation]": {
+          "coefficient": -1.3603,
+          "p_value": 0.156891,
+          "significant": false
+        }
+      }
+    },
+    "text_ncf": {
+      "modality": "text_ncf",
+      "method": "logistic_regression",
+      "pseudo_r_squared": 0.3635554830460066,
+      "llr_p_value": 2.5222190534822545e-32,
+      "significant_overall": true,
+      "coefficients": {
+        "Intercept": {
+          "coefficient": -20.5102,
+          "p_value": 0.999003,
+          "significant": false
+        },
+        "C(group_label)[T.disability]": {
+          "coefficient": -6.0438,
+          "p_value": 0.99998,
+          "significant": false
+        },
+        "C(group_label)[T.gender]": {
+          "coefficient": 17.4817,
+          "p_value": 0.99915,
+          "significant": false
+        },
+        "C(group_label)[T.national_origin/citizenship]": {
+          "coefficient": 17.3747,
+          "p_value": 0.999155,
+          "significant": false
+        },
+        "C(group_label)[T.race/ethnicity]": {
+          "coefficient": 20.6727,
+          "p_value": 0.998995,
+          "significant": false
+        },
+        "C(group_label)[T.religion]": {
+          "coefficient": 16.6743,
+          "p_value": 0.999189,
+          "significant": false
+        },
+        "C(group_label)[T.sexual_orientation]": {
+          "coefficient": 17.2144,
+          "p_value": 0.999163,
+          "significant": false
+        }
+      }
+    },
+    "image": {
+      "modality": "image",
+      "method": "logistic_regression",
+      "pseudo_r_squared": 0.05618519796524446,
+      "llr_p_value": 0.00010057851761546066,
+      "significant_overall": true,
+      "coefficients": {
+        "Intercept": {
+          "coefficient": -0.4055,
+          "p_value": 0.656923,
+          "significant": false
+        },
+        "C(group_label)[T.disability]": {
+          "coefficient": 0.6931,
+          "p_value": 0.560324,
+          "significant": false
+        },
+        "C(group_label)[T.gender]": {
+          "coefficient": -0.1234,
+          "p_value": 0.89545,
+          "significant": false
+        },
+        "C(group_label)[T.multiple/none]": {
+          "coefficient": -1.4508,
+          "p_value": 0.128376,
+          "significant": false
+        },
+        "C(group_label)[T.national_origin/citizenship]": {
+          "coefficient": -0.0741,
+          "p_value": 0.939642,
+          "significant": false
+        },
+        "C(group_label)[T.race/ethnicity]": {
+          "coefficient": 0.2162,
+          "p_value": 0.820635,
+          "significant": false
+        },
+        "C(group_label)[T.religion]": {
+          "coefficient": -0.5108,
+          "p_value": 0.594496,
+          "significant": false
+        },
+        "C(group_label)[T.sexual_orientation]": {
+          "coefficient": -0.8329,
+          "p_value": 0.379387,
+          "significant": false
+        }
+      }
+    },
+    "fusion": {
+      "modality": "fusion",
+      "method": "logistic_regression",
+      "pseudo_r_squared": 0.11321512572445047,
+      "llr_p_value": 1.221557776661467e-08,
+      "significant_overall": true,
+      "coefficients": {
+        "Intercept": {
+          "coefficient": -1.3863,
+          "p_value": 0.214998,
+          "significant": false
+        },
+        "C(group_label)[T.disability]": {
+          "coefficient": 1.674,
+          "p_value": 0.216342,
+          "significant": false
+        },
+        "C(group_label)[T.gender]": {
+          "coefficient": 0.3321,
+          "p_value": 0.771557,
+          "significant": false
+        },
+        "C(group_label)[T.multiple/none]": {
+          "coefficient": -1.9002,
+          "p_value": 0.121929,
+          "significant": false
+        },
+        "C(group_label)[T.national_origin/citizenship]": {
+          "coefficient": 1.0296,
+          "p_value": 0.37929,
+          "significant": false
+        },
+        "C(group_label)[T.race/ethnicity]": {
+          "coefficient": 0.8044,
+          "p_value": 0.485838,
+          "significant": false
+        },
+        "C(group_label)[T.religion]": {
+          "coefficient": 0.087,
+          "p_value": 0.940438,
+          "significant": false
+        },
+        "C(group_label)[T.sexual_orientation]": {
+          "coefficient": -0.4726,
+          "p_value": 0.683781,
+          "significant": false
+        }
+      }
+    }
+  },
+  "cochrans_q": {
+    "Q_statistic": 59.282051282051285,
+    "p_value": 1.3655743202889425e-14,
+    "n_paired": 222,
+    "significant": true,
+    "fp_rate_cf": 0.35135135135135137,
+    "fp_rate_ncf": 0.04504504504504504
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "condition": "cf_no_adv",
+  "condition_label": "CF-no-adv",
+  "description": "Stacking Ensemble: train OOF fitting + single held-out test evaluation",
+  "protocol": "5-fold CV/OOF on train only; final meta-learner fit on full train; one-shot evaluation on test",
+  "best_meta_learner": "GradientBoosting",
+  "n_train_samples": 4158,
+  "n_test_samples": 892,
+  "n_folds": 5,
+  "n_meta_features": 9,
+  "feature_names": [
+    "p_text",
+    "p_image",
+    "p_text*p_image",
+    "|p_text-p_image|",
+    "max(pt,pi)",
+    "min(pt,pi)",
+    "mean(pt,pi)",
+    "p_text^2",
+    "p_image^2"
+  ],
+  "meta_learner_selection": {
+    "LogisticRegression": {
+      "mean_f1": 0.9966,
+      "std_f1": 0.0022
+    },
+    "GradientBoosting": {
+      "mean_f1": 0.9969,
+      "std_f1": 0.0021
+    },
+    "MLP(32,16)": {
+      "mean_f1": 0.9969,
+      "std_f1": 0.0019
+    },
+    "ExtraTrees": {
+      "mean_f1": 0.9959,
+      "std_f1": 0.0017
+    }
+  },
+  "threshold_train_oof": 0.17,
+  "threshold_calibrated_train_oof": 0.4,
+  "fold_f1s": [
+    0.9976,
+    0.9976,
+    0.9976,
+    0.9916,
+    0.9976
+  ],
+  "oof_metrics_uncalibrated": {
+    "accuracy": 0.9969,
+    "precision": 0.9962,
+    "recall": 0.9976,
+    "f1": 0.9969,
+    "auc_roc": 0.9993,
+    "brier": 0.0033,
+    "fpr": 0.0039,
+    "fnr": 0.0024,
+    "ece": 0.0033
+  },
+  "test_metrics_uncalibrated": {
+    "accuracy": 0.8397,
+    "precision": 0.8252,
+    "recall": 0.8638,
+    "f1": 0.8441,
+    "auc_roc": 0.9132,
+    "brier": 0.1558,
+    "fpr": 0.1847,
+    "fnr": 0.1362,
+    "ece": 0.1551
+  },
+  "test_metrics_calibrated": {
+    "accuracy": 0.8453,
+    "precision": 0.8125,
+    "recall": 0.8996,
+    "f1": 0.8538,
+    "auc_roc": 0.905,
+    "brier": 0.1392,
+    "fpr": 0.2095,
+    "fnr": 0.1004,
+    "ece": 0.1198
+  },
+  "per_group_fpr_stacking_test": {
+    "race/ethnicity": {
+      "n": 165,
+      "n_non_hate": 53,
+      "fpr": 0.3585
+    },
+    "religion": {
+      "n": 168,
+      "n_non_hate": 56,
+      "fpr": 0.1964
+    },
+    "gender": {
+      "n": 161,
+      "n_non_hate": 89,
+      "fpr": 0.2247
+    },
+    "sexual_orientation": {
+      "n": 129,
+      "n_non_hate": 89,
+      "fpr": 0.1124
+    },
+    "national_origin/citizenship": {
+      "n": 122,
+      "n_non_hate": 34,
+      "fpr": 0.4118
+    },
+    "disability": {
+      "n": 23,
+      "n_non_hate": 7,
+      "fpr": 0.5714
+    },
+    "age": {
+      "n": 13,
+      "n_non_hate": 5,
+      "fpr": 0.2
+    },
+    "multiple/none": {
+      "n": 111,
+      "n_non_hate": 111,
+      "fpr": 0.027
+    }
+  },
+  "f1_95ci": [
+    0.8173,
+    0.8688
+  ],
+  "baselines": {
+    "text_only": {
+      "accuracy": 0.8386,
+      "precision": 0.8028,
+      "recall": 0.8996,
+      "f1": 0.8484,
+      "auc_roc": 0.9044,
+      "brier": 0.143,
+      "fpr": 0.223,
+      "fnr": 0.1004,
+      "ece": 0.1293
+    },
+    "image_only": {
+      "accuracy": 0.7747,
+      "precision": 0.7656,
+      "recall": 0.7946,
+      "f1": 0.7798,
+      "auc_roc": 0.8474,
+      "brier": 0.1592,
+      "fpr": 0.2455,
+      "fnr": 0.2054,
+      "ece": 0.0738
+    },
+    "scalar_fusion": {
+      "accuracy": 0.8352,
+      "precision": 0.8142,
+      "recall": 0.8705,
+      "f1": 0.8414,
+      "auc_roc": 0.9132,
+      "brier": 0.1201,
+      "fpr": 0.2005,
+      "fnr": 0.1295,
+      "ece": 0.0736
+    }
+  },
+  "runtime_seconds": 15.6
+}

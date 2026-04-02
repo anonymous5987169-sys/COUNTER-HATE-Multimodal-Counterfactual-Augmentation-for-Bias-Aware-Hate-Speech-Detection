@@ -1,0 +1,279 @@
+{
+  "description": "Feature-Level Cross-Modal Fusion: GMU + Cross-Attention (MiniLM embeddings \u00d7 EfficientNet backbone features)",
+  "condition": "ncf",
+  "condition_label": "nCF",
+  "architecture": {
+    "text_dim": 768,
+    "image_raw_dim": 1280,
+    "image_proj_dim": 768,
+    "cross_attention_output_components": [
+      "text_attn",
+      "image_attn",
+      "gated_text",
+      "gated_image"
+    ],
+    "concat_dim": 3072,
+    "concat_formula": "concat_dim = 4 * text_dim = 1536",
+    "task_head": "Linear(1536,256) -> ReLU -> Dropout -> Linear(256,1)",
+    "adv_head": "GRL -> Linear(1536,256) -> ReLU -> Linear(256,8)"
+  },
+  "parameter_sanity": {
+    "derived_concat_dim": 3072,
+    "model_concat_dim": 3072,
+    "concat_dim_matches": true,
+    "trainable_params": 8469257,
+    "total_params": 8469257
+  },
+  "n_train": 70,
+  "n_val": 15,
+  "n_test": 15,
+  "n_folds": 2,
+  "device": "cuda",
+  "smoke_test": true,
+  "cv_results": {
+    "fold_val_f1s": [
+      0.7636,
+      0.7727
+    ],
+    "fold_val_aucs": [
+      0.7749,
+      0.7937
+    ],
+    "mean_f1": 0.7681,
+    "std_f1": 0.0046,
+    "mean_auc": 0.7843,
+    "std_auc": 0.0094
+  },
+  "ensemble": {
+    "metrics": {
+      "accuracy": 0.6,
+      "precision": 0.6667,
+      "recall": 0.6667,
+      "f1": 0.6667,
+      "auc_roc": 0.5926,
+      "brier": 0.2673,
+      "fpr": 0.5,
+      "fnr": 0.3333
+    },
+    "fairness": {
+      "demographic_parity_diff": null,
+      "equalised_odds_diff": null,
+      "max_fpr_across_groups": null,
+      "min_fpr_across_groups": null
+    },
+    "per_group": {
+      "race/ethnicity": {
+        "n": 1,
+        "n_hate": 1,
+        "n_non_hate": 0,
+        "fpr": null,
+        "fnr": 1.0,
+        "auc": null
+      },
+      "religion": {
+        "n": 3,
+        "n_hate": 2,
+        "n_non_hate": 1,
+        "fpr": 1.0,
+        "fnr": 0.5,
+        "auc": 0.5
+      },
+      "gender": {
+        "n": 4,
+        "n_hate": 2,
+        "n_non_hate": 2,
+        "fpr": 0.5,
+        "fnr": 0.0,
+        "auc": 0.5
+      },
+      "sexual_orientation": {
+        "n": 1,
+        "n_hate": 0,
+        "n_non_hate": 1,
+        "fpr": 0.0,
+        "fnr": null,
+        "auc": null
+      },
+      "national_origin/citizenship": {
+        "n": 1,
+        "n_hate": 1,
+        "n_non_hate": 0,
+        "fpr": null,
+        "fnr": 0.0,
+        "auc": null
+      },
+      "disability": {
+        "n": 3,
+        "n_hate": 3,
+        "n_non_hate": 0,
+        "fpr": null,
+        "fnr": 0.3333,
+        "auc": null
+      },
+      "age": {
+        "n": 0,
+        "fpr": null,
+        "fnr": null,
+        "auc": null
+      },
+      "multiple/none": {
+        "n": 2,
+        "n_hate": 0,
+        "n_non_hate": 2,
+        "fpr": 0.5,
+        "fnr": null,
+        "auc": null
+      }
+    },
+    "ece": 0.211,
+    "ci": {
+      "f1_ci": [
+        0.5004,
+        0.8884
+      ],
+      "auc_ci": [
+        0.3115,
+        0.8419
+      ],
+      "fpr_ci": [
+        0.0,
+        0.8417
+      ]
+    },
+    "threshold": 0.76
+  },
+  "best_fold": {
+    "fold_idx": 1,
+    "metrics": {
+      "accuracy": 0.5333,
+      "precision": 0.5833,
+      "recall": 0.7778,
+      "f1": 0.6667,
+      "auc_roc": 0.5556,
+      "brier": 0.2946,
+      "fpr": 0.8333,
+      "fnr": 0.2222
+    },
+    "fairness": {
+      "demographic_parity_diff": null,
+      "equalised_odds_diff": null,
+      "max_fpr_across_groups": null,
+      "min_fpr_across_groups": null
+    },
+    "ece": 0.2769,
+    "ci": {
+      "f1_ci": [
+        0.4569,
+        0.9131
+      ],
+      "auc_ci": [
+        0.3336,
+        0.8267
+      ],
+      "fpr_ci": [
+        0.2375,
+        1.0
+      ]
+    },
+    "threshold": 0.76
+  },
+  "final_model": {
+    "metrics": {
+      "accuracy": 0.6,
+      "precision": 0.6667,
+      "recall": 0.6667,
+      "f1": 0.6667,
+      "auc_roc": 0.6481,
+      "brier": 0.2365,
+      "fpr": 0.5,
+      "fnr": 0.3333
+    },
+    "fairness": {
+      "demographic_parity_diff": null,
+      "equalised_odds_diff": null,
+      "max_fpr_across_groups": null,
+      "min_fpr_across_groups": null
+    },
+    "ece": 0.147,
+    "ci": {
+      "f1_ci": [
+        0.4658,
+        0.8884
+      ],
+      "auc_ci": [
+        0.3737,
+        0.9165
+      ],
+      "fpr_ci": [
+        0.0,
+        0.7104
+      ]
+    },
+    "threshold": 0.44
+  },
+  "runtime_seconds": 9.9,
+  "late_fusion_comparison": {
+    "models": [
+      {
+        "name": "Late Fusion: Text-Only",
+        "f1": 0.8471,
+        "f1_ci": [
+          0.8194,
+          0.8729
+        ],
+        "auc_roc": 0.9056,
+        "fpr": 0.214,
+        "dp_diff": 0.781,
+        "eo_diff": 0.6522
+      },
+      {
+        "name": "Late Fusion: Image-Only",
+        "f1": 0.8025,
+        "f1_ci": [
+          0.773,
+          0.8299
+        ],
+        "auc_roc": 0.8474,
+        "fpr": 0.2883,
+        "dp_diff": 0.6075,
+        "eo_diff": 0.8288
+      },
+      {
+        "name": "Late Fusion: Equal Fusion",
+        "f1": 0.8526,
+        "f1_ci": [
+          0.8263,
+          0.8767
+        ],
+        "auc_roc": 0.9099,
+        "fpr": 0.2005,
+        "dp_diff": 0.7901,
+        "eo_diff": 0.7497
+      },
+      {
+        "name": "Late Fusion: Learned Fusion",
+        "f1": 0.8539,
+        "f1_ci": [
+          0.8275,
+          0.8778
+        ],
+        "auc_roc": 0.9132,
+        "fpr": 0.2275,
+        "dp_diff": 0.781,
+        "eo_diff": 0.6605
+      },
+      {
+        "name": "Cross-Attn + GMU (Ensemble)",
+        "f1": 0.6666666666666666,
+        "f1_ci": [
+          0.5004,
+          0.8884
+        ],
+        "auc_roc": 0.5925925925925926,
+        "fpr": 0.5,
+        "dp_diff": null,
+        "eo_diff": null
+      }
+    ]
+  }
+}

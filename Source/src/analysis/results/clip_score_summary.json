@@ -1,0 +1,79 @@
+{
+  "overall": {
+    "mean": 0.9090202450752258,
+    "std": 0.09789669513702393,
+    "median": 0.9377451539039612,
+    "min": 0.606723427772522,
+    "max": 1.0,
+    "n": 100,
+    "n_flagged": 0,
+    "pct_flagged": 0.0,
+    "threshold": 0.2
+  },
+  "per_class": {
+    "ambiguous": {
+      "mean": 0.9493390321731567,
+      "std": 0.07153323292732239,
+      "median": 0.9830509424209595,
+      "n": 8,
+      "n_flagged": 0,
+      "pct_flagged": 0.0
+    },
+    "counter_speech": {
+      "mean": 0.9375208616256714,
+      "std": 0.07384523004293442,
+      "median": 0.9669767618179321,
+      "n": 10,
+      "n_flagged": 0,
+      "pct_flagged": 0.0
+    },
+    "hate_gender": {
+      "mean": 0.8465097546577454,
+      "std": 0.106088787317276,
+      "median": 0.8424981236457825,
+      "n": 19,
+      "n_flagged": 0,
+      "pct_flagged": 0.0
+    },
+    "hate_other": {
+      "mean": 0.9480891227722168,
+      "std": 0.05667831003665924,
+      "median": 0.9669524431228638,
+      "n": 5,
+      "n_flagged": 0,
+      "pct_flagged": 0.0
+    },
+    "hate_race": {
+      "mean": 0.8816837668418884,
+      "std": 0.08270435780286789,
+      "median": 0.8661918640136719,
+      "n": 15,
+      "n_flagged": 0,
+      "pct_flagged": 0.0
+    },
+    "hate_religion": {
+      "mean": 0.9439626336097717,
+      "std": 0.08517444878816605,
+      "median": 0.9995760917663574,
+      "n": 16,
+      "n_flagged": 0,
+      "pct_flagged": 0.0
+    },
+    "neutral_discussion": {
+      "mean": 0.9768813252449036,
+      "std": 0.03915570303797722,
+      "median": 1.0,
+      "n": 12,
+      "n_flagged": 0,
+      "pct_flagged": 0.0
+    },
+    "offensive_non_hate": {
+      "mean": 0.8704491257667542,
+      "std": 0.12412203103303909,
+      "median": 0.9057109951972961,
+      "n": 15,
+      "n_flagged": 0,
+      "pct_flagged": 0.0
+    }
+  }
+}

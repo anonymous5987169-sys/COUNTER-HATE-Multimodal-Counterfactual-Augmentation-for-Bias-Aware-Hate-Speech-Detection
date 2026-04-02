@@ -1,0 +1,779 @@
+{
+  "nCF": {
+    "condition": "nCF",
+    "n_samples": 714,
+    "results": {
+      "equal_weight": {
+        "metrics": {
+          "accuracy": 0.8697478991596639,
+          "precision": 0.8238213399503722,
+          "recall": 0.9378531073446328,
+          "f1": 0.8771466314398944,
+          "auc_roc": 0.9338355304456999,
+          "brier": 0.09862805617504417,
+          "fpr": 0.19722222222222222,
+          "fnr": 0.062146892655367235,
+          "tn": 289,
+          "fp": 71,
+          "fn": 22,
+          "tp": 332
+        },
+        "fairness": {
+          "race/ethnicity": {
+            "n_samples": 132,
+            "n_positive": 86,
+            "fpr": 0.41304347826086957,
+            "fnr": 0.05813953488372093,
+            "accuracy": 0.8181818181818182
+          },
+          "religion": {
+            "n_samples": 140,
+            "n_positive": 93,
+            "fpr": 0.2553191489361702,
+            "fnr": 0.053763440860215055,
+            "accuracy": 0.8785714285714286
+          },
+          "gender": {
+            "n_samples": 160,
+            "n_positive": 85,
+            "fpr": 0.22666666666666666,
+            "fnr": 0.058823529411764705,
+            "accuracy": 0.8625
+          },
+          "sexual_orientation": {
+            "n_samples": 72,
+            "n_positive": 0,
+            "fpr": 0.1111111111111111,
+            "fnr": 0,
+            "accuracy": 0.8888888888888888
+          },
+          "national_origin/citizenship": {
+            "n_samples": 26,
+            "n_positive": 0,
+            "fpr": 0.34615384615384615,
+            "fnr": 0,
+            "accuracy": 0.6538461538461539
+          },
+          "disability": {
+            "n_samples": 4,
+            "n_positive": 0,
+            "fpr": 0.75,
+            "fnr": 0,
+            "accuracy": 0.25
+          },
+          "age": {
+            "n_samples": 4,
+            "n_positive": 0,
+            "fpr": 0.25,
+            "fnr": 0,
+            "accuracy": 0.75
+          },
+          "multiple/none": {
+            "n_samples": 86,
+            "n_positive": 0,
+            "fpr": 0.023255813953488372,
+            "fnr": 0,
+            "accuracy": 0.9767441860465116
+          }
+        },
+        "bootstrap_ci": {
+          "f1": {
+            "mean": 0.8770266318433402,
+            "ci_lower": 0.851818012554527,
+            "ci_upper": 0.9014123376623376,
+            "std": 0.013102881753787677
+          }
+        },
+        "threshold": 0.5,
+        "learned_weight": null
+      },
+      "product": {
+        "metrics": {
+          "accuracy": 0.8697478991596639,
+          "precision": 0.8238213399503722,
+          "recall": 0.9378531073446328,
+          "f1": 0.8771466314398944,
+          "auc_roc": 0.9350674827369743,
+          "brier": 0.09391460297573218,
+          "fpr": 0.19722222222222222,
+          "fnr": 0.062146892655367235,
+          "tn": 289,
+          "fp": 71,
+          "fn": 22,
+          "tp": 332
+        },
+        "fairness": {
+          "race/ethnicity": {
+            "n_samples": 132,
+            "n_positive": 86,
+            "fpr": 0.41304347826086957,
+            "fnr": 0.05813953488372093,
+            "accuracy": 0.8181818181818182
+          },
+          "religion": {
+            "n_samples": 140,
+            "n_positive": 93,
+            "fpr": 0.2553191489361702,
+            "fnr": 0.053763440860215055,
+            "accuracy": 0.8785714285714286
+          },
+          "gender": {
+            "n_samples": 160,
+            "n_positive": 85,
+            "fpr": 0.22666666666666666,
+            "fnr": 0.058823529411764705,
+            "accuracy": 0.8625
+          },
+          "sexual_orientation": {
+            "n_samples": 72,
+            "n_positive": 0,
+            "fpr": 0.1111111111111111,
+            "fnr": 0,
+            "accuracy": 0.8888888888888888
+          },
+          "national_origin/citizenship": {
+            "n_samples": 26,
+            "n_positive": 0,
+            "fpr": 0.34615384615384615,
+            "fnr": 0,
+            "accuracy": 0.6538461538461539
+          },
+          "disability": {
+            "n_samples": 4,
+            "n_positive": 0,
+            "fpr": 0.75,
+            "fnr": 0,
+            "accuracy": 0.25
+          },
+          "age": {
+            "n_samples": 4,
+            "n_positive": 0,
+            "fpr": 0.25,
+            "fnr": 0,
+            "accuracy": 0.75
+          },
+          "multiple/none": {
+            "n_samples": 86,
+            "n_positive": 0,
+            "fpr": 0.023255813953488372,
+            "fnr": 0,
+            "accuracy": 0.9767441860465116
+          }
+        },
+        "bootstrap_ci": {
+          "f1": {
+            "mean": 0.8770266318433402,
+            "ci_lower": 0.851818012554527,
+            "ci_upper": 0.9014123376623376,
+            "std": 0.013102881753787677
+          }
+        },
+        "threshold": 0.5,
+        "learned_weight": null
+      },
+      "learned_weight": {
+        "metrics": {
+          "accuracy": 0.8641456582633054,
+          "precision": 0.7927107061503417,
+          "recall": 0.9830508474576272,
+          "f1": 0.8776796973518285,
+          "auc_roc": 0.9354048964218455,
+          "brier": 0.0966669616214791,
+          "fpr": 0.25277777777777777,
+          "fnr": 0.01694915254237288,
+          "tn": 269,
+          "fp": 91,
+          "fn": 6,
+          "tp": 348
+        },
+        "fairness": {
+          "race/ethnicity": {
+            "n_samples": 132,
+            "n_positive": 86,
+            "fpr": 0.4782608695652174,
+            "fnr": 0.011627906976744186,
+            "accuracy": 0.8257575757575758
+          },
+          "religion": {
+            "n_samples": 140,
+            "n_positive": 93,
+            "fpr": 0.2765957446808511,
+            "fnr": 0.010752688172043012,
+            "accuracy": 0.9
+          },
+          "gender": {
+            "n_samples": 160,
+            "n_positive": 85,
+            "fpr": 0.32,
+            "fnr": 0.023529411764705882,
+            "accuracy": 0.8375
+          },
+          "sexual_orientation": {
+            "n_samples": 72,
+            "n_positive": 0,
+            "fpr": 0.16666666666666666,
+            "fnr": 0,
+            "accuracy": 0.8333333333333334
+          },
+          "national_origin/citizenship": {
+            "n_samples": 26,
+            "n_positive": 0,
+            "fpr": 0.34615384615384615,
+            "fnr": 0,
+            "accuracy": 0.6538461538461539
+          },
+          "disability": {
+            "n_samples": 4,
+            "n_positive": 0,
+            "fpr": 0.75,
+            "fnr": 0,
+            "accuracy": 0.25
+          },
+          "age": {
+            "n_samples": 4,
+            "n_positive": 0,
+            "fpr": 0.25,
+            "fnr": 0,
+            "accuracy": 0.75
+          },
+          "multiple/none": {
+            "n_samples": 86,
+            "n_positive": 0,
+            "fpr": 0.08139534883720931,
+            "fnr": 0,
+            "accuracy": 0.9186046511627907
+          }
+        },
+        "bootstrap_ci": {
+          "f1": {
+            "mean": 0.877759717551844,
+            "ci_lower": 0.852116638119707,
+            "ci_upper": 0.9010887803574803,
+            "std": 0.012675431556768773
+          }
+        },
+        "threshold": 0.3500000000000001,
+        "learned_weight": 0.55
+      }
+    },
+    "timestamp": 1774564268.1514134
+  },
+  "CF-no-adv": {
+    "condition": "CF-no-adv",
+    "n_samples": 714,
+    "results": {
+      "equal_weight": {
+        "metrics": {
+          "accuracy": 0.8627450980392157,
+          "precision": 0.8528610354223434,
+          "recall": 0.876750700280112,
+          "f1": 0.8646408839779005,
+          "auc_roc": 0.9277201076509035,
+          "brier": 0.10133765593950671,
+          "fpr": 0.15126050420168066,
+          "fnr": 0.12324929971988796,
+          "tn": 303,
+          "fp": 54,
+          "fn": 44,
+          "tp": 313
+        },
+        "fairness": {
+          "race/ethnicity": {
+            "n_samples": 133,
+            "n_positive": 93,
+            "fpr": 0.325,
+            "fnr": 0.15053763440860216,
+            "accuracy": 0.7969924812030075
+          },
+          "religion": {
+            "n_samples": 132,
+            "n_positive": 88,
+            "fpr": 0.20454545454545456,
+            "fnr": 0.11363636363636363,
+            "accuracy": 0.8560606060606061
+          },
+          "gender": {
+            "n_samples": 160,
+            "n_positive": 85,
+            "fpr": 0.17333333333333334,
+            "fnr": 0.10588235294117647,
+            "accuracy": 0.8625
+          },
+          "sexual_orientation": {
+            "n_samples": 72,
+            "n_positive": 0,
+            "fpr": 0.09722222222222222,
+            "fnr": 0,
+            "accuracy": 0.9027777777777778
+          },
+          "national_origin/citizenship": {
+            "n_samples": 29,
+            "n_positive": 0,
+            "fpr": 0.13793103448275862,
+            "fnr": 0,
+            "accuracy": 0.8620689655172413
+          },
+          "disability": {
+            "n_samples": 7,
+            "n_positive": 0,
+            "fpr": 0.5714285714285714,
+            "fnr": 0,
+            "accuracy": 0.42857142857142855
+          },
+          "age": {
+            "n_samples": 5,
+            "n_positive": 0,
+            "fpr": 0.4,
+            "fnr": 0,
+            "accuracy": 0.6
+          },
+          "multiple/none": {
+            "n_samples": 85,
+            "n_positive": 0,
+            "fpr": 0.023529411764705882,
+            "fnr": 0,
+            "accuracy": 0.9764705882352941
+          }
+        },
+        "bootstrap_ci": {
+          "f1": {
+            "mean": 0.8642518259656611,
+            "ci_lower": 0.8370765588003157,
+            "ci_upper": 0.8896418690270168,
+            "std": 0.013764296510089861
+          }
+        },
+        "threshold": 0.5,
+        "learned_weight": null
+      },
+      "product": {
+        "metrics": {
+          "accuracy": 0.8627450980392157,
+          "precision": 0.8528610354223434,
+          "recall": 0.876750700280112,
+          "f1": 0.8646408839779005,
+          "auc_roc": 0.9388539729617337,
+          "brier": 0.114136801257795,
+          "fpr": 0.15126050420168066,
+          "fnr": 0.12324929971988796,
+          "tn": 303,
+          "fp": 54,
+          "fn": 44,
+          "tp": 313
+        },
+        "fairness": {
+          "race/ethnicity": {
+            "n_samples": 133,
+            "n_positive": 93,
+            "fpr": 0.325,
+            "fnr": 0.15053763440860216,
+            "accuracy": 0.7969924812030075
+          },
+          "religion": {
+            "n_samples": 132,
+            "n_positive": 88,
+            "fpr": 0.20454545454545456,
+            "fnr": 0.11363636363636363,
+            "accuracy": 0.8560606060606061
+          },
+          "gender": {
+            "n_samples": 160,
+            "n_positive": 85,
+            "fpr": 0.17333333333333334,
+            "fnr": 0.10588235294117647,
+            "accuracy": 0.8625
+          },
+          "sexual_orientation": {
+            "n_samples": 72,
+            "n_positive": 0,
+            "fpr": 0.09722222222222222,
+            "fnr": 0,
+            "accuracy": 0.9027777777777778
+          },
+          "national_origin/citizenship": {
+            "n_samples": 29,
+            "n_positive": 0,
+            "fpr": 0.13793103448275862,
+            "fnr": 0,
+            "accuracy": 0.8620689655172413
+          },
+          "disability": {
+            "n_samples": 7,
+            "n_positive": 0,
+            "fpr": 0.5714285714285714,
+            "fnr": 0,
+            "accuracy": 0.42857142857142855
+          },
+          "age": {
+            "n_samples": 5,
+            "n_positive": 0,
+            "fpr": 0.4,
+            "fnr": 0,
+            "accuracy": 0.6
+          },
+          "multiple/none": {
+            "n_samples": 85,
+            "n_positive": 0,
+            "fpr": 0.023529411764705882,
+            "fnr": 0,
+            "accuracy": 0.9764705882352941
+          }
+        },
+        "bootstrap_ci": {
+          "f1": {
+            "mean": 0.8642518259656611,
+            "ci_lower": 0.8370765588003157,
+            "ci_upper": 0.8896418690270168,
+            "std": 0.013764296510089861
+          }
+        },
+        "threshold": 0.5,
+        "learned_weight": null
+      },
+      "learned_weight": {
+        "metrics": {
+          "accuracy": 0.8473389355742297,
+          "precision": 0.7995169082125604,
+          "recall": 0.927170868347339,
+          "f1": 0.8586251621271076,
+          "auc_roc": 0.9199130632645216,
+          "brier": 0.10942831611185894,
+          "fpr": 0.23249299719887956,
+          "fnr": 0.07282913165266107,
+          "tn": 274,
+          "fp": 83,
+          "fn": 26,
+          "tp": 331
+        },
+        "fairness": {
+          "race/ethnicity": {
+            "n_samples": 133,
+            "n_positive": 93,
+            "fpr": 0.375,
+            "fnr": 0.08602150537634409,
+            "accuracy": 0.8270676691729323
+          },
+          "religion": {
+            "n_samples": 132,
+            "n_positive": 88,
+            "fpr": 0.22727272727272727,
+            "fnr": 0.06818181818181818,
+            "accuracy": 0.8787878787878788
+          },
+          "gender": {
+            "n_samples": 160,
+            "n_positive": 85,
+            "fpr": 0.30666666666666664,
+            "fnr": 0.058823529411764705,
+            "accuracy": 0.825
+          },
+          "sexual_orientation": {
+            "n_samples": 72,
+            "n_positive": 0,
+            "fpr": 0.18055555555555555,
+            "fnr": 0,
+            "accuracy": 0.8194444444444444
+          },
+          "national_origin/citizenship": {
+            "n_samples": 29,
+            "n_positive": 0,
+            "fpr": 0.27586206896551724,
+            "fnr": 0,
+            "accuracy": 0.7241379310344828
+          },
+          "disability": {
+            "n_samples": 7,
+            "n_positive": 0,
+            "fpr": 0.5714285714285714,
+            "fnr": 0,
+            "accuracy": 0.42857142857142855
+          },
+          "age": {
+            "n_samples": 5,
+            "n_positive": 0,
+            "fpr": 0.4,
+            "fnr": 0,
+            "accuracy": 0.6
+          },
+          "multiple/none": {
+            "n_samples": 85,
+            "n_positive": 0,
+            "fpr": 0.09411764705882353,
+            "fnr": 0,
+            "accuracy": 0.9058823529411765
+          }
+        },
+        "bootstrap_ci": {
+          "f1": {
+            "mean": 0.8585842311107245,
+            "ci_lower": 0.831181918478297,
+            "ci_upper": 0.8835084559706357,
+            "std": 0.013529080180418842
+          }
+        },
+        "threshold": 0.5000000000000001,
+        "learned_weight": 0.25
+      }
+    },
+    "timestamp": 1774564273.3926854
+  },
+  "CF+GRL": {
+    "condition": "CF+GRL",
+    "n_samples": 714,
+    "results": {
+      "equal_weight": {
+        "metrics": {
+          "accuracy": 0.8627450980392157,
+          "precision": 0.8509485094850948,
+          "recall": 0.8795518207282913,
+          "f1": 0.8650137741046832,
+          "auc_roc": 0.9280339586815118,
+          "brier": 0.09976317282076963,
+          "fpr": 0.15406162464985995,
+          "fnr": 0.12044817927170869,
+          "tn": 302,
+          "fp": 55,
+          "fn": 43,
+          "tp": 314
+        },
+        "fairness": {
+          "race/ethnicity": {
+            "n_samples": 133,
+            "n_positive": 93,
+            "fpr": 0.325,
+            "fnr": 0.15053763440860216,
+            "accuracy": 0.7969924812030075
+          },
+          "religion": {
+            "n_samples": 132,
+            "n_positive": 88,
+            "fpr": 0.20454545454545456,
+            "fnr": 0.11363636363636363,
+            "accuracy": 0.8560606060606061
+          },
+          "gender": {
+            "n_samples": 160,
+            "n_positive": 85,
+            "fpr": 0.18666666666666668,
+            "fnr": 0.10588235294117647,
+            "accuracy": 0.85625
+          },
+          "sexual_orientation": {
+            "n_samples": 72,
+            "n_positive": 0,
+            "fpr": 0.09722222222222222,
+            "fnr": 0,
+            "accuracy": 0.9027777777777778
+          },
+          "national_origin/citizenship": {
+            "n_samples": 29,
+            "n_positive": 0,
+            "fpr": 0.13793103448275862,
+            "fnr": 0,
+            "accuracy": 0.8620689655172413
+          },
+          "disability": {
+            "n_samples": 7,
+            "n_positive": 0,
+            "fpr": 0.5714285714285714,
+            "fnr": 0,
+            "accuracy": 0.42857142857142855
+          },
+          "age": {
+            "n_samples": 5,
+            "n_positive": 0,
+            "fpr": 0.4,
+            "fnr": 0,
+            "accuracy": 0.6
+          },
+          "multiple/none": {
+            "n_samples": 85,
+            "n_positive": 0,
+            "fpr": 0.023529411764705882,
+            "fnr": 0,
+            "accuracy": 0.9764705882352941
+          }
+        },
+        "bootstrap_ci": {
+          "f1": {
+            "mean": 0.8646780754491319,
+            "ci_lower": 0.8374672082592876,
+            "ci_upper": 0.8898018215550683,
+            "std": 0.013705580802084817
+          }
+        },
+        "threshold": 0.5,
+        "learned_weight": null
+      },
+      "product": {
+        "metrics": {
+          "accuracy": 0.8627450980392157,
+          "precision": 0.8509485094850948,
+          "recall": 0.8795518207282913,
+          "f1": 0.8650137741046832,
+          "auc_roc": 0.9395679840563677,
+          "brier": 0.11334253856184476,
+          "fpr": 0.15406162464985995,
+          "fnr": 0.12044817927170869,
+          "tn": 302,
+          "fp": 55,
+          "fn": 43,
+          "tp": 314
+        },
+        "fairness": {
+          "race/ethnicity": {
+            "n_samples": 133,
+            "n_positive": 93,
+            "fpr": 0.325,
+            "fnr": 0.15053763440860216,
+            "accuracy": 0.7969924812030075
+          },
+          "religion": {
+            "n_samples": 132,
+            "n_positive": 88,
+            "fpr": 0.20454545454545456,
+            "fnr": 0.11363636363636363,
+            "accuracy": 0.8560606060606061
+          },
+          "gender": {
+            "n_samples": 160,
+            "n_positive": 85,
+            "fpr": 0.18666666666666668,
+            "fnr": 0.10588235294117647,
+            "accuracy": 0.85625
+          },
+          "sexual_orientation": {
+            "n_samples": 72,
+            "n_positive": 0,
+            "fpr": 0.09722222222222222,
+            "fnr": 0,
+            "accuracy": 0.9027777777777778
+          },
+          "national_origin/citizenship": {
+            "n_samples": 29,
+            "n_positive": 0,
+            "fpr": 0.13793103448275862,
+            "fnr": 0,
+            "accuracy": 0.8620689655172413
+          },
+          "disability": {
+            "n_samples": 7,
+            "n_positive": 0,
+            "fpr": 0.5714285714285714,
+            "fnr": 0,
+            "accuracy": 0.42857142857142855
+          },
+          "age": {
+            "n_samples": 5,
+            "n_positive": 0,
+            "fpr": 0.4,
+            "fnr": 0,
+            "accuracy": 0.6
+          },
+          "multiple/none": {
+            "n_samples": 85,
+            "n_positive": 0,
+            "fpr": 0.023529411764705882,
+            "fnr": 0,
+            "accuracy": 0.9764705882352941
+          }
+        },
+        "bootstrap_ci": {
+          "f1": {
+            "mean": 0.8646780754491319,
+            "ci_lower": 0.8374672082592876,
+            "ci_upper": 0.8898018215550683,
+            "std": 0.013705580802084817
+          }
+        },
+        "threshold": 0.5,
+        "learned_weight": null
+      },
+      "learned_weight": {
+        "metrics": {
+          "accuracy": 0.8613445378151261,
+          "precision": 0.8131067961165048,
+          "recall": 0.938375350140056,
+          "f1": 0.871261378413524,
+          "auc_roc": 0.921670629035928,
+          "brier": 0.10659691450414338,
+          "fpr": 0.21568627450980393,
+          "fnr": 0.06162464985994398,
+          "tn": 280,
+          "fp": 77,
+          "fn": 22,
+          "tp": 335
+        },
+        "fairness": {
+          "race/ethnicity": {
+            "n_samples": 133,
+            "n_positive": 93,
+            "fpr": 0.375,
+            "fnr": 0.08602150537634409,
+            "accuracy": 0.8270676691729323
+          },
+          "religion": {
+            "n_samples": 132,
+            "n_positive": 88,
+            "fpr": 0.22727272727272727,
+            "fnr": 0.06818181818181818,
+            "accuracy": 0.8787878787878788
+          },
+          "gender": {
+            "n_samples": 160,
+            "n_positive": 85,
+            "fpr": 0.26666666666666666,
+            "fnr": 0.047058823529411764,
+            "accuracy": 0.85
+          },
+          "sexual_orientation": {
+            "n_samples": 72,
+            "n_positive": 0,
+            "fpr": 0.16666666666666666,
+            "fnr": 0,
+            "accuracy": 0.8333333333333334
+          },
+          "national_origin/citizenship": {
+            "n_samples": 29,
+            "n_positive": 0,
+            "fpr": 0.27586206896551724,
+            "fnr": 0,
+            "accuracy": 0.7241379310344828
+          },
+          "disability": {
+            "n_samples": 7,
+            "n_positive": 0,
+            "fpr": 0.5714285714285714,
+            "fnr": 0,
+            "accuracy": 0.42857142857142855
+          },
+          "age": {
+            "n_samples": 5,
+            "n_positive": 0,
+            "fpr": 0.4,
+            "fnr": 0,
+            "accuracy": 0.6
+          },
+          "multiple/none": {
+            "n_samples": 85,
+            "n_positive": 0,
+            "fpr": 0.07058823529411765,
+            "fnr": 0,
+            "accuracy": 0.9294117647058824
+          }
+        },
+        "bootstrap_ci": {
+          "f1": {
+            "mean": 0.8710696338152836,
+            "ci_lower": 0.8445528455284553,
+            "ci_upper": 0.8951671549443238,
+            "std": 0.013058844104292632
+          }
+        },
+        "threshold": 0.5000000000000001,
+        "learned_weight": 0.25
+      }
+    },
+    "timestamp": 1774564278.4782467
+  }
+}

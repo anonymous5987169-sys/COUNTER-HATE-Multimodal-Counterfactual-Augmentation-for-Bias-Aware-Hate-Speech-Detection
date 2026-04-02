@@ -1,0 +1,479 @@
+{
+  "description": "Comprehensive error analysis and failure pattern detection",
+  "source": "stacking_predictions_test_cf_no_adv.csv",
+  "n_samples": 892,
+  "confusion_matrix": {
+    "TN": 362,
+    "FP": 82,
+    "FN": 61,
+    "TP": 387
+  },
+  "overall": {
+    "error_rate": 0.1603,
+    "fpr": 0.1847,
+    "fnr": 0.1362
+  },
+  "per_group_errors": {
+    "race/ethnicity": {
+      "n": 165,
+      "TP": 92,
+      "FP": 19,
+      "TN": 34,
+      "FN": 20,
+      "f1": 0.8251,
+      "error_rate": 0.2364,
+      "fpr": 0.3585,
+      "fnr": 0.1786
+    },
+    "religion": {
+      "n": 168,
+      "TP": 108,
+      "FP": 11,
+      "TN": 45,
+      "FN": 4,
+      "f1": 0.9351,
+      "error_rate": 0.0893,
+      "fpr": 0.1964,
+      "fnr": 0.0357
+    },
+    "gender": {
+      "n": 161,
+      "TP": 62,
+      "FP": 20,
+      "TN": 69,
+      "FN": 10,
+      "f1": 0.8052,
+      "error_rate": 0.1863,
+      "fpr": 0.2247,
+      "fnr": 0.1389
+    },
+    "sexual_orientation": {
+      "n": 129,
+      "TP": 35,
+      "FP": 10,
+      "TN": 79,
+      "FN": 5,
+      "f1": 0.8235,
+      "error_rate": 0.1163,
+      "fpr": 0.1124,
+      "fnr": 0.125
+    },
+    "national_origin/citizenship": {
+      "n": 122,
+      "TP": 69,
+      "FP": 14,
+      "TN": 20,
+      "FN": 19,
+      "f1": 0.807,
+      "error_rate": 0.2705,
+      "fpr": 0.4118,
+      "fnr": 0.2159
+    },
+    "disability": {
+      "n": 23,
+      "TP": 15,
+      "FP": 4,
+      "TN": 3,
+      "FN": 1,
+      "f1": 0.8571,
+      "error_rate": 0.2174,
+      "fpr": 0.5714,
+      "fnr": 0.0625
+    },
+    "age": {
+      "n": 13,
+      "TP": 6,
+      "FP": 1,
+      "TN": 4,
+      "FN": 2,
+      "f1": 0.8,
+      "error_rate": 0.2308,
+      "fpr": 0.2,
+      "fnr": 0.25
+    },
+    "multiple/none": {
+      "n": 111,
+      "TP": 0,
+      "FP": 3,
+      "TN": 108,
+      "FN": 0,
+      "f1": 0.0,
+      "error_rate": 0.027,
+      "fpr": 0.027,
+      "fnr": 0.0
+    }
+  },
+  "hardest_false_positives": [
+    {
+      "idx": 783,
+      "confidence": 0.5,
+      "p_stacking": 1.0,
+      "p_text": 1.0,
+      "p_image": 0.9786,
+      "group": "sexual_orientation",
+      "text_preview": "dGayWisher Hey gDayWisher, I hope you can fuck right off,you IQ deficient robot"
+    },
+    {
+      "idx": 818,
+      "confidence": 0.5,
+      "p_stacking": 1.0,
+      "p_text": 0.9999,
+      "p_image": 0.9975,
+      "group": "sexual_orientation",
+      "text_preview": "You can only fuck Hitler in the ass if you're in hell."
+    },
+    {
+      "idx": 820,
+      "confidence": 0.5,
+      "p_stacking": 1.0,
+      "p_text": 0.9996,
+      "p_image": 0.9587,
+      "group": "national_origin/citizenship",
+      "text_preview": "They deserve this poverty, they sound like inhumane pieces of shit over there"
+    },
+    {
+      "idx": 835,
+      "confidence": 0.5,
+      "p_stacking": 1.0,
+      "p_text": 1.0,
+      "p_image": 0.98,
+      "group": "gender",
+      "text_preview": "Inbred, sister fucking low IQ murderous stains on humanity. Change my mind."
+    },
+    {
+      "idx": 851,
+      "confidence": 0.5,
+      "p_stacking": 1.0,
+      "p_text": 0.9996,
+      "p_image": 0.8997,
+      "group": "disability",
+      "text_preview": "you should practice your second amendment right and shoot those voices in your head, peckerwood boy."
+    },
+    {
+      "idx": 858,
+      "confidence": 0.5,
+      "p_stacking": 1.0,
+      "p_text": 0.9991,
+      "p_image": 0.9653,
+      "group": "race/ethnicity",
+      "text_preview": "Keep killing us white boys. You have made america a war zone. Trump and MAGATerrorism you own this. Republicans are terr"
+    },
+    {
+      "idx": 878,
+      "confidence": 0.5,
+      "p_stacking": 1.0,
+      "p_text": 0.9999,
+      "p_image": 0.9388,
+      "group": "race/ethnicity",
+      "text_preview": "really you prick- you are a fucking friend of Israel you would masturbate thinking of fucking nothing yahoo URL"
+    },
+    {
+      "idx": 880,
+      "confidence": 0.5,
+      "p_stacking": 1.0,
+      "p_text": 0.9981,
+      "p_image": 0.9961,
+      "group": "race/ethnicity",
+      "text_preview": "Well maybe instead of just eating our Kebabs, they should take another page out of brown folks' book and WASH THEIR ASSE"
+    },
+    {
+      "idx": 785,
+      "confidence": 0.5,
+      "p_stacking": 1.0,
+      "p_text": 0.9999,
+      "p_image": 0.7215,
+      "group": "race/ethnicity",
+      "text_preview": "Go back to Somalia save your own dam country and leave AMERICA to Americans!"
+    },
+    {
+      "idx": 789,
+      "confidence": 0.5,
+      "p_stacking": 1.0,
+      "p_text": 0.9998,
+      "p_image": 0.7972,
+      "group": "disability",
+      "text_preview": ">Im to autistic to get it \\*too You are a certified autist now."
+    }
+  ],
+  "hardest_false_negatives": [
+    {
+      "idx": 391,
+      "confidence": 0.5,
+      "p_stacking": 0.0,
+      "p_text": 0.0034,
+      "p_image": 0.2081,
+      "group": "disability",
+      "text_preview": "Find his fat ass on the closest golf course that doesn't allow minorities."
+    },
+    {
+      "idx": 415,
+      "confidence": 0.5,
+      "p_stacking": 0.0,
+      "p_text": 0.0,
+      "p_image": 0.1804,
+      "group": "national_origin/citizenship",
+      "text_preview": ">Baklava is definitely Turkish. >We all recall with fond memories when Turkey was a cultured nation Yeah, I miss the day"
+    },
+    {
+      "idx": 416,
+      "confidence": 0.5,
+      "p_stacking": 0.0,
+      "p_text": 0.0026,
+      "p_image": 0.1249,
+      "group": "national_origin/citizenship",
+      "text_preview": "Im polish american and i agree not about the communism part but because russian men are retarded and russian women are s"
+    },
+    {
+      "idx": 619,
+      "confidence": 0.5,
+      "p_stacking": 0.0,
+      "p_text": 0.0146,
+      "p_image": 0.0349,
+      "group": "religion",
+      "text_preview": "Each of these pastor have targets of min.100 souls, which ensures their family/children education in best of school beco"
+    },
+    {
+      "idx": 426,
+      "confidence": 0.5,
+      "p_stacking": 0.0,
+      "p_text": 0.0001,
+      "p_image": 0.8263,
+      "group": "national_origin/citizenship",
+      "text_preview": "I wish someone snapped in my country, its too populated here, poverty everywhere with population growing very fast like "
+    },
+    {
+      "idx": 419,
+      "confidence": 0.5,
+      "p_stacking": 0.0,
+      "p_text": 0.0011,
+      "p_image": 0.9468,
+      "group": "national_origin/citizenship",
+      "text_preview": "Jairo Carbajal About time, deport them all and build the wall! DemonRats want to give free health care to illegal immigr"
+    },
+    {
+      "idx": 432,
+      "confidence": 0.5,
+      "p_stacking": 0.0,
+      "p_text": 0.0,
+      "p_image": 0.356,
+      "group": "national_origin/citizenship",
+      "text_preview": "A UN representative ? Means a Con. Or criminal herself. UN is a criminal organization. Ilegales have NO rights."
+    },
+    {
+      "idx": 385,
+      "confidence": 0.5,
+      "p_stacking": 0.0,
+      "p_text": 0.0001,
+      "p_image": 0.5724,
+      "group": "national_origin/citizenship",
+      "text_preview": "This tumor of a country is rapidly infecting all of human civilisation too"
+    },
+    {
+      "idx": 546,
+      "confidence": 0.5,
+      "p_stacking": 0.0,
+      "p_text": 0.0012,
+      "p_image": 0.7077,
+      "group": "race/ethnicity",
+      "text_preview": "you're the one coping because you cant get friends in school LOL \u200b cope harder, nigger"
+    },
+    {
+      "idx": 450,
+      "confidence": 0.5,
+      "p_stacking": 0.0,
+      "p_text": 0.0031,
+      "p_image": 0.7116,
+      "group": "race/ethnicity",
+      "text_preview": "I look so fuckin stupid crying I ain't no weak bitch and I ain't never cry ova a nigga"
+    }
+  ],
+  "text_feature_analysis": {
+    "false_positives": {
+      "mean_words": 24.8,
+      "median_words": 19.0,
+      "max_words": 57
+    },
+    "false_negatives": {
+      "mean_words": 25.3,
+      "median_words": 20.0,
+      "max_words": 98
+    },
+    "true_positives": {
+      "mean_words": 28.8,
+      "median_words": 24.0,
+      "max_words": 103
+    },
+    "true_negatives": {
+      "mean_words": 35.6,
+      "median_words": 32.0,
+      "max_words": 116
+    }
+  },
+  "fp_top_words": [
+    {
+      "word": "fuck",
+      "count": 19
+    },
+    {
+      "word": "url",
+      "count": 12
+    },
+    {
+      "word": "country",
+      "count": 9
+    },
+    {
+      "word": "white",
+      "count": 9
+    },
+    {
+      "word": "fucking",
+      "count": 9
+    },
+    {
+      "word": "shit",
+      "count": 7
+    },
+    {
+      "word": "ass",
+      "count": 7
+    },
+    {
+      "word": "our",
+      "count": 6
+    },
+    {
+      "word": "her",
+      "count": 6
+    },
+    {
+      "word": "now",
+      "count": 6
+    },
+    {
+      "word": "off",
+      "count": 6
+    },
+    {
+      "word": "bitch",
+      "count": 6
+    },
+    {
+      "word": "time",
+      "count": 6
+    },
+    {
+      "word": "america",
+      "count": 5
+    },
+    {
+      "word": "dumb",
+      "count": 5
+    }
+  ],
+  "fn_top_words": [
+    {
+      "word": "url",
+      "count": 14
+    },
+    {
+      "word": "ass",
+      "count": 7
+    },
+    {
+      "word": "her",
+      "count": 6
+    },
+    {
+      "word": "need",
+      "count": 6
+    },
+    {
+      "word": "back",
+      "count": 6
+    },
+    {
+      "word": "american",
+      "count": 5
+    },
+    {
+      "word": "why",
+      "count": 5
+    },
+    {
+      "word": "fuck",
+      "count": 5
+    },
+    {
+      "word": "women",
+      "count": 4
+    },
+    {
+      "word": "where",
+      "count": 4
+    },
+    {
+      "word": "see",
+      "count": 4
+    },
+    {
+      "word": "his",
+      "count": 4
+    },
+    {
+      "word": "country",
+      "count": 4
+    },
+    {
+      "word": "too",
+      "count": 4
+    },
+    {
+      "word": "family",
+      "count": 4
+    }
+  ],
+  "modality_disagreement": {
+    "n_agree": 689,
+    "n_disagree": 203,
+    "accuracy_when_agree": 0.8955,
+    "accuracy_when_disagree": 0.6502,
+    "text_correct_on_disagree": 120,
+    "image_correct_on_disagree": 83,
+    "neither_correct": 0
+  },
+  "disagree_by_group": {
+    "race/ethnicity": {
+      "n_disagree": 46,
+      "disagree_rate": 0.2788
+    },
+    "religion": {
+      "n_disagree": 25,
+      "disagree_rate": 0.1488
+    },
+    "gender": {
+      "n_disagree": 42,
+      "disagree_rate": 0.2609
+    },
+    "sexual_orientation": {
+      "n_disagree": 25,
+      "disagree_rate": 0.1938
+    },
+    "national_origin/citizenship": {
+      "n_disagree": 31,
+      "disagree_rate": 0.2541
+    },
+    "disability": {
+      "n_disagree": 7,
+      "disagree_rate": 0.3043
+    },
+    "age": {
+      "n_disagree": 7,
+      "disagree_rate": 0.5385
+    },
+    "multiple/none": {
+      "n_disagree": 20,
+      "disagree_rate": 0.1802
+    }
+  }
+}

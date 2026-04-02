@@ -1,0 +1,170 @@
+{
+  "n_matched_samples": 892,
+  "agreement": {
+    "overall_agreement_rate": {
+      "mean": 0.4697309417040359,
+      "ci_lower": 0.437219730941704,
+      "ci_upper": 0.5022421524663677
+    },
+    "per_group_agreement": {
+      "age": {
+        "mean": 0.2,
+        "ci_lower": 0.0,
+        "ci_upper": 0.6
+      },
+      "disability": {
+        "mean": 0.2857142857142857,
+        "ci_lower": 0.0,
+        "ci_upper": 0.5714285714285714
+      },
+      "gender": {
+        "mean": 0.5920398009950248,
+        "ci_lower": 0.527363184079602,
+        "ci_upper": 0.6616915422885572
+      },
+      "multiple/none": {
+        "mean": 0.26126126126126126,
+        "ci_lower": 0.18018018018018017,
+        "ci_upper": 0.35135135135135137
+      },
+      "national_origin/citizenship": {
+        "mean": 0.5,
+        "ci_lower": 0.3375000000000009,
+        "ci_upper": 0.6764705882352942
+      },
+      "other": {
+        "mean": 0.7946428571428571,
+        "ci_lower": 0.7142857142857143,
+        "ci_upper": 0.8660714285714286
+      },
+      "race/ethnicity": {
+        "mean": 0.49696969696969695,
+        "ci_lower": 0.41818181818181815,
+        "ci_upper": 0.5757575757575758
+      },
+      "religion": {
+        "mean": 0.21428571428571427,
+        "ci_lower": 0.16071428571428573,
+        "ci_upper": 0.27976190476190477
+      },
+      "sexual_orientation": {
+        "mean": 0.4943820224719101,
+        "ci_lower": 0.39325842696629215,
+        "ci_upper": 0.5955056179775281
+      }
+    },
+    "cohens_kappa": -0.0705593390644188,
+    "spearman_correlation": {
+      "rho": -0.114315508256812,
+      "p_value": 0.0006247839143445296
+    }
+  },
+  "disagreement": {
+    "text_hate_image_nonhate_count": 197,
+    "text_hate_image_nonhate_rate": 0.22085201793721973,
+    "text_nonhate_image_hate_count": 276,
+    "text_nonhate_image_hate_rate": 0.3094170403587444,
+    "total_disagreements": 473,
+    "total_disagreement_rate": 0.5302690582959642,
+    "per_group_disagreement_rate": {
+      "age": {
+        "disagreement_count": 4,
+        "group_total": 5,
+        "disagreement_rate": 0.8
+      },
+      "disability": {
+        "disagreement_count": 5,
+        "group_total": 7,
+        "disagreement_rate": 0.7142857142857143
+      },
+      "gender": {
+        "disagreement_count": 82,
+        "group_total": 201,
+        "disagreement_rate": 0.4079601990049751
+      },
+      "multiple/none": {
+        "disagreement_count": 82,
+        "group_total": 111,
+        "disagreement_rate": 0.7387387387387387
+      },
+      "national_origin/citizenship": {
+        "disagreement_count": 17,
+        "group_total": 34,
+        "disagreement_rate": 0.5
+      },
+      "other": {
+        "disagreement_count": 23,
+        "group_total": 112,
+        "disagreement_rate": 0.20535714285714285
+      },
+      "race/ethnicity": {
+        "disagreement_count": 83,
+        "group_total": 165,
+        "disagreement_rate": 0.503030303030303
+      },
+      "religion": {
+        "disagreement_count": 132,
+        "group_total": 168,
+        "disagreement_rate": 0.7857142857142857
+      },
+      "sexual_orientation": {
+        "disagreement_count": 45,
+        "group_total": 89,
+        "disagreement_rate": 0.5056179775280899
+      }
+    }
+  },
+  "bias_consistency": {
+    "dfpr_sign_agreement": {
+      "age": "consistent",
+      "disability": "inconsistent",
+      "gender": "inconsistent",
+      "multiple/none": "insufficient_data",
+      "national_origin/citizenship": "inconsistent",
+      "race/ethnicity": "consistent",
+      "religion": "consistent",
+      "sexual_orientation": "consistent"
+    },
+    "dfpr_correlation": {
+      "pearson_r": 0.23933214414878706,
+      "p_value": 0.6052329478251229
+    },
+    "dfpr_text": {
+      "age": 0.6666666666666666,
+      "disability": 0.5,
+      "gender": 0.3076923076923077,
+      "multiple/none": null,
+      "national_origin/citizenship": 0.375,
+      "race/ethnicity": 0.17567567567567566,
+      "religion": 0.7816901408450705,
+      "sexual_orientation": 0.19642857142857145
+    },
+    "dfpr_image": {
+      "age": 0.2,
+      "disability": 0.0,
+      "gender": 0.0,
+      "multiple/none": 0.0,
+      "national_origin/citizenship": -0.02941176470588236,
+      "race/ethnicity": 0.05660377358490565,
+      "religion": 0.01785714285714285,
+      "sexual_orientation": 0.06741573033707865
+    },
+    "common_groups": [
+      "age",
+      "disability",
+      "gender",
+      "multiple/none",
+      "national_origin/citizenship",
+      "race/ethnicity",
+      "religion",
+      "sexual_orientation"
+    ]
+  },
+  "metadata": {
+    "text_model": "MiniLM-v2-12-384 + MLP (CF condition)",
+    "image_model": "EfficientNet-B0 + GRL (CF condition)",
+    "bootstrap_n": 10,
+    "bootstrap_ci": 0.95,
+    "seed": 42
+  }
+}

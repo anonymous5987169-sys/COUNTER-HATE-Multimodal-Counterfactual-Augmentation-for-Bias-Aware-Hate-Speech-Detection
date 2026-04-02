@@ -1,0 +1,165 @@
+{
+  "description": "GRL Adversarial Weight Ablation Study",
+  "grl_weights_tested": [
+    0.0,
+    0.1,
+    0.3,
+    0.5,
+    0.7,
+    0.9,
+    1.0
+  ],
+  "test_set_size": 892,
+  "baseline_adv_weight_image": 0.5,
+  "baseline_adv_weight_fusion": 0.3,
+  "results_by_weight": {
+    "0.0": {
+      "adv_weight": 0.0,
+      "threshold": 0.48,
+      "metrics": {
+        "accuracy": 0.4978,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "auc": 0.5692,
+        "brier": 0.2498,
+        "fpr": 0.0,
+        "fnr": 1.0,
+        "ece": 0.0161
+      },
+      "f1_ci_95": [
+        0.6415,
+        0.7011
+      ]
+    },
+    "0.1": {
+      "adv_weight": 0.1,
+      "threshold": 0.475,
+      "metrics": {
+        "accuracy": 0.4978,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "auc": 0.5517,
+        "brier": 0.2501,
+        "fpr": 0.0,
+        "fnr": 1.0,
+        "ece": 0.0203
+      },
+      "f1_ci_95": [
+        0.644,
+        0.703
+      ]
+    },
+    "0.3": {
+      "adv_weight": 0.3,
+      "threshold": 0.15,
+      "metrics": {
+        "accuracy": 0.5022,
+        "precision": 0.5022,
+        "recall": 1.0,
+        "f1": 0.6687,
+        "auc": 0.4773,
+        "brier": 0.2502,
+        "fpr": 1.0,
+        "fnr": 0.0,
+        "ece": 0.0096
+      },
+      "f1_ci_95": [
+        0.6382,
+        0.6969
+      ]
+    },
+    "0.5": {
+      "adv_weight": 0.5,
+      "threshold": 0.15,
+      "metrics": {
+        "accuracy": 0.4776,
+        "precision": 0.2955,
+        "recall": 0.029,
+        "f1": 0.0528,
+        "auc": 0.412,
+        "brier": 0.2507,
+        "fpr": 0.0698,
+        "fnr": 0.9302,
+        "ece": 0.0289
+      },
+      "f1_ci_95": [
+        0.6382,
+        0.6969
+      ]
+    },
+    "0.7": {
+      "adv_weight": 0.7,
+      "threshold": 0.15,
+      "metrics": {
+        "accuracy": 0.4978,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "auc": 0.4942,
+        "brier": 0.2502,
+        "fpr": 0.0,
+        "fnr": 1.0,
+        "ece": 0.0125
+      },
+      "f1_ci_95": [
+        0.6382,
+        0.6969
+      ]
+    },
+    "0.9": {
+      "adv_weight": 0.9,
+      "threshold": 0.49,
+      "metrics": {
+        "accuracy": 0.5112,
+        "precision": 0.5714,
+        "recall": 0.1071,
+        "f1": 0.1805,
+        "auc": 0.5368,
+        "brier": 0.2498,
+        "fpr": 0.0811,
+        "fnr": 0.9189,
+        "ece": 0.0073
+      },
+      "f1_ci_95": [
+        0.6404,
+        0.699
+      ]
+    },
+    "1.0": {
+      "adv_weight": 1.0,
+      "threshold": 0.505,
+      "metrics": {
+        "accuracy": 0.5034,
+        "precision": 0.5028,
+        "recall": 1.0,
+        "f1": 0.6692,
+        "auc": 0.5598,
+        "brier": 0.2498,
+        "fpr": 0.9977,
+        "fnr": 0.0023,
+        "ece": 0.0087
+      },
+      "f1_ci_95": [
+        0.64,
+        0.6995
+      ]
+    }
+  },
+  "bootstrap_n": 1500,
+  "runtime_seconds": 50.4,
+  "best_adv_weight": 1.0,
+  "best_metrics": {
+    "accuracy": 0.5034,
+    "precision": 0.5028,
+    "recall": 1.0,
+    "f1": 0.6692,
+    "auc": 0.5598,
+    "brier": 0.2498,
+    "fpr": 0.9977,
+    "fnr": 0.0023,
+    "ece": 0.0087
+  },
+  "recommendation": "adv_weight=1.0 achieves F1=0.6692 (vs current 0.3: 0.6687)"
+}

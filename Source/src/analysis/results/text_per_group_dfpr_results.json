@@ -1,0 +1,1144 @@
+{
+  "metadata": {
+    "description": "Per-identity-group DFPR analysis for all text models (nCF vs CF)",
+    "test_set_size": 892,
+    "groups": [
+      "race/ethnicity",
+      "religion",
+      "gender",
+      "sexual_orientation",
+      "national_origin/citizenship",
+      "disability",
+      "age",
+      "other",
+      "multiple/none"
+    ],
+    "models_evaluated": [
+      "LR/TF-IDF",
+      "Ridge/TF-IDF",
+      "NB/TF-IDF",
+      "RF/TF-IDF",
+      "SVM/TF-IDF",
+      "SVM/TF-IDF+Char",
+      "LR/TF-IDF+Char",
+      "MiniLM+LR",
+      "MiniLM+SVM",
+      "MiniLM+MLP",
+      "MiniLM+MLP (CSV)"
+    ],
+    "metric": "DFPR = FPR_CF - FPR_nCF"
+  },
+  "per_model_per_group": {
+    "LR/TF-IDF": {
+      "race/ethnicity": {
+        "fpr_ncf": 0.33962264150943394,
+        "fpr_cf": 0.33962264150943394,
+        "dfpr": 0.0,
+        "fnr_ncf": 0.17857142857142858,
+        "fnr_cf": 0.19642857142857142,
+        "dfnr": 0.01785714285714285,
+        "count": 165,
+        "n_neg": 53,
+        "n_pos": 112
+      },
+      "religion": {
+        "fpr_ncf": 0.17857142857142858,
+        "fpr_cf": 0.17857142857142858,
+        "dfpr": 0.0,
+        "fnr_ncf": 0.10714285714285714,
+        "fnr_cf": 0.09821428571428571,
+        "dfnr": -0.008928571428571425,
+        "count": 168,
+        "n_neg": 56,
+        "n_pos": 112
+      },
+      "gender": {
+        "fpr_ncf": 0.34831460674157305,
+        "fpr_cf": 0.3707865168539326,
+        "dfpr": 0.02247191011235955,
+        "fnr_ncf": 0.13392857142857142,
+        "fnr_cf": 0.13392857142857142,
+        "dfnr": 0.0,
+        "count": 201,
+        "n_neg": 89,
+        "n_pos": 112
+      },
+      "sexual_orientation": {
+        "fpr_ncf": 0.14606741573033707,
+        "fpr_cf": 0.1348314606741573,
+        "dfpr": -0.011235955056179775,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 89,
+        "n_neg": 89,
+        "n_pos": 0
+      },
+      "national_origin/citizenship": {
+        "fpr_ncf": 0.35294117647058826,
+        "fpr_cf": 0.4411764705882353,
+        "dfpr": 0.08823529411764702,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 34,
+        "n_neg": 34,
+        "n_pos": 0
+      },
+      "disability": {
+        "fpr_ncf": 0.42857142857142855,
+        "fpr_cf": 0.42857142857142855,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 7,
+        "n_neg": 7,
+        "n_pos": 0
+      },
+      "age": {
+        "fpr_ncf": 0.4,
+        "fpr_cf": 0.4,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 5,
+        "n_neg": 5,
+        "n_pos": 0
+      },
+      "other": {
+        "fpr_ncf": null,
+        "fpr_cf": null,
+        "dfpr": null,
+        "fnr_ncf": 0.11607142857142858,
+        "fnr_cf": 0.125,
+        "dfnr": 0.008928571428571425,
+        "count": 112,
+        "n_neg": 0,
+        "n_pos": 112
+      },
+      "multiple/none": {
+        "fpr_ncf": 0.02702702702702703,
+        "fpr_cf": 0.05405405405405406,
+        "dfpr": 0.02702702702702703,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 111,
+        "n_neg": 111,
+        "n_pos": 0
+      }
+    },
+    "Ridge/TF-IDF": {
+      "race/ethnicity": {
+        "fpr_ncf": 0.4716981132075472,
+        "fpr_cf": 0.3584905660377358,
+        "dfpr": -0.11320754716981135,
+        "fnr_ncf": 0.13392857142857142,
+        "fnr_cf": 0.15178571428571427,
+        "dfnr": 0.01785714285714285,
+        "count": 165,
+        "n_neg": 53,
+        "n_pos": 112
+      },
+      "religion": {
+        "fpr_ncf": 0.23214285714285715,
+        "fpr_cf": 0.23214285714285715,
+        "dfpr": 0.0,
+        "fnr_ncf": 0.07142857142857142,
+        "fnr_cf": 0.08928571428571429,
+        "dfnr": 0.017857142857142863,
+        "count": 168,
+        "n_neg": 56,
+        "n_pos": 112
+      },
+      "gender": {
+        "fpr_ncf": 0.38202247191011235,
+        "fpr_cf": 0.4044943820224719,
+        "dfpr": 0.02247191011235955,
+        "fnr_ncf": 0.09821428571428571,
+        "fnr_cf": 0.09821428571428571,
+        "dfnr": 0.0,
+        "count": 201,
+        "n_neg": 89,
+        "n_pos": 112
+      },
+      "sexual_orientation": {
+        "fpr_ncf": 0.1348314606741573,
+        "fpr_cf": 0.15730337078651685,
+        "dfpr": 0.02247191011235955,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 89,
+        "n_neg": 89,
+        "n_pos": 0
+      },
+      "national_origin/citizenship": {
+        "fpr_ncf": 0.47058823529411764,
+        "fpr_cf": 0.47058823529411764,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 34,
+        "n_neg": 34,
+        "n_pos": 0
+      },
+      "disability": {
+        "fpr_ncf": 0.42857142857142855,
+        "fpr_cf": 0.42857142857142855,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 7,
+        "n_neg": 7,
+        "n_pos": 0
+      },
+      "age": {
+        "fpr_ncf": 0.6,
+        "fpr_cf": 0.6,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 5,
+        "n_neg": 5,
+        "n_pos": 0
+      },
+      "other": {
+        "fpr_ncf": null,
+        "fpr_cf": null,
+        "dfpr": null,
+        "fnr_ncf": 0.10714285714285714,
+        "fnr_cf": 0.09821428571428571,
+        "dfnr": -0.008928571428571425,
+        "count": 112,
+        "n_neg": 0,
+        "n_pos": 112
+      },
+      "multiple/none": {
+        "fpr_ncf": 0.05405405405405406,
+        "fpr_cf": 0.0990990990990991,
+        "dfpr": 0.04504504504504504,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 111,
+        "n_neg": 111,
+        "n_pos": 0
+      }
+    },
+    "NB/TF-IDF": {
+      "race/ethnicity": {
+        "fpr_ncf": 0.32075471698113206,
+        "fpr_cf": 0.33962264150943394,
+        "dfpr": 0.018867924528301883,
+        "fnr_ncf": 0.1875,
+        "fnr_cf": 0.16964285714285715,
+        "dfnr": -0.01785714285714285,
+        "count": 165,
+        "n_neg": 53,
+        "n_pos": 112
+      },
+      "religion": {
+        "fpr_ncf": 0.17857142857142858,
+        "fpr_cf": 0.19642857142857142,
+        "dfpr": 0.01785714285714285,
+        "fnr_ncf": 0.125,
+        "fnr_cf": 0.13392857142857142,
+        "dfnr": 0.008928571428571425,
+        "count": 168,
+        "n_neg": 56,
+        "n_pos": 112
+      },
+      "gender": {
+        "fpr_ncf": 0.3258426966292135,
+        "fpr_cf": 0.34831460674157305,
+        "dfpr": 0.02247191011235955,
+        "fnr_ncf": 0.15178571428571427,
+        "fnr_cf": 0.15178571428571427,
+        "dfnr": 0.0,
+        "count": 201,
+        "n_neg": 89,
+        "n_pos": 112
+      },
+      "sexual_orientation": {
+        "fpr_ncf": 0.12359550561797752,
+        "fpr_cf": 0.14606741573033707,
+        "dfpr": 0.02247191011235955,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 89,
+        "n_neg": 89,
+        "n_pos": 0
+      },
+      "national_origin/citizenship": {
+        "fpr_ncf": 0.3235294117647059,
+        "fpr_cf": 0.3235294117647059,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 34,
+        "n_neg": 34,
+        "n_pos": 0
+      },
+      "disability": {
+        "fpr_ncf": 0.42857142857142855,
+        "fpr_cf": 0.42857142857142855,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 7,
+        "n_neg": 7,
+        "n_pos": 0
+      },
+      "age": {
+        "fpr_ncf": 0.4,
+        "fpr_cf": 0.4,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 5,
+        "n_neg": 5,
+        "n_pos": 0
+      },
+      "other": {
+        "fpr_ncf": null,
+        "fpr_cf": null,
+        "dfpr": null,
+        "fnr_ncf": 0.16071428571428573,
+        "fnr_cf": 0.14285714285714285,
+        "dfnr": -0.017857142857142877,
+        "count": 112,
+        "n_neg": 0,
+        "n_pos": 112
+      },
+      "multiple/none": {
+        "fpr_ncf": 0.018018018018018018,
+        "fpr_cf": 0.02702702702702703,
+        "dfpr": 0.00900900900900901,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 111,
+        "n_neg": 111,
+        "n_pos": 0
+      }
+    },
+    "RF/TF-IDF": {
+      "race/ethnicity": {
+        "fpr_ncf": 0.33962264150943394,
+        "fpr_cf": 0.32075471698113206,
+        "dfpr": -0.018867924528301883,
+        "fnr_ncf": 0.20535714285714285,
+        "fnr_cf": 0.23214285714285715,
+        "dfnr": 0.0267857142857143,
+        "count": 165,
+        "n_neg": 53,
+        "n_pos": 112
+      },
+      "religion": {
+        "fpr_ncf": 0.17857142857142858,
+        "fpr_cf": 0.19642857142857142,
+        "dfpr": 0.01785714285714285,
+        "fnr_ncf": 0.20535714285714285,
+        "fnr_cf": 0.15178571428571427,
+        "dfnr": -0.053571428571428575,
+        "count": 168,
+        "n_neg": 56,
+        "n_pos": 112
+      },
+      "gender": {
+        "fpr_ncf": 0.30337078651685395,
+        "fpr_cf": 0.4044943820224719,
+        "dfpr": 0.10112359550561795,
+        "fnr_ncf": 0.125,
+        "fnr_cf": 0.17857142857142858,
+        "dfnr": 0.053571428571428575,
+        "count": 201,
+        "n_neg": 89,
+        "n_pos": 112
+      },
+      "sexual_orientation": {
+        "fpr_ncf": 0.14606741573033707,
+        "fpr_cf": 0.15730337078651685,
+        "dfpr": 0.011235955056179775,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 89,
+        "n_neg": 89,
+        "n_pos": 0
+      },
+      "national_origin/citizenship": {
+        "fpr_ncf": 0.3235294117647059,
+        "fpr_cf": 0.35294117647058826,
+        "dfpr": 0.02941176470588236,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 34,
+        "n_neg": 34,
+        "n_pos": 0
+      },
+      "disability": {
+        "fpr_ncf": 0.2857142857142857,
+        "fpr_cf": 0.2857142857142857,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 7,
+        "n_neg": 7,
+        "n_pos": 0
+      },
+      "age": {
+        "fpr_ncf": 0.6,
+        "fpr_cf": 0.8,
+        "dfpr": 0.20000000000000007,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 5,
+        "n_neg": 5,
+        "n_pos": 0
+      },
+      "other": {
+        "fpr_ncf": null,
+        "fpr_cf": null,
+        "dfpr": null,
+        "fnr_ncf": 0.1875,
+        "fnr_cf": 0.20535714285714285,
+        "dfnr": 0.01785714285714285,
+        "count": 112,
+        "n_neg": 0,
+        "n_pos": 112
+      },
+      "multiple/none": {
+        "fpr_ncf": 0.06306306306306306,
+        "fpr_cf": 0.08108108108108109,
+        "dfpr": 0.01801801801801803,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 111,
+        "n_neg": 111,
+        "n_pos": 0
+      }
+    },
+    "SVM/TF-IDF": {
+      "race/ethnicity": {
+        "fpr_ncf": 0.4339622641509434,
+        "fpr_cf": 0.33962264150943394,
+        "dfpr": -0.09433962264150947,
+        "fnr_ncf": 0.16071428571428573,
+        "fnr_cf": 0.1875,
+        "dfnr": 0.026785714285714274,
+        "count": 165,
+        "n_neg": 53,
+        "n_pos": 112
+      },
+      "religion": {
+        "fpr_ncf": 0.19642857142857142,
+        "fpr_cf": 0.21428571428571427,
+        "dfpr": 0.01785714285714285,
+        "fnr_ncf": 0.08928571428571429,
+        "fnr_cf": 0.10714285714285714,
+        "dfnr": 0.01785714285714285,
+        "count": 168,
+        "n_neg": 56,
+        "n_pos": 112
+      },
+      "gender": {
+        "fpr_ncf": 0.3595505617977528,
+        "fpr_cf": 0.3595505617977528,
+        "dfpr": 0.0,
+        "fnr_ncf": 0.10714285714285714,
+        "fnr_cf": 0.125,
+        "dfnr": 0.017857142857142863,
+        "count": 201,
+        "n_neg": 89,
+        "n_pos": 112
+      },
+      "sexual_orientation": {
+        "fpr_ncf": 0.1348314606741573,
+        "fpr_cf": 0.15730337078651685,
+        "dfpr": 0.02247191011235955,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 89,
+        "n_neg": 89,
+        "n_pos": 0
+      },
+      "national_origin/citizenship": {
+        "fpr_ncf": 0.47058823529411764,
+        "fpr_cf": 0.5,
+        "dfpr": 0.02941176470588236,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 34,
+        "n_neg": 34,
+        "n_pos": 0
+      },
+      "disability": {
+        "fpr_ncf": 0.42857142857142855,
+        "fpr_cf": 0.42857142857142855,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 7,
+        "n_neg": 7,
+        "n_pos": 0
+      },
+      "age": {
+        "fpr_ncf": 0.4,
+        "fpr_cf": 0.4,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 5,
+        "n_neg": 5,
+        "n_pos": 0
+      },
+      "other": {
+        "fpr_ncf": null,
+        "fpr_cf": null,
+        "dfpr": null,
+        "fnr_ncf": 0.13392857142857142,
+        "fnr_cf": 0.10714285714285714,
+        "dfnr": -0.026785714285714288,
+        "count": 112,
+        "n_neg": 0,
+        "n_pos": 112
+      },
+      "multiple/none": {
+        "fpr_ncf": 0.07207207207207207,
+        "fpr_cf": 0.11711711711711711,
+        "dfpr": 0.04504504504504504,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 111,
+        "n_neg": 111,
+        "n_pos": 0
+      }
+    },
+    "SVM/TF-IDF+Char": {
+      "race/ethnicity": {
+        "fpr_ncf": 0.49056603773584906,
+        "fpr_cf": 0.37735849056603776,
+        "dfpr": -0.1132075471698113,
+        "fnr_ncf": 0.125,
+        "fnr_cf": 0.13392857142857142,
+        "dfnr": 0.008928571428571425,
+        "count": 165,
+        "n_neg": 53,
+        "n_pos": 112
+      },
+      "religion": {
+        "fpr_ncf": 0.21428571428571427,
+        "fpr_cf": 0.25,
+        "dfpr": 0.035714285714285726,
+        "fnr_ncf": 0.08035714285714286,
+        "fnr_cf": 0.09821428571428571,
+        "dfnr": 0.01785714285714285,
+        "count": 168,
+        "n_neg": 56,
+        "n_pos": 112
+      },
+      "gender": {
+        "fpr_ncf": 0.3258426966292135,
+        "fpr_cf": 0.3707865168539326,
+        "dfpr": 0.0449438202247191,
+        "fnr_ncf": 0.14285714285714285,
+        "fnr_cf": 0.13392857142857142,
+        "dfnr": -0.008928571428571425,
+        "count": 201,
+        "n_neg": 89,
+        "n_pos": 112
+      },
+      "sexual_orientation": {
+        "fpr_ncf": 0.12359550561797752,
+        "fpr_cf": 0.1348314606741573,
+        "dfpr": 0.011235955056179775,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 89,
+        "n_neg": 89,
+        "n_pos": 0
+      },
+      "national_origin/citizenship": {
+        "fpr_ncf": 0.35294117647058826,
+        "fpr_cf": 0.35294117647058826,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 34,
+        "n_neg": 34,
+        "n_pos": 0
+      },
+      "disability": {
+        "fpr_ncf": 0.42857142857142855,
+        "fpr_cf": 0.42857142857142855,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 7,
+        "n_neg": 7,
+        "n_pos": 0
+      },
+      "age": {
+        "fpr_ncf": 0.4,
+        "fpr_cf": 0.4,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 5,
+        "n_neg": 5,
+        "n_pos": 0
+      },
+      "other": {
+        "fpr_ncf": null,
+        "fpr_cf": null,
+        "dfpr": null,
+        "fnr_ncf": 0.09821428571428571,
+        "fnr_cf": 0.09821428571428571,
+        "dfnr": 0.0,
+        "count": 112,
+        "n_neg": 0,
+        "n_pos": 112
+      },
+      "multiple/none": {
+        "fpr_ncf": 0.036036036036036036,
+        "fpr_cf": 0.07207207207207207,
+        "dfpr": 0.036036036036036036,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 111,
+        "n_neg": 111,
+        "n_pos": 0
+      }
+    },
+    "LR/TF-IDF+Char": {
+      "race/ethnicity": {
+        "fpr_ncf": 0.39622641509433965,
+        "fpr_cf": 0.3584905660377358,
+        "dfpr": -0.03773584905660382,
+        "fnr_ncf": 0.16964285714285715,
+        "fnr_cf": 0.14285714285714285,
+        "dfnr": -0.0267857142857143,
+        "count": 165,
+        "n_neg": 53,
+        "n_pos": 112
+      },
+      "religion": {
+        "fpr_ncf": 0.16071428571428573,
+        "fpr_cf": 0.16071428571428573,
+        "dfpr": 0.0,
+        "fnr_ncf": 0.125,
+        "fnr_cf": 0.10714285714285714,
+        "dfnr": -0.017857142857142863,
+        "count": 168,
+        "n_neg": 56,
+        "n_pos": 112
+      },
+      "gender": {
+        "fpr_ncf": 0.30337078651685395,
+        "fpr_cf": 0.3146067415730337,
+        "dfpr": 0.011235955056179747,
+        "fnr_ncf": 0.16964285714285715,
+        "fnr_cf": 0.15178571428571427,
+        "dfnr": -0.017857142857142877,
+        "count": 201,
+        "n_neg": 89,
+        "n_pos": 112
+      },
+      "sexual_orientation": {
+        "fpr_ncf": 0.12359550561797752,
+        "fpr_cf": 0.1348314606741573,
+        "dfpr": 0.011235955056179775,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 89,
+        "n_neg": 89,
+        "n_pos": 0
+      },
+      "national_origin/citizenship": {
+        "fpr_ncf": 0.23529411764705882,
+        "fpr_cf": 0.2647058823529412,
+        "dfpr": 0.02941176470588236,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 34,
+        "n_neg": 34,
+        "n_pos": 0
+      },
+      "disability": {
+        "fpr_ncf": 0.42857142857142855,
+        "fpr_cf": 0.2857142857142857,
+        "dfpr": -0.14285714285714285,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 7,
+        "n_neg": 7,
+        "n_pos": 0
+      },
+      "age": {
+        "fpr_ncf": 0.4,
+        "fpr_cf": 0.4,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 5,
+        "n_neg": 5,
+        "n_pos": 0
+      },
+      "other": {
+        "fpr_ncf": null,
+        "fpr_cf": null,
+        "dfpr": null,
+        "fnr_ncf": 0.11607142857142858,
+        "fnr_cf": 0.08928571428571429,
+        "dfnr": -0.026785714285714288,
+        "count": 112,
+        "n_neg": 0,
+        "n_pos": 112
+      },
+      "multiple/none": {
+        "fpr_ncf": 0.009009009009009009,
+        "fpr_cf": 0.02702702702702703,
+        "dfpr": 0.01801801801801802,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 111,
+        "n_neg": 111,
+        "n_pos": 0
+      }
+    },
+    "MiniLM+LR": {
+      "race/ethnicity": {
+        "fpr_ncf": 0.32075471698113206,
+        "fpr_cf": 0.32075471698113206,
+        "dfpr": 0.0,
+        "fnr_ncf": 0.3125,
+        "fnr_cf": 0.26785714285714285,
+        "dfnr": -0.04464285714285715,
+        "count": 165,
+        "n_neg": 53,
+        "n_pos": 112
+      },
+      "religion": {
+        "fpr_ncf": 0.48214285714285715,
+        "fpr_cf": 0.42857142857142855,
+        "dfpr": -0.0535714285714286,
+        "fnr_ncf": 0.9821428571428571,
+        "fnr_cf": 0.9821428571428571,
+        "dfnr": 0.0,
+        "count": 168,
+        "n_neg": 56,
+        "n_pos": 112
+      },
+      "gender": {
+        "fpr_ncf": 0.30337078651685395,
+        "fpr_cf": 0.2808988764044944,
+        "dfpr": -0.02247191011235955,
+        "fnr_ncf": 0.13392857142857142,
+        "fnr_cf": 0.13392857142857142,
+        "dfnr": 0.0,
+        "count": 201,
+        "n_neg": 89,
+        "n_pos": 112
+      },
+      "sexual_orientation": {
+        "fpr_ncf": 0.3707865168539326,
+        "fpr_cf": 0.3707865168539326,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 89,
+        "n_neg": 89,
+        "n_pos": 0
+      },
+      "national_origin/citizenship": {
+        "fpr_ncf": 0.35294117647058826,
+        "fpr_cf": 0.35294117647058826,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 34,
+        "n_neg": 34,
+        "n_pos": 0
+      },
+      "disability": {
+        "fpr_ncf": 0.14285714285714285,
+        "fpr_cf": 0.14285714285714285,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 7,
+        "n_neg": 7,
+        "n_pos": 0
+      },
+      "age": {
+        "fpr_ncf": 0.4,
+        "fpr_cf": 0.4,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 5,
+        "n_neg": 5,
+        "n_pos": 0
+      },
+      "other": {
+        "fpr_ncf": null,
+        "fpr_cf": null,
+        "dfpr": null,
+        "fnr_ncf": 0.17857142857142858,
+        "fnr_cf": 0.17857142857142858,
+        "dfnr": 0.0,
+        "count": 112,
+        "n_neg": 0,
+        "n_pos": 112
+      },
+      "multiple/none": {
+        "fpr_ncf": 0.8738738738738738,
+        "fpr_cf": 0.8918918918918919,
+        "dfpr": 0.018018018018018056,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 111,
+        "n_neg": 111,
+        "n_pos": 0
+      }
+    },
+    "MiniLM+SVM": {
+      "race/ethnicity": {
+        "fpr_ncf": 0.32075471698113206,
+        "fpr_cf": 0.33962264150943394,
+        "dfpr": 0.018867924528301883,
+        "fnr_ncf": 0.19642857142857142,
+        "fnr_cf": 0.15178571428571427,
+        "dfnr": -0.04464285714285715,
+        "count": 165,
+        "n_neg": 53,
+        "n_pos": 112
+      },
+      "religion": {
+        "fpr_ncf": 0.5,
+        "fpr_cf": 0.5178571428571429,
+        "dfpr": 0.017857142857142905,
+        "fnr_ncf": 0.9464285714285714,
+        "fnr_cf": 0.9285714285714286,
+        "dfnr": -0.017857142857142794,
+        "count": 168,
+        "n_neg": 56,
+        "n_pos": 112
+      },
+      "gender": {
+        "fpr_ncf": 0.3258426966292135,
+        "fpr_cf": 0.3146067415730337,
+        "dfpr": -0.011235955056179803,
+        "fnr_ncf": 0.09821428571428571,
+        "fnr_cf": 0.044642857142857144,
+        "dfnr": -0.05357142857142857,
+        "count": 201,
+        "n_neg": 89,
+        "n_pos": 112
+      },
+      "sexual_orientation": {
+        "fpr_ncf": 0.38202247191011235,
+        "fpr_cf": 0.39325842696629215,
+        "dfpr": 0.011235955056179803,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 89,
+        "n_neg": 89,
+        "n_pos": 0
+      },
+      "national_origin/citizenship": {
+        "fpr_ncf": 0.35294117647058826,
+        "fpr_cf": 0.35294117647058826,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 34,
+        "n_neg": 34,
+        "n_pos": 0
+      },
+      "disability": {
+        "fpr_ncf": 0.14285714285714285,
+        "fpr_cf": 0.14285714285714285,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 7,
+        "n_neg": 7,
+        "n_pos": 0
+      },
+      "age": {
+        "fpr_ncf": 0.4,
+        "fpr_cf": 0.4,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 5,
+        "n_neg": 5,
+        "n_pos": 0
+      },
+      "other": {
+        "fpr_ncf": null,
+        "fpr_cf": null,
+        "dfpr": null,
+        "fnr_ncf": 0.125,
+        "fnr_cf": 0.11607142857142858,
+        "dfnr": -0.008928571428571425,
+        "count": 112,
+        "n_neg": 0,
+        "n_pos": 112
+      },
+      "multiple/none": {
+        "fpr_ncf": 0.9279279279279279,
+        "fpr_cf": 0.9369369369369369,
+        "dfpr": 0.009009009009009028,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 111,
+        "n_neg": 111,
+        "n_pos": 0
+      }
+    },
+    "MiniLM+MLP": {
+      "race/ethnicity": {
+        "fpr_ncf": 0.2830188679245283,
+        "fpr_cf": 0.3018867924528302,
+        "dfpr": 0.018867924528301883,
+        "fnr_ncf": 0.30357142857142855,
+        "fnr_cf": 0.38392857142857145,
+        "dfnr": 0.0803571428571429,
+        "count": 165,
+        "n_neg": 53,
+        "n_pos": 112
+      },
+      "religion": {
+        "fpr_ncf": 0.44642857142857145,
+        "fpr_cf": 0.44642857142857145,
+        "dfpr": 0.0,
+        "fnr_ncf": 0.9821428571428571,
+        "fnr_cf": 0.9732142857142857,
+        "dfnr": -0.008928571428571397,
+        "count": 168,
+        "n_neg": 56,
+        "n_pos": 112
+      },
+      "gender": {
+        "fpr_ncf": 0.30337078651685395,
+        "fpr_cf": 0.3146067415730337,
+        "dfpr": 0.011235955056179747,
+        "fnr_ncf": 0.13392857142857142,
+        "fnr_cf": 0.17857142857142858,
+        "dfnr": 0.04464285714285715,
+        "count": 201,
+        "n_neg": 89,
+        "n_pos": 112
+      },
+      "sexual_orientation": {
+        "fpr_ncf": 0.3707865168539326,
+        "fpr_cf": 0.3707865168539326,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 89,
+        "n_neg": 89,
+        "n_pos": 0
+      },
+      "national_origin/citizenship": {
+        "fpr_ncf": 0.35294117647058826,
+        "fpr_cf": 0.35294117647058826,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 34,
+        "n_neg": 34,
+        "n_pos": 0
+      },
+      "disability": {
+        "fpr_ncf": 0.14285714285714285,
+        "fpr_cf": 0.14285714285714285,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 7,
+        "n_neg": 7,
+        "n_pos": 0
+      },
+      "age": {
+        "fpr_ncf": 0.4,
+        "fpr_cf": 0.4,
+        "dfpr": 0.0,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 5,
+        "n_neg": 5,
+        "n_pos": 0
+      },
+      "other": {
+        "fpr_ncf": null,
+        "fpr_cf": null,
+        "dfpr": null,
+        "fnr_ncf": 0.13392857142857142,
+        "fnr_cf": 0.16964285714285715,
+        "dfnr": 0.035714285714285726,
+        "count": 112,
+        "n_neg": 0,
+        "n_pos": 112
+      },
+      "multiple/none": {
+        "fpr_ncf": 0.8738738738738738,
+        "fpr_cf": 0.8198198198198198,
+        "dfpr": -0.05405405405405406,
+        "fnr_ncf": null,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 111,
+        "n_neg": 111,
+        "n_pos": 0
+      }
+    },
+    "MiniLM+MLP (CSV)": {
+      "race/ethnicity": {
+        "fpr_ncf": 0.5202702702702703,
+        "fpr_cf": 0.3018867924528302,
+        "dfpr": -0.2183834778174401,
+        "fnr_ncf": 0.058823529411764705,
+        "fnr_cf": 0.38392857142857145,
+        "dfnr": 0.32510504201680673,
+        "count": 165,
+        "n_neg": 148,
+        "n_pos": 112
+      },
+      "religion": {
+        "fpr_ncf": 0.028169014084507043,
+        "fpr_cf": 0.44642857142857145,
+        "dfpr": 0.4182595573440644,
+        "fnr_ncf": 0.11538461538461539,
+        "fnr_cf": 0.9732142857142857,
+        "dfnr": 0.8578296703296703,
+        "count": 168,
+        "n_neg": 142,
+        "n_pos": 112
+      },
+      "gender": {
+        "fpr_ncf": 0.06153846153846154,
+        "fpr_cf": 0.3146067415730337,
+        "dfpr": 0.25306828003457216,
+        "fnr_ncf": 0.11764705882352941,
+        "fnr_cf": 0.17857142857142858,
+        "dfnr": 0.060924369747899165,
+        "count": 201,
+        "n_neg": 89,
+        "n_pos": 136
+      },
+      "sexual_orientation": {
+        "fpr_ncf": 0.05357142857142857,
+        "fpr_cf": 0.3707865168539326,
+        "dfpr": 0.31721508828250405,
+        "fnr_ncf": 0.09090909090909091,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 89,
+        "n_neg": 89,
+        "n_pos": 33
+      },
+      "national_origin/citizenship": {
+        "fpr_ncf": 0.08333333333333333,
+        "fpr_cf": 0.35294117647058826,
+        "dfpr": 0.26960784313725494,
+        "fnr_ncf": 0.0,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 34,
+        "n_neg": 34,
+        "n_pos": 10
+      },
+      "disability": {
+        "fpr_ncf": 0.0,
+        "fpr_cf": 0.14285714285714285,
+        "dfpr": 0.14285714285714285,
+        "fnr_ncf": 0.0,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 7,
+        "n_neg": 7,
+        "n_pos": 1
+      },
+      "age": {
+        "fpr_ncf": 0.0,
+        "fpr_cf": 0.4,
+        "dfpr": 0.4,
+        "fnr_ncf": 0.0,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 5,
+        "n_neg": 5,
+        "n_pos": 2
+      },
+      "other": {
+        "fpr_ncf": null,
+        "fpr_cf": null,
+        "dfpr": null,
+        "fnr_ncf": 0.13392857142857142,
+        "fnr_cf": 0.16964285714285715,
+        "dfnr": 0.035714285714285726,
+        "count": 112,
+        "n_neg": 0,
+        "n_pos": 112
+      },
+      "multiple/none": {
+        "fpr_ncf": null,
+        "fpr_cf": 0.8198198198198198,
+        "dfpr": null,
+        "fnr_ncf": 0.12612612612612611,
+        "fnr_cf": null,
+        "dfnr": null,
+        "count": 111,
+        "n_neg": 111,
+        "n_pos": 111
+      }
+    }
+  }
+}

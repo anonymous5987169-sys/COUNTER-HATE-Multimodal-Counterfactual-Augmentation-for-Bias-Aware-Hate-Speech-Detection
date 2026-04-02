@@ -1,0 +1,104 @@
+{
+  "logistic_regression": {
+    "ncf": {
+      "model": "logistic_regression",
+      "condition": "ncf",
+      "tn": 338,
+      "fp": 106,
+      "fn": 62,
+      "tp": 386,
+      "fpr": 0.23873873873873874,
+      "fnr": 0.13839285714285715,
+      "accuracy": 0.8116591928251121,
+      "total_samples": 892,
+      "hate_samples": 448,
+      "non_hate_samples": 444
+    },
+    "cf": {
+      "model": "logistic_regression",
+      "condition": "cf",
+      "tn": 2046,
+      "fp": 633,
+      "fn": 448,
+      "tp": 2246,
+      "fpr": 0.23628219484882418,
+      "fnr": 0.16629547141796586,
+      "accuracy": 0.7988088591103667,
+      "total_samples": 5373,
+      "hate_samples": 2694,
+      "non_hate_samples": 2679
+    },
+    "delta_fpr": -0.002456543889914564,
+    "delta_fnr": 0.027902614275108706,
+    "fpr_direction": "REDUCED",
+    "fnr_direction": "AMPLIFIED"
+  },
+  "svm": {
+    "ncf": {
+      "model": "svm",
+      "condition": "ncf",
+      "tn": 332,
+      "fp": 112,
+      "fn": 56,
+      "tp": 392,
+      "fpr": 0.25225225225225223,
+      "fnr": 0.125,
+      "accuracy": 0.8116591928251121,
+      "total_samples": 892,
+      "hate_samples": 448,
+      "non_hate_samples": 444
+    },
+    "cf": {
+      "model": "svm",
+      "condition": "cf",
+      "tn": 1958,
+      "fp": 721,
+      "fn": 351,
+      "tp": 2343,
+      "fpr": 0.269130272489735,
+      "fnr": 0.13028953229398663,
+      "accuracy": 0.8004839009864135,
+      "total_samples": 5373,
+      "hate_samples": 2694,
+      "non_hate_samples": 2679
+    },
+    "delta_fpr": 0.01687802023748275,
+    "delta_fnr": 0.005289532293986626,
+    "fpr_direction": "AMPLIFIED",
+    "fnr_direction": "AMPLIFIED"
+  },
+  "random_forest": {
+    "ncf": {
+      "model": "random_forest",
+      "condition": "ncf",
+      "tn": 315,
+      "fp": 129,
+      "fn": 55,
+      "tp": 393,
+      "fpr": 0.2905405405405405,
+      "fnr": 0.12276785714285714,
+      "accuracy": 0.7937219730941704,
+      "total_samples": 892,
+      "hate_samples": 448,
+      "non_hate_samples": 444
+    },
+    "cf": {
+      "model": "random_forest",
+      "condition": "cf",
+      "tn": 1883,
+      "fp": 796,
+      "fn": 373,
+      "tp": 2321,
+      "fpr": 0.2971257932064203,
+      "fnr": 0.1384558277654046,
+      "accuracy": 0.782430671877908,
+      "total_samples": 5373,
+      "hate_samples": 2694,
+      "non_hate_samples": 2679
+    },
+    "delta_fpr": 0.006585252665879782,
+    "delta_fnr": 0.015687970622547467,
+    "fpr_direction": "AMPLIFIED",
+    "fnr_direction": "AMPLIFIED"
+  }
+}
