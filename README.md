@@ -13,7 +13,8 @@ See [Appendix.pdf](./Appendix.pdf) for extended results, dataset construction de
 
 **MIDAS** is a purpose-built dataset for evaluating bias mitigation in hate detection.
 
-**Dataset Link:** [Access on Hugging Face](https://huggingface.co/datasets/vs16/counter-hate-dataset)
+**Dataset Access:** [Available on Hugging Face](https://huggingface.co/datasets/vs16/counter-hate-dataset)
+**Images:** [Access on Hugging Face](https://huggingface.co/datasets/vs16/counter-hate-dataset/tree/main/images)
 
 ### Composition
 
