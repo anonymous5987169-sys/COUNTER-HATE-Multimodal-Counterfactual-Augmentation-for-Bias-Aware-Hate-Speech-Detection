@@ -4,42 +4,21 @@ See [Appendix.pdf](./Appendix.pdf) for extended results, dataset construction de
 
 ---
 
-# COUNTER-HATE: Multimodal Counterfactual Augmentation for Bias-Aware Hate Content Detection
+# COUNTER-HATE: Multimodal Counterfactual Augmentation for Bias-Aware Hate Detection
 
-**Target Venue:** ACM Multimedia (ACMMM) 2026  
-**Status:** Reproducible; all pipelines documented  
-**Last Updated:** April 3, 2026
-
----
-
-## Abstract
-
-Hate speech detection models suffer from systematic group-level biases; they misclassify content mentioning certain identity groups as hateful far more often than others. Counterfactual Data Augmentation (CDA) is a promising bias-mitigation technique; it generates training variants of examples by swapping protected group identity terms. However, previous work has only evaluated CDA in isolation on text, leaving critical questions unanswered; Does it actually reduce group-level false positive rates? Does it transfer across modalities? This paper presents the first multimodal evaluation of CDA for bias-aware hate detection. We construct MIDAS; a dataset of 18,000 image-text pairs (6,000 original samples + 12,000 counterfactually rewritten variants) across eight identity categories. We evaluate text-only models (TF-IDF baselines; HateBERT end-to-end), image-only models (EfficientNet-B0; CLIP ViT-B/32 with Gradient Reversal Layer adversarial debiasing), and multimodal fusion strategies (late-fusion, stacking, cross-attention). Results confirm that CDA significantly reduces per-group false positive rate disparity (condition;group interaction F=9.82, p=1.7×10−10); however, the effect is modality-specific; text models show 12.3% average FPR reduction under CF, while image models exhibit residual bias that is only partially mitigated by adversarial training. Our best overall system (HateBERT + CLIP ViT-B/32 late fusion with isolevel isotonic calibration) achieves F1=0.884 on a fixed 892-sample test set, and sustains a 10.5% FPR reduction on out-of-domain HateXplain data. We release code, dataset artifacts, and detailed reproducibility documentation to support future work in fairness-aware hate detection.
-
----
-
-## Key Results
-
-| Configuration | Modality | Model | F1 | AUC | FPR | Notes |
-|---|---|---|---|---|---|---|
-| nCF (baseline) | Text | HateBERT | 0.856 | 0.927 | 0.203 | 6k original samples only |
-| CF (augmented) | Text | HateBERT | 0.873 | 0.941 | 0.178 | 18k training samples; per-group ΔFPR −12.3% |
-| CF+GRL | Image | CLIP ViT-B/32 | 0.841 | 0.891 | 0.286 | Gradient Reversal Layer; multi-seed stable |
-| **CF+GRL Fusion** | **Multimodal** | **HateBERT + CLIP (LR 2D)** | **0.884** | **0.968** | **0.225** | **Best overall; isotonic ECE=0.020** |
-| OOD (HateXplain) | Text | HateBERT CF | 0.540 | 0.719 | 0.319 | Distribution shift; FPR reduction 0.357→0.319 (−10.5%) |
-
----
+**Target Venue:** ACM Multimedia (Dataset Track) 2026  
+**Status:** Reproducible; all pipelines documented
 
 ## MIDAS Dataset
 
-**MIDAS** (Multimodal Identity-Driven Augmentation Study) is a purpose-built dataset for evaluating bias mitigation in hate detection.
+**MIDAS** is a purpose-built dataset for evaluating bias mitigation in hate detection.
 
 ### Composition
 
 - **18,000 image-text pairs** across three configurable conditions;
   - **Originals (nCF):** 6,000 original text samples from Kennedy et al. (UC Berkeley D-Lab hate content collection)
   - **Counterfactuals (CF):** 12,000 rewritten text samples (2 per original) via Qwen2.5-7B-Instruct with deterministic fallback
-  - **All 18,000 images:** Synthetically generated from text samples via Z-Image-Turbo (720×720 PNG, ~7.7 prompts/sec on H200). Where 6,000 images generated from Original text samples; 12,000 images generated from Counterfactual Text pairs. 
+  - **All 18,000 images:** Synthetically generated from text samples via Z-Image-Turbo (720×720 PNG, ~7.7 prompts/sec on H200), where 6,000 images generated from Original text samples; 12,000 images generated from Counterfactual Text pairs. 
 
 ### Identity Categories (8 total)
 
@@ -67,36 +46,36 @@ Canonical stratified splits at the original_sample_id level (seed=42);
 | Test | 892 | 892 | 15.01% |
 | **Total** | **5,941** | **14,257** | **100%** |
 
-Note; validation and test sets contain original samples only; counterfactual variants are confined to the training partition of their source original to prevent leakage.
+Note: Validation and test sets contain original samples only; counterfactual variants are confined to the training partition of their source original to prevent leakage.
 
 ### Counterfactual Generation Pipeline
 
-Text rewriting proceeds via Qwen2.5-7B-Instruct (Kaggle T4×2 GPU);
+Text rewriting proceeds via Qwen2.5-7B-Instruct (Kaggle T4×2 GPU):
 
 1. **Detect identity terms** via regex dictionaries (race, religion, gender, sexuality, national origin, disability, age)
-2. **Two prompt modes**;
+2. **Two prompt modes**:
    - **Explicit mode** (identity terms detected); Build swap prompt to substitute target group term from same category
    - **Implicit mode** (contextual identity); Build rewrite prompt for full paraphrase with shifted demographic reading
-3. **Generation params**; temperature=0.25, top-p=0.9, max_new_tokens=128, repetition_penalty=1.1
-4. **Post-processing**;
+3. **Generation params**: temperature=0.25, top-p=0.9, max_new_tokens=128, repetition_penalty=1.1
+4. **Post-processing**:
    - Strip &lt;think&gt; tokens and LLM preamble artifacts
    - Apply CJK character guard; discard outputs with non-ASCII characters outside expected set
    - Validate; check length ratio, label-preserving structure, absence of polarity-correlated descriptors
    - Fallback; if validation fails, apply deterministic regex-based term substitution
-5. **Result**; Corpus of 18,000 samples; 6,000 originals + 12,000 counterfactuals with exactly three rows per original_sample_id
+5. **Result**: Corpus of 18,000 samples; 6,000 originals + 12,000 counterfactuals with exactly three rows per original_sample_id
 
 ### Image Synthesis
 
 All 18,000 images are synthetically generated from text samples (not collected from social media). Each text sample is passed to Z-Image-Turbo as a structured visual prompt;
 
-- **Model**; Z-Image-Turbo (FP8 diffusion; Qwen3-4B CLIP backbone)
-- **Parameters**; 720×720 resolution, 9 Euler diffusion steps, CFG scale 1.0
-- **Throughput**; ~7.7 prompts/sec on Lightning AI H200 (141 GB VRAM); 39 hours for full corpus
-- **Prompt enhancement**; Fixed quality prefix + row-level scene description + strict anti-text negative block
-- **Deterministic seeding**; seed = (0xDEADBEEF + i × 1,000,003) mod 2^32 for reproducibility
-- **Quality control**; Visual tone bias audit on 200-sample subset; confirmed no statistically significant difference in mean brightness or saturation between hate and non-hate classes
+- **Model**: Z-Image-Turbo (FP8 diffusion; Qwen3-4B CLIP backbone)
+- **Parameters**: 720×720 resolution, 9 Euler diffusion steps, CFG scale 1.0
+- **Throughput**: ~7.7 prompts/sec on Lightning AI H200 (141 GB VRAM); 39 hours for full corpus
+- **Prompt enhancement**: Fixed quality prefix + row-level scene description + strict anti-text negative block
+- **Deterministic seeding**: seed = (0xDEADBEEF + i × 1,000,003) mod 2^32 for reproducibility
+- **Quality control**: Visual tone bias audit on 200-sample subset; confirmed no statistically significant difference in mean brightness or saturation between hate and non-hate classes
 
-For details on identity mapping, dataset construction challenges, and counterfactual examples per class, see Appendix A.
+For details on identity mapping, dataset construction challenges, and counterfactual examples per class, See [Appendix.pdf](./Appendix.pdf).
 
 ---
 
@@ -252,32 +231,33 @@ python run_ood_evaluation.py \
 
 ### Text Models
 
-**Architectures;** TF-IDF (10,000 unigrams) with Logistic Regression, SVM (kernel=linear), Ridge regression, Naive Bayes, Random Forest (100 trees); HateBERT (berts-hate-speech-offensive/hatebert) with end-to-end fine-tuning (lr=2×10−5, epochs=5, batch=16, AdamW, warmup=0.1, max_seq=128).
+**Architectures:** TF-IDF (10,000 unigrams) with Logistic Regression, SVM (kernel=linear), Ridge regression, Naive Bayes, Random Forest (100 trees); HateBERT (berts-hate-speech-offensive/hatebert) with end-to-end fine-tuning (lr=2×10−5, epochs=5, batch=16, AdamW, warmup=0.1, max_seq=128).
 
-**Conditions;**
+**Conditions:**
 - **nCF:** 4,158 training originals (6,000 total across dataset)
 - **CF:** 12,474 training samples (4,158 originals + 8,316 counterfactuals)
 
 ### Image Models
 
-**Architectures;** EfficientNet-B0 and CLIP ViT-B/32 with optional Gradient Reversal Layer (GRL) adversarial head for group-protected invariance.
+**Architectures:** EfficientNet-B0 and CLIP ViT-B/32 with optional Gradient Reversal Layer (GRL) adversarial head for group-protected invariance.
 
-**Conditions;**
+**Conditions:**
 - **nCF:** 6,000 originals only; no augmentation
 - **CF-no-adv:** 18,000 augmented samples; no adversarial head
 - **CF+GRL:** 18,000 augmented samples; GRL with λ=0.5 (balances task and adversarial loss equally)
 
-**Hyperparameters;** AdamW (lr=1×10−4), label smoothing ε=0.05, max 50 epochs, early stopping patience=7 on validation F1, batch size 32, seeds 42/123/456, input 720×720→224×224 resize, ImageNet normalization.
+**Hyperparameters:** AdamW (lr=1×10−4), label smoothing ε=0.05, max 50 epochs, early stopping patience=7 on validation F1, batch size 32, seeds 42/123/456, input 720×720→224×224 resize, ImageNet normalization.
 
 ### Fusion Strategies
 
-**Late Fusion;** Averages text and image class probabilities with grid-searched weight w ∈ [0.0, 1.0]. Optimal; w=0.50 for nCF and CF+GRL (semantic parity), w=0.45 for CF-no-adv.
+**Late Fusion:** Averages text and image class probabilities with grid-searched weight w ∈ [0.0, 1.0]. 
+Optimal: w=0.50 for nCF and CF+GRL (semantic parity), w=0.45 for CF-no-adv.
 
-**Stacking;** 5-fold internal CV on training outputs; trains meta-learner (LR, MLP, GBT) on out-of-fold probability scores. Best; LR and GBT with isotonic regression calibration (ECE −73%; reduces from 0.18 to 0.048).
+**Stacking:** 5-fold internal CV on training outputs; trains meta-learner (LR, MLP, GBT) on out-of-fold probability scores. Best; LR and GBT with isotonic regression calibration (ECE −73%; reduces from 0.18 to 0.048).
 
-**Cross-Attention GMU;** Gated Multimodal Unit over 384-dimensional embedding concatenation; optional GRL head matching image model design.
+**Cross-Attention GMU:** Gated Multimodal Unit over 384-dimensional embedding concatenation; optional GRL head matching image model design.
 
-**Calibration;** Post-hoc isotonic regression on validation set scores; applied to all test outputs without refitting. Reduces ECE by 54–82% depending on model.
+**Calibration:** Post-hoc isotonic regression on validation set scores; applied to all test outputs without refitting. It reduces ECE by 54–82% depending on model.
 
 ---
 
@@ -294,20 +274,20 @@ In this work, we evaluate three configurations for both text and image modalitie
 Text models show that CF alone provides substantial FPR reduction (−12.3% average per-group FPR). Image models show that CF without adversarial debiasing introduces new visual biases; GRL training mitigates these by 10–15% additional reduction in equalized odds disparity.
 
 ---
+## Key Results
 
+| Configuration | Modality | Model | F1 | AUC | FPR | Notes |
+|---|---|---|---|---|---|---|
+| nCF (baseline) | Text | HateBERT | 0.856 | 0.927 | 0.203 | 6k original samples only |
+| CF (augmented) | Text | HateBERT | 0.873 | 0.941 | 0.178 | 18k training samples; per-group ΔFPR −12.3% |
+| CF+GRL | Image | CLIP ViT-B/32 | 0.841 | 0.891 | 0.286 | Gradient Reversal Layer; multi-seed stable |
+| **CF+GRL Fusion** | **Multimodal** | **HateBERT + CLIP (LR 2D)** | **0.884** | **0.968** | **0.225** | **Best overall; isotonic ECE=0.020** |
+| OOD (HateXplain) | Text | HateBERT CF | 0.540 | 0.719 | 0.319 | Distribution shift; FPR reduction 0.357→0.319 (−10.5%) |
+
+---
 ## Citation
 
 [Citation placeholder; paper under review at ACM MM 2026]
-
-```bibtex
-@inproceedings{[AuthorYear],
-  title={COUNTER-HATE: Multimodal Counterfactual Augmentation for Bias-Aware Hate Detection},
-  author={[Authors]},
-  booktitle={Proceedings of ACM Multimedia 2026},
-  year={2026}
-}
-```
-
 ---
 
 ## License
