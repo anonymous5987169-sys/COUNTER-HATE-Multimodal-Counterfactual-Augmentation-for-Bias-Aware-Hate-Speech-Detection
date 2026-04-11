@@ -58,7 +58,8 @@ def build_metadata_csv(
     clip_scoring_dir = os.path.dirname(os.path.abspath(__file__))
     results_dir = os.path.join(clip_scoring_dir, "results")
     src_dir = os.path.dirname(clip_scoring_dir)  # src/
-    project_root = os.path.dirname(src_dir)  # one level up from src/
+    source_dir = os.path.dirname(src_dir)  # Source/
+    project_root = os.path.dirname(source_dir)  # COUNTER-HATE root
     
     # Load the 18K dataset from project root
     csv_path = os.path.join(project_root, dataset_csv)

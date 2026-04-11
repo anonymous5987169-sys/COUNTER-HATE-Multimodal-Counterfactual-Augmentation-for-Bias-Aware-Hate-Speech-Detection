@@ -15,10 +15,11 @@ from tqdm import tqdm
 from PIL import Image
 from transformers import CLIPProcessor, CLIPModel
 
-# Get project root (one level above src/)
+# Get project root (COUNTER-HATE root is 3 levels up from clip_scoring)
 clip_scoring_dir = os.path.dirname(os.path.abspath(__file__))
-src_dir = os.path.dirname(clip_scoring_dir)
-PROJECT_ROOT = os.path.dirname(src_dir)  # Project root
+src_dir = os.path.dirname(clip_scoring_dir)  # src/
+SOURCE_DIR = os.path.dirname(src_dir)  # Source/
+PROJECT_ROOT = os.path.dirname(SOURCE_DIR)  # COUNTER-HATE root
 sys.path.insert(0, PROJECT_ROOT)
 
 
