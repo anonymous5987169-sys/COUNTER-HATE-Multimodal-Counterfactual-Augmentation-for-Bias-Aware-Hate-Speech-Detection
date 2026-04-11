@@ -108,6 +108,18 @@ For details on identity mapping, dataset construction challenges, and counterfac
 │   │   ├── image_gen/
 │   │   │   ├── generate_t2i_prompts.py           # Prompt enhancement for Z-Image-Turbo
 │   │   │   └── image_gen.py                      # Z-Image-Turbo batch generation; 720×720 PNG
+│   │   ├── clip_scoring/
+│   │   │   ├── README.md                         # CLIP pipeline documentation
+│   │   │   ├── compute_clip_scores.py            # Main CLIP similarity scoring engine
+│   │   │   ├── build_metadata.py                 # Build image-text pair mappings
+│   │   │   ├── summarize_clip.py                 # Generate statistical summaries
+│   │   │   ├── analyze_text_quality.py           # Text quality and encoding analysis
+│   │   │   ├── test_clip_fix.py                  # Quick validation script
+│   │   │   ├── optimized_clip_scoring.py         # Optimized batch processing with temperature tuning
+│   │   │   ├── debug_clip_api.py                 # CLIP API debugging utility
+│   │   │   ├── requirements_clip.txt             # CLIP pipeline dependencies
+│   │   │   ├── COMPLETION_REPORT.md              # Results summary and metrics
+│   │   │   └── results/                          # Output directory (metadata, scores, summaries)
 │   │   ├── text_models/
 │   │   │   ├── binary_fairness_analysis.py       # TF-IDF (10k unigrams) + LR, SVM, Ridge, NB, RF
 │   │   │   └── train_hatebert.py                 # HateBERT end-to-end fine-tuning
@@ -174,7 +186,22 @@ python counterfactual_gen/CF-Gen.py \
 # Runtime; ~4 hours on Kaggle T4×2 GPU
 ```
 
-### 4. Train Text Models
+### 4. Compute CLIP Similarity Scores (Optional)
+
+Assess image-text alignment using OpenAI CLIP-ViT-Base-32 across all 18,000 image-text pairs:
+
+```bash
+cd Source/src/clip_scoring
+python build_metadata.py                    # Build metadata mapping
+python compute_clip_scores.py --device cuda # Compute CLIP scores (GPU recommended)
+python summarize_clip.py                    # Generate statistics
+# Results: 18,000 scores with mean=0.225, std=0.040 across original/counterfactual splits
+# Output: results/clip_scores_results.csv, results/clip_summary_table.csv
+```
+
+See [Source/src/clip_scoring/README.md](Source/src/clip_scoring/README.md) for full documentation.
+
+### 5. Train Text Models
 
 ```bash
 cd Source/src
@@ -186,7 +213,7 @@ python text_models/binary_fairness_analysis.py \
 # Results written to results/ directory
 ```
 
-### 5. Train Image Models
+### 6. Train Image Models
 
 ```bash
 python image_models/image_train.py \
@@ -198,7 +225,7 @@ python image_models/image_train.py \
 # Multi-seed training; seeds 42, 123, 456
 ```
 
-### 6. Fuse and Evaluate
+### 7. Fuse and Evaluate
 
 ```bash
 python fusion/late_fusion_ensemble.py \
@@ -209,7 +236,7 @@ python fusion/late_fusion_ensemble.py \
 # Best config; HateBERT CF + CLIP CF+GRL, LR(2D), w=0.50 → F1=0.884, AUC=0.968, FPR=0.225
 ```
 
-### 7. Statistical Testing
+### 8. Statistical Testing
 
 ```bash
 python analysis/enhanced_statistical_tests.py \
@@ -218,7 +245,7 @@ python analysis/enhanced_statistical_tests.py \
 # Tests; OLS ANOVA (condition×group interaction: F=9.82, p=1.7×10−10), Chi-square, Kruskal-Wallis, Wilcoxon
 ```
 
-### 8. Out-of-Domain Evaluation
+### 9. Out-of-Domain Evaluation
 
 ```bash
 cd OOD-testing
