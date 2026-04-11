@@ -9,15 +9,21 @@ import torch
 from PIL import Image
 from transformers import CLIPProcessor, CLIPModel
 
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Get paths
+clip_scoring_dir = os.path.dirname(os.path.abspath(__file__))
+results_dir = os.path.join(clip_scoring_dir, "results")
 
 # Load metadata
-metadata_path = os.path.join(PROJECT_ROOT, "clip_scoring", "metadata.csv")
+metadata_path = os.path.join(results_dir, "metadata.csv")
 df = pd.read_csv(metadata_path)
 print(f"Loaded {len(df):,} pairs from metadata")
 
 # Take first 50 samples for quick test
 df_test = df.head(50)
+
+# Get project root
+src_dir = os.path.dirname(clip_scoring_dir)
+project_root = os.path.dirname(src_dir)
 
 # Load CLIP model
 print("Loading CLIP model...")
@@ -34,7 +40,7 @@ for idx, row in df_test.iterrows():
     
     # Ensure absolute path
     if not os.path.isabs(image_path):
-        image_path = os.path.join(PROJECT_ROOT, image_path)
+        image_path = os.path.join(project_root, image_path)
     
     try:
         image = Image.open(image_path).convert("RGB")

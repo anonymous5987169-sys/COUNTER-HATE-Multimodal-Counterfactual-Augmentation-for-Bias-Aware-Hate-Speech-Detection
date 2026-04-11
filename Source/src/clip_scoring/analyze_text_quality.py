@@ -11,14 +11,17 @@ import os
 import sys
 import pandas as pd
 
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Get project root (one level above src/)
+clip_scoring_dir = os.path.dirname(os.path.abspath(__file__))
+src_dir = os.path.dirname(clip_scoring_dir)
+PROJECT_ROOT = os.path.dirname(src_dir)
 sys.path.insert(0, PROJECT_ROOT)
 
 
 def analyze_text_quality():
     """Check for encoding and text quality issues."""
     
-    # Load dataset
+    # Load dataset from project root
     dataset_path = os.path.join(PROJECT_ROOT, "data/datasets/final_dataset_18k.csv")
     print(f"Loading dataset from {dataset_path}...")
     df = pd.read_csv(dataset_path)
@@ -100,7 +103,9 @@ def compare_scores_before_after():
     
     # Load dataset
     dataset_path = os.path.join(PROJECT_ROOT, "data/datasets/final_dataset_18k.csv")
-    metadata_path = os.path.join(PROJECT_ROOT, "clip_scoring/metadata.csv")
+    clip_scoring_dir = os.path.dirname(os.path.abspath(__file__))
+    results_dir = os.path.join(clip_scoring_dir, "results")
+    metadata_path = os.path.join(results_dir, "metadata.csv")
     
     df = pd.read_csv(dataset_path)
     meta_df = pd.read_csv(metadata_path)

@@ -47,15 +47,21 @@ def build_metadata_csv(
     Parameters
     ----------
     output_path : str
-        Path where to save metadata.csv (relative to project root)
+        Filename where to save metadata.csv (relative to results/)
     dataset_csv : str
-        Path to the 18K dataset CSV (relative to project root)
+        Path to the 18K dataset CSV (relative to project root, i.e., one level above src/)
     limit_per_class : int or None
         If set, limit to this many samples per class (for testing)
     """
     
-    # Load the 18K dataset
-    csv_path = os.path.join(PROJECT_ROOT, dataset_csv)
+    # Get paths
+    clip_scoring_dir = os.path.dirname(os.path.abspath(__file__))
+    results_dir = os.path.join(clip_scoring_dir, "results")
+    src_dir = os.path.dirname(clip_scoring_dir)  # src/
+    project_root = os.path.dirname(src_dir)  # one level up from src/
+    
+    # Load the 18K dataset from project root
+    csv_path = os.path.join(project_root, dataset_csv)
     print(f"Loading dataset from {csv_path}...")
     df = pd.read_csv(csv_path)
     print(f"  Total rows: {len(df):,}")
@@ -79,7 +85,7 @@ def build_metadata_csv(
     metadata_records = []
     
     for class_label, rel_dir in CLASS_TO_DIR.items():
-        img_dir = os.path.join(PROJECT_ROOT, rel_dir)
+        img_dir = os.path.join(project_root, rel_dir)
         if not os.path.isdir(img_dir):
             print(f"  WARNING: Image dir not found: {img_dir}")
             continue
@@ -114,8 +120,8 @@ def build_metadata_csv(
     print(f"  Original: {(metadata_df['split_type'] == 'original').sum():,}")
     print(f"  Counterfactual: {(metadata_df['split_type'] == 'counterfactual').sum():,}")
     
-    out_path = os.path.join(PROJECT_ROOT, "clip_scoring", output_path)
-    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    out_path = os.path.join(results_dir, output_path)
+    os.makedirs(results_dir, exist_ok=True)
     metadata_df.to_csv(out_path, index=False)
     print(f"\nSaved metadata to {out_path}")
     

@@ -15,8 +15,10 @@ from tqdm import tqdm
 from PIL import Image
 from transformers import CLIPProcessor, CLIPModel
 
-# Add project root to path
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Get project root (one level above src/)
+clip_scoring_dir = os.path.dirname(os.path.abspath(__file__))
+src_dir = os.path.dirname(clip_scoring_dir)
+PROJECT_ROOT = os.path.dirname(src_dir)  # Project root
 sys.path.insert(0, PROJECT_ROOT)
 
 
@@ -164,9 +166,9 @@ def compute_clip_scores(
     Parameters
     ----------
     metadata_csv : str
-        Input metadata CSV (relative to clip_scoring/)
+        Input metadata CSV (relative to clip_scoring/results/)
     output_csv : str
-        Output CSV with clip_score column (relative to clip_scoring/)
+        Output CSV with clip_score column (relative to clip_scoring/results/)
     batch_size : int
         Batch size for processing
     device : str
@@ -175,8 +177,12 @@ def compute_clip_scores(
         Whether to use float16 precision (not recommended for CLIP)
     """
     
-    metadata_path = os.path.join(PROJECT_ROOT, "clip_scoring", metadata_csv)
-    output_path = os.path.join(PROJECT_ROOT, "clip_scoring", output_csv)
+    # Get clip_scoring directory
+    clip_scoring_dir = os.path.dirname(os.path.abspath(__file__))
+    results_dir = os.path.join(clip_scoring_dir, "results")
+    
+    metadata_path = os.path.join(results_dir, metadata_csv)
+    output_path = os.path.join(results_dir, output_csv)
     
     # Load metadata
     print(f"\nLoading metadata from {metadata_path}...")
@@ -195,7 +201,7 @@ def compute_clip_scores(
     df["clip_score"] = scores
     
     # Save results
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    os.makedirs(results_dir, exist_ok=True)
     df.to_csv(output_path, index=False)
     print(f"\nSaved results to {output_path}")
 

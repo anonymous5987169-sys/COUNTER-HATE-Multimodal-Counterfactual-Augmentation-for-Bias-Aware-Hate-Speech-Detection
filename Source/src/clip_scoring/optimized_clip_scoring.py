@@ -18,7 +18,10 @@ from tqdm import tqdm
 from PIL import Image
 from transformers import CLIPProcessor, CLIPModel
 
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Get project root (one level above src/)
+clip_scoring_dir = os.path.dirname(os.path.abspath(__file__))
+src_dir = os.path.dirname(clip_scoring_dir)
+PROJECT_ROOT = os.path.dirname(src_dir)
 sys.path.insert(0, PROJECT_ROOT)
 
 
@@ -119,7 +122,11 @@ class OptimizedCLIPScorer:
 def compute_scores_with_temperature_search():
     """Find best temperature value for score range."""
     
-    metadata_path = os.path.join(PROJECT_ROOT, "clip_scoring", "metadata.csv")
+    # Get results directory
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    results_dir = os.path.join(current_dir, "results")
+    
+    metadata_path = os.path.join(results_dir, "metadata.csv")
     df = pd.read_csv(metadata_path)
     
     # Sample for quick test
@@ -152,8 +159,12 @@ def compute_scores_with_temperature_search():
 def compute_full_with_optimization():
     """Compute full 18K with selected optimizations."""
     
-    metadata_path = os.path.join(PROJECT_ROOT, "clip_scoring", "metadata.csv")
-    output_path = os.path.join(PROJECT_ROOT, "clip_scoring", "clip_scores_results_optimized.csv")
+    # Get results directory
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    results_dir = os.path.join(current_dir, "results")
+    
+    metadata_path = os.path.join(results_dir, "metadata.csv")
+    output_path = os.path.join(results_dir, "clip_scores_results_optimized.csv")
     
     print(f"\n{'='*70}")
     print("COMPUTING OPTIMIZED 18K CLIP SCORES")

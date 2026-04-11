@@ -23,13 +23,17 @@ def summarize_clip_scores(
     Parameters
     ----------
     input_csv : str
-        Input results CSV (relative to clip_scoring/)
+        Input results CSV (relative to clip_scoring/results/)
     output_csv : str
-        Output summary CSV (relative to clip_scoring/)
+        Output summary CSV (relative to clip_scoring/results/)
     """
     
-    input_path = os.path.join(PROJECT_ROOT, "clip_scoring", input_csv)
-    output_path = os.path.join(PROJECT_ROOT, "clip_scoring", output_csv)
+    # Get clip_scoring directory and results subdirectory
+    clip_scoring_dir = os.path.dirname(os.path.abspath(__file__))
+    results_dir = os.path.join(clip_scoring_dir, "results")
+    
+    input_path = os.path.join(results_dir, input_csv)
+    output_path = os.path.join(results_dir, output_csv)
     
     # Load results
     print(f"Loading {input_path}...")
@@ -106,7 +110,7 @@ def summarize_clip_scores(
     # Save summary table
     if summary_rows:
         summary_df = pd.DataFrame(summary_rows)
-        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        os.makedirs(results_dir, exist_ok=True)
         summary_df.to_csv(output_path, index=False, float_format="%.6f")
         print(f"\n" + "="*70)
         print(f"\nSaved summary to {output_path}")
