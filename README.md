@@ -1,12 +1,5 @@
-## Supplementary File (Appendix)
-
-See [Appendix.pdf](./Appendix.pdf) for extended results, dataset construction details, qualitative analysis, and statistical tests.
-
----
-
 # COUNTER-HATE: Multimodal Counterfactual Augmentation for Bias-Aware Hate Detection
 
-**Target Venue:** ACM Multimedia (Dataset Track) 2026  
 **Status:** Reproducible; all pipelines documented
 
 ## MIDAS Dataset
