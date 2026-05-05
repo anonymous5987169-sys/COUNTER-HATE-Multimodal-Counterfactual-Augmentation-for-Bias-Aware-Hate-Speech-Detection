@@ -72,7 +72,7 @@ All 18,000 images are synthetically generated from text samples (not collected f
 - **Deterministic seeding**: seed = (0xDEADBEEF + i × 1,000,003) mod 2^32 for reproducibility
 - **Quality control**: Visual tone bias audit on 200-sample subset; confirmed no statistically significant difference in mean brightness or saturation between hate and non-hate classes
 
-For details on identity mapping, dataset construction challenges, and counterfactual examples per class, See [Appendix.pdf](./Appendix.pdf).
+For details on identity mapping, dataset construction challenges, and counterfactual examples per class. See Appendix in the paper. 
 
 ---
 
