@@ -311,7 +311,7 @@ Text models show that CF alone provides substantial FPR reduction (−12.3% aver
 ---
 ## Citation
 
-[Citation placeholder; paper under review at ACM MM 2026]
+[Citation placeholder; paper under review ]
 ---
 
 ## License
