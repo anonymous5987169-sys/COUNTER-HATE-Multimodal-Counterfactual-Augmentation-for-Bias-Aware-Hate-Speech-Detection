@@ -1,4 +1,4 @@
-# COUNTER-HATE: Multimodal Counterfactual Augmentation for Bias-Aware Hate Detection
+# COUNTER-HATE: Multimodal Counterfactual Augmentation for Bias-Aware Hate Content Detection
 
 **Status:** Reproducible; all pipelines documented
 
